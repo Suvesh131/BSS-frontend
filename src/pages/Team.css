@@ -1,0 +1,67 @@
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.team-card {
+  text-align: center;
+  padding: 32px 20px;
+  border-top: 4px solid var(--saffron);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.team-card::before {
+  content: 'ॐ';
+  position: absolute;
+  font-family: 'Tiro Devanagari Sanskrit', serif;
+  font-size: 100px;
+  color: rgba(255,107,0,0.04);
+  top: -10px; right: -10px;
+  line-height: 1;
+}
+
+.team-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  box-shadow: 0 8px 24px rgba(255,107,0,0.3);
+}
+
+.team-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+
+.team-role {
+  color: var(--saffron-dark);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.team-role-hindi {
+  color: var(--text-light);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 900px) {
+  .team-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+}

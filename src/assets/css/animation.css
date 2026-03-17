@@ -1,0 +1,310 @@
+/* ═══════════════════════════════════════
+   BSS WEBSITE — COMPLETE ANIMATIONS
+   ═══════════════════════════════════════ */
+
+/* ── 1. KEYFRAMES ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+@keyframes spinOnce {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,107,0,0); }
+  50%       { box-shadow: 0 0 30px 10px rgba(255,107,0,0.3); }
+}
+@keyframes pulse-ring {
+  0%   { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes borderGlow {
+  0%, 100% { border-color: rgba(255,107,0,0.3); }
+  50%       { border-color: rgba(212,160,23,0.8); }
+}
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes particleFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.2; }
+  50%       { transform: translateY(-50px) rotate(180deg); opacity: 0.6; }
+}
+@keyframes marquee {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(-100%); }
+}
+@keyframes navSlide {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── 2. SCROLL REVEAL — IntersectionObserver classes ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.reveal-left {
+  transform: translateX(-40px);
+}
+.reveal.reveal-right {
+  transform: translateX(40px);
+}
+.reveal.reveal-scale {
+  transform: scale(0.9);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+}
+
+/* Stagger delays for grid children */
+.reveal-stagger > *:nth-child(1) { transition-delay: 0.05s; }
+.reveal-stagger > *:nth-child(2) { transition-delay: 0.15s; }
+.reveal-stagger > *:nth-child(3) { transition-delay: 0.25s; }
+.reveal-stagger > *:nth-child(4) { transition-delay: 0.35s; }
+.reveal-stagger > *:nth-child(5) { transition-delay: 0.45s; }
+.reveal-stagger > *:nth-child(6) { transition-delay: 0.55s; }
+
+/* ── 3. HERO ANIMATIONS ── */
+.hero-logo-img {
+  animation: float 4s ease-in-out infinite, spinOnce 1s ease 0.3s both;
+}
+.hero-content {
+  animation: fadeInUp 0.9s ease 0.1s both;
+}
+.hero-title {
+  animation: fadeInUp 0.8s ease 0.3s both;
+  opacity: 0;
+}
+.hero-eng {
+  animation: fadeInUp 0.8s ease 0.5s both;
+  opacity: 0;
+}
+.hero-place {
+  animation: fadeInUp 0.8s ease 0.6s both;
+  opacity: 0;
+}
+.hero-desc {
+  animation: fadeInUp 0.8s ease 0.7s both;
+  opacity: 0;
+}
+.hero-btns {
+  animation: fadeInUp 0.8s ease 0.9s both;
+  opacity: 0;
+}
+
+/* ── 4. NAVBAR ANIMATION ── */
+.navbar {
+  animation: navSlide 0.6s ease forwards;
+}
+.nav-logo-img {
+  transition: transform 0.4s ease;
+}
+.nav-logo:hover .nav-logo-img {
+  transform: rotate(10deg) scale(1.05);
+}
+
+/* ── 5. BUTTON HOVER EFFECTS ── */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 0; height: 0;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s, height 0.5s;
+}
+.btn-primary:hover::after {
+  width: 300px;
+  height: 300px;
+}
+.btn-primary:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 30px rgba(255,107,0,0.45) !important;
+}
+.btn-primary:active {
+  transform: translateY(-1px) !important;
+}
+
+.btn-secondary {
+  transition: all 0.3s ease !important;
+}
+.btn-secondary:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 20px rgba(255,107,0,0.2) !important;
+}
+
+/* ── 6. CARD HOVER EFFECTS ── */
+.card {
+  transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.35s ease !important;
+}
+.card:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 20px 50px rgba(255,107,0,0.18) !important;
+}
+
+/* Service cards icon bounce */
+.service-card:hover .service-icon {
+  animation: float 0.8s ease infinite;
+  display: inline-block;
+}
+
+/* Team card avatar spin on hover */
+.team-card:hover .team-avatar {
+  animation: spinOnce 0.6s ease forwards;
+}
+
+/* ── 7. STATS COUNTER ANIMATION ── */
+.stat-num {
+  animation: countUp 0.6s ease both;
+  display: inline-block;
+}
+.stat-item:nth-child(1) .stat-num { animation-delay: 0.1s; }
+.stat-item:nth-child(2) .stat-num { animation-delay: 0.2s; }
+.stat-item:nth-child(3) .stat-num { animation-delay: 0.3s; }
+.stat-item:nth-child(4) .stat-num { animation-delay: 0.4s; }
+
+/* ── 8. GALLERY ZOOM ── */
+.gallery-item {
+  overflow: hidden;
+  border-radius: 16px;
+  cursor: pointer;
+}
+.gallery-item img {
+  transition: transform 0.5s cubic-bezier(0.34,1.2,0.64,1);
+}
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+.gallery-item::after {
+  content: '🔍';
+  position: absolute;
+  inset: 0;
+  background: rgba(26,10,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: 16px;
+}
+.gallery-item:hover::after {
+  opacity: 1;
+}
+
+/* ── 9. DONATE CTA PULSE ── */
+.donate-cta .btn-primary {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+.donate-cta-content img {
+  animation: float 3s ease-in-out infinite;
+  transition: transform 0.3s;
+}
+.donate-cta-content img:hover {
+  transform: scale(1.08) rotate(5deg);
+}
+
+/* ── 10. SECTION TITLE UNDERLINE ANIMATION ── */
+.section-title h2 {
+  position: relative;
+  display: inline-block;
+}
+.divider {
+  transition: width 0.8s ease;
+  width: 0 !important;
+}
+.divider.visible {
+  width: 80px !important;
+}
+
+/* ── 11. FOOTER SOCIAL ICONS ── */
+.social-btn {
+  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease !important;
+}
+.social-btn:hover {
+  transform: translateY(-5px) scale(1.12) !important;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35) !important;
+}
+
+/* ── 12. ABOUT LOGO GLOW ── */
+.about-logo-big {
+  animation: float 4s ease-in-out infinite;
+  transition: box-shadow 0.3s;
+}
+.about-logo-card:hover .about-logo-big {
+  box-shadow: 0 0 50px rgba(212,160,23,0.6), 0 0 100px rgba(255,107,0,0.2) !important;
+}
+
+/* ── 13. NAV LINK UNDERLINE EFFECT ── */
+.nav-links-desktop li a {
+  position: relative;
+}
+.nav-links-desktop li a::after {
+  content: '';
+  position: absolute;
+  bottom: 2px; left: 50%;
+  width: 0; height: 2px;
+  background: var(--gold);
+  border-radius: 1px;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+.nav-links-desktop li a:hover::after,
+.nav-links-desktop li a.active::after {
+  width: 70%;
+  left: 15%;
+}
+
+/* ── 14. PAGE HERO ANIMATION ── */
+.page-hero h1 {
+  animation: fadeInUp 0.7s ease 0.2s both;
+  opacity: 0;
+}
+.page-hero p {
+  animation: fadeInUp 0.7s ease 0.4s both;
+  opacity: 0;
+}
+
+/* ── 15. ANNOUNCEMENT BAR LOGO ── */
+.announce-label img {
+  animation: float 2s ease-in-out infinite;
+  transition: transform 0.3s;
+}
+
+/* ── REDUCED MOTION ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
