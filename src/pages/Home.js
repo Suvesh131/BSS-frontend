@@ -11,18 +11,18 @@ const Home = () => {
   useEffect(() => {
     axios.get(`${API}/api/events`).then(r => setEvents(r.data.slice(0, 3))).catch(() => {});
   }, []);
-
-
   const team = [
-    { name: 'Prakash Kumar', role: 'Founder & President', roleHindi: 'संस्थापक एवं अध्यक्ष', image: '/images/prakash.png' },
-    { name: 'Manish Tiwari', role: 'Vice President', roleHindi: 'उपाध्यक्ष', image: '/images/manish.png' },
-    { name: 'Team Member 3', role: 'Secretary', roleHindi: 'सचिव', image: null },
-    { name: 'Team Member 4', role: 'Treasurer', roleHindi: 'कोषाध्यक्ष', image: null },
-    { name: 'Team Member 5', role: 'Member', roleHindi: 'सदस्य', image: null },
-    { name: 'Team Member 6', role: 'Member', roleHindi: 'सदस्य', image: null },
-    { name: 'Team Member 7', role: 'Member', roleHindi: 'सदस्य', image: null },
-    { name: 'Team Member 8', role: 'Member', roleHindi: 'सदस्य', image: null },
-  ];
+  { name: 'Prakash Kumar', role: 'Founder & President', roleHindi: 'संस्थापक एवं अध्यक्ष', image: '/images/prakash.png' },
+  { name: 'Manish Tiwari', role: 'Vice President', roleHindi: 'उपाध्यक्ष', image: '/images/manish.png' },
+  { name: 'Team Member 3', role: 'Secretary', roleHindi: 'सचिव', image: null },
+  { name: 'Team Member 4', role: 'Treasurer', roleHindi: 'कोषाध्यक्ष', image: null },
+  { name: 'Team Member 5', role: 'Member', roleHindi: 'सदस्य', image: null },
+  { name: 'Team Member 6', role: 'Member', roleHindi: 'सदस्य', image: null },
+  { name: 'Team Member 7', role: 'Member', roleHindi: 'सदस्य', image: null },
+  { name: 'Team Member 8', role: 'Member', roleHindi: 'सदस्य', image: null },
+];
+
+  
 
   const services = [
     { icon: '🕉️', title: 'Religious Events', hindi: 'धार्मिक आयोजन', desc: 'Puja, Havan, and cultural ceremonies organized for the community.' },
@@ -206,7 +206,7 @@ const Home = () => {
             <div className="divider"></div>
           </div>
           <div className="team-grid reveal-stagger" style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}>
-            {team.map((member, i) => (
+            {team.slice(0, 8).map((member, i) => (
               <div key={i} className="team-card card reveal reveal-scale">
                 <div className="team-avatar">
                   {member.image ? (

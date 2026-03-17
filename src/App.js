@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -18,21 +18,37 @@ import { initScrollReveal, initCounters } from './utils/scrollReveal';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
+  const observerRef = useRef(null);
+
   useEffect(() => {
+    // Page top pe scroll
     window.scrollTo({ top: 0, behavior: 'instant' });
-    // Har page change pe scroll reveal reinit karo
-    setTimeout(() => {
-      initScrollReveal();
+
+    // Purana observer cleanup karo
+    if (observerRef.current) {
+      observerRef.current.disconnect();
+    }
+
+    // 300ms baad reinit karo — React DOM ready hone ke baad
+    const timer = setTimeout(() => {
+      observerRef.current = initScrollReveal();
       initCounters();
-    }, 100);
+    }, 10); 
+
+    return () => clearTimeout(timer);
   }, [pathname]);
+
   return null;
 };
 
 function App() {
   useEffect(() => {
-    initScrollReveal();
-    initCounters();
+    const timer = setTimeout(() => {
+      initScrollReveal();
+      initCounters();
+    }, 10); // ✅ pehli load pe bhi 300ms
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
