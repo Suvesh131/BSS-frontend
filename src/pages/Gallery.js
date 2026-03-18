@@ -4,28 +4,28 @@ const galleryData = [
   {
     folder: "Events",
     images: [
-      { title: "Event 1", imageUrl: "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID" },
-      { title: "Event 2", imageUrl: "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID" },
-      { title: "Event 3", imageUrl: "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID" },
-      { title: "Event 4", imageUrl: "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID" },
+      { title: "Event 1", imageUrl: "/images/gallery/event1.jpg" },
+      { title: "Event 2", imageUrl: "/images/gallery/event2.jpg" },
+      { title: "Event 3", imageUrl: "/images/gallery/event3.jpg" },
+      { title: "Event 4", imageUrl: "/images/gallery/event4.jpg" },
     ]
   },
   {
     folder: "Chhath Puja",
     images: [
-      { title: "Chhath Puja 1", imageUrl: "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID" },
-      { title: "Chhath Puja 2", imageUrl: "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID" },
-      { title: "Chhath Puja 3", imageUrl: "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID" },
-      { title: "Chhath Puja 4", imageUrl: "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID" },
+      { title: "Chhath Puja 1", imageUrl: "/images/gallery/chhath1.jpg" },
+      { title: "Chhath Puja 2", imageUrl: "/images/gallery/chhath2.jpg" },
+      { title: "Chhath Puja 3", imageUrl: "/images/gallery/chhath3.jpg" },
+      { title: "Chhath Puja 4", imageUrl: "/images/gallery/chhath4.jpg" },
     ]
   },
   {
     folder: "Meetings",
     images: [
-      { title: "Meeting 2024", imageUrl: "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID" },
-      { title: "Meeting 2024",  imageUrl: "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID" },
-      { title: "Meeting 2024",  imageUrl: "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID" },
-      { title: "Meeting 2024",  imageUrl: "https://drive.google.com/uc?export=view&id=YOUR_FILE_ID" },
+      { title: "Meeting 2024", imageUrl: "/images/gallery/meeting1.jpg" },
+      { title: "Meeting 2024",  imageUrl: "/images/gallery/meeting2.jpg" },
+      { title: "Meeting 2024",  imageUrl: "/images/gallery/meeting3.jpg" },
+      { title: "Meeting 2024",  imageUrl: "/images/gallery/meeting4.jpg" },
     ]
   },
 ];
@@ -97,7 +97,7 @@ const Gallery = () => {
                 {/* Images Grid */}
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '16px' }}>
                   {images.map((img, i) => (
-                    <ImageCard key={i} img={img} onClick={() => setSelected(img)} />
+                    <ImageCard key={i} img={{...img, folder}} onClick={() => setSelected({...img, folder})} />
                   ))}
                 </div>
 
@@ -132,17 +132,31 @@ const Gallery = () => {
   );
 };
 
-const ImageCard = ({ img, onClick }) => (
-  <div onClick={onClick}
-    style={{ cursor: 'pointer', borderRadius: '14px', overflow: 'hidden', boxShadow: 'var(--shadow)', transition: 'transform 0.3s', background: 'white' }}
-    onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.03)'}
-    onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}>
-    <img src={img.imageUrl} alt={img.title}
-      style={{ width: '100%', height: '210px', objectFit: 'cover', display: 'block' }} />
-    <div style={{ padding: '10px 14px' }}>
-      <p style={{ fontWeight: '600', color: 'var(--saffron-dark)', fontSize: '0.88rem' }}>{img.title}</p>
+const ImageCard = ({ img, onClick }) => {
+  const [imageError, setImageError] = React.useState(false);
+  
+  return (
+    <div onClick={onClick}
+      style={{ cursor: 'pointer', borderRadius: '14px', overflow: 'hidden', boxShadow: 'var(--shadow)', transition: 'transform 0.3s', background: 'white' }}
+      onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.03)'}
+      onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}>
+      {!imageError ? (
+        <img 
+          src={img.imageUrl} 
+          alt={img.title}
+          onError={() => setImageError(true)}
+          style={{ width: '100%', height: '210px', objectFit: 'cover', display: 'block' }} 
+        />
+      ) : (
+        <div style={{ width: '100%', height: '210px', background: 'linear-gradient(135deg, var(--saffron-dark), var(--maroon))', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <p style={{ color: 'white', fontSize: '2rem' }}>🖼️</p>
+        </div>
+      )}
+      <div style={{ padding: '10px 14px' }}>
+        <p style={{ fontWeight: '600', color: 'var(--saffron-dark)', fontSize: '0.88rem' }}>{img.title}</p>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Gallery;

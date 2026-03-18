@@ -100,9 +100,9 @@ const Home = () => {
         <div className="stats-grid reveal-stagger">
           {[
             { num: 5, suffix: '+', label: 'Years of Service', hindi: 'सेवा के वर्ष' },
-            { num: 10, suffix: '+', label: 'Members', hindi: 'सदस्य' },
+            { num: 50, suffix: '+', label: 'Members', hindi: 'सदस्य' },
             { num: 10, suffix: '+', label: 'Events', hindi: 'कार्यक्रम' },
-            { num: 50, suffix: '+', label: 'Families Helped', hindi: 'परिवारों की मदद' },
+            { num: 30, suffix: '+', label: 'Families Helped', hindi: 'परिवारों की मदद' },
           ].map((s, i) => (
             <div key={i} className="stat-item reveal">
               <span className="stat-num" data-count={s.num} data-suffix={s.suffix}>{s.num}{s.suffix}</span>
@@ -139,6 +139,14 @@ const Home = () => {
             <div style={{ marginTop: '28px', display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
               <Link to="/about" className="btn-primary">Read More</Link>
               <Link to="/join" className="btn-secondary">Join BSS</Link>
+              <a 
+                href="https://sites.google.com/view/brahmarshisevasangh" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn-secondary"
+              >
+                2.0 BSS Site
+              </a>
             </div>
           </div>
         </div>

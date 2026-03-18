@@ -136,13 +136,15 @@
   flex: 1;
   overflow: hidden;
   position: relative;
+  height: 28px;
+  display: flex;
+  align-items: center;
 }
 
 /* Moving text */
 .marquee-inner {
   display: flex;
-  width: max-content;
-  animation: marquee 35s linear infinite;
+  animation: marqueeScroll 20s linear infinite;
   will-change: transform;
 }
 
@@ -150,12 +152,13 @@
 .marquee-inner span {
   white-space: nowrap;
   font-size: 0.9rem;
-  padding-right: 40px;
+  padding-right: 80px;
   letter-spacing: 0.3px;
+  flex-shrink: 0;
 }
 
-/* Smooth animation */
-@keyframes marquee {
+/* Smooth seamless animation - no gaps */
+@keyframes marqueeScroll {
   0% {
     transform: translateX(0);
   }
