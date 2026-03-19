@@ -61,7 +61,7 @@ const Complaint = () => (
         {/* Contact fallback */}
         <div className="card" style={{ marginTop: '24px', textAlign: 'center', background: 'var(--cream-dark)' }}>
           <p style={{ color: 'var(--text-light)', fontSize: '0.9rem' }}>
-            Form nahi dikh raha? Seedha email karein:
+            Don't see the form? Email directly to:
           </p>
           <a href="mailto:brahmarshisevasangh@gmail.com"
             style={{ color: 'var(--saffron-dark)', fontWeight: '600', fontSize: '0.95rem', textDecoration: 'none' }}>

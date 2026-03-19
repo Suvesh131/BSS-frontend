@@ -105,6 +105,42 @@ const Gallery = () => {
             ))}
           </div>
 
+          {/* Fallback Button */}
+          <div style={{ marginTop: '32px', textAlign: 'center' }}>
+            <p style={{ color: 'var(--text-light)', fontSize: '0.85rem', marginBottom: '12px' }}>
+              Gallery not loading?
+            </p>
+            <a
+              href="https://sites.google.com/view/brahmarshisevasangh/gallery"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                background: 'linear-gradient(135deg, var(--saffron-dark), var(--maroon))',
+                color: 'white',
+                fontWeight: '600',
+                fontSize: '0.92rem',
+                textDecoration: 'none',
+                padding: '12px 28px',
+                borderRadius: '50px',
+                boxShadow: '0 4px 16px rgba(180,60,0,0.35)',
+                transition: 'transform 0.2s, box-shadow 0.2s',
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 8px 24px rgba(180,60,0,0.45)';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 16px rgba(180,60,0,0.35)';
+              }}
+            >
+              🌐 View Full Gallery ↗
+            </a>
+          </div>
+
         </div>
       </section>
 
