@@ -136,7 +136,7 @@ const Home = () => {
             <p className="hindi-text" style={{ margin: '12px 0', fontSize: '0.95rem', lineHeight: '1.9', color: 'var(--text-light)' }}>
               यह संस्था सनातन परिवारों को एकजुट करने और जन कल्याण के लिए समर्पित है।
             </p>
-            <div style={{ marginTop: '28px', display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+            <div className="about-actions">
               <Link to="/about" className="btn-primary">Read More</Link>
               <Link to="/join" className="btn-secondary">Join BSS</Link>
               <a 
@@ -207,13 +207,13 @@ const Home = () => {
 
       {/* ── TEAM ── */}
       <section className="team-section">
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '80px 20px' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 20px' }}>
           <div className="section-title reveal">
             <h2>Our Team</h2>
             <p className="subtitle hindi-text">हमारी टीम — कार्यकारिणी</p>
             <div className="divider"></div>
           </div>
-          <div className="team-grid reveal-stagger" style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}>
+          <div className="team-grid reveal-stagger">
             {team.slice(0, 8).map((member, i) => (
               <div key={i} className="team-card card reveal reveal-scale">
                 <div className="team-avatar">

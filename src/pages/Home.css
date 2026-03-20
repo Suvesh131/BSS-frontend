@@ -223,6 +223,21 @@
 .about-founded strong { font-size: 1.8rem; color: var(--gold-light); font-family: 'Cinzel Decorative', cursive; }
 .about-content p { line-height: 1.8; color: var(--text-light); margin-bottom: 8px; }
 
+.about-actions {
+  margin-top: 28px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.about-actions .btn-primary,
+.about-actions .btn-secondary {
+  flex: 1 1 130px;
+  min-width: 100px;
+  text-align: center;
+}
+
 /* ── SERVICES ── */
 .services-grid {
   display: grid;
@@ -242,7 +257,11 @@
 .event-date { font-size: 0.8rem; color: var(--gold); font-weight: 600; }
 
 /* ── TEAM ── */
-.team-section { background: var(--cream-dark); }
+.team-section {
+  background: var(--cream-dark);
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
 
 .team-grid {
   display: grid;
@@ -330,10 +349,34 @@
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .events-grid { grid-template-columns: 1fr; }
   .about-grid { grid-template-columns: 1fr; gap: 32px; }
-  .team-grid { grid-template-columns: repeat(3, 1fr); }
+  .team-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .team-card { padding: 30px 18px; }
 }
 @media (max-width: 600px) {
-  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-grid { grid-template-columns: 1fr; gap: 14px; }
+  .team-card { padding: 24px 14px; }
   .services-grid { grid-template-columns: 1fr; }
   .hero-logo-img { width: 100px; height: 100px; }
+
+  .about-actions {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .about-actions .btn-primary,
+  .about-actions .btn-secondary {
+    flex: 1 1 0;
+    min-width: 100px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 420px) {
+  .about-actions .btn-primary,
+  .about-actions .btn-secondary {
+    font-size: 0.85rem;
+    padding: 10px 12px;
+  }
+  .team-card { padding: 20px 12px; }
 }

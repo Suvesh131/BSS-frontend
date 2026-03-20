@@ -91,7 +91,7 @@ const MemberRegister = () => {
               <div className="success-icon">🎉</div>
               <h3></h3>
               <p className="hindi-text"></p>
-              <p>Agar form nahi khula toh neeche click karein:</p>
+              <p>If the form does not open, click below:</p>
               <a href={GOOGLE_FORM_LINK} target="_blank" rel="noopener noreferrer" className="join-btn-primary" style={{ marginTop: '16px' }}>
                 Click Here to Open Form 📋
               </a>
@@ -100,7 +100,7 @@ const MemberRegister = () => {
 
           {/* Manual link */}
           <div className="join-manual">
-            <p>Form manually kholine ke liye:</p>
+            <p>To open the form manually:</p>
             <a href={GOOGLE_FORM_LINK} target="_blank" rel="noopener noreferrer" className="join-manual-link">
               🔗 Click Here to Open Form
             </a>
