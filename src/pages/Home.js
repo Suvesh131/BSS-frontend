@@ -14,11 +14,11 @@ const Home = () => {
   const team = [
   { name: 'Prakash Kumar', role: 'Founder & President', roleHindi: 'संस्थापक एवं अध्यक्ष', image: '/images/prakash.png' },
   { name: 'Manish Tiwari', role: 'Vice President', roleHindi: 'उपाध्यक्ष', image: '/images/manish.png' },
-  { name: 'Team Member 3', role: 'General Secretary', roleHindi: 'महासचिव', image: null },
+  { name: 'Anshu Singh', role: 'Youth Wing Head', roleHindi: 'युवा प्रमुख', image: '/images/yuva.jpeg' },
   { name: 'Team Member 4', role: 'Treasurer', roleHindi: 'कोषाध्यक्ष', image: null },
   { name: 'Team Member 5', role: 'Joint Secretary', roleHindi: 'संयुक्त सचिव', image: null },
   { name: 'Team Member 6', role: 'Media In-charge', roleHindi: 'सदमीडिया प्रभारी', image: null },
-  { name: 'Anshu Singh', role: 'Youth Wing Head', roleHindi: 'युवा प्रमुख', image: '/images/yuva.jpeg' },
+  { name: 'Team Member 7', role: 'General Secretary', roleHindi: 'महासचिव', image: null },
   { name: 'Team Member 8', role: 'Legal Advisor', roleHindi: 'कानूनी सलाहकार', image: null },
 ];
 
