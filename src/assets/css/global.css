@@ -1,31 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit&family=Cinzel+Decorative:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit&family=Cinzel+Decorative:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap");
 
 :root {
-  --saffron: #FF6B00;
-  --saffron-light: #FF8C42;
-  --saffron-dark: #CC5500;
-  --gold: #D4A017;
-  --gold-light: #F5C842;
+  --saffron: #ff6b00;
+  --saffron-light: #ff8c42;
+  --saffron-dark: #cc5500;
+  --gold: #d4a017;
+  --gold-light: #f5c842;
   --maroon: #800020;
-  --cream: #FFF8EE;
-  --cream-dark: #F5E6D0;
-  --dark: #1A0A00;
-  --text: #2D1A0A;
-  --text-light: #6B4C2A;
-  --white: #FFFFFF;
+  --cream: #fff8ee;
+  --cream-dark: #f5e6d0;
+  --dark: #1a0a00;
+  --text: #2d1a0a;
+  --text-light: #6b4c2a;
+  --white: #ffffff;
   --shadow: 0 4px 24px rgba(255, 107, 0, 0.15);
   --shadow-lg: 0 8px 40px rgba(255, 107, 0, 0.25);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html,
+body {
+  height: 100%;
+  scroll-behavior: smooth;
+  overscroll-behavior-y: none;
+}
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background: var(--cream);
   color: var(--text);
   overflow-x: hidden;
+  overflow-y: auto;
   min-width: 0;
 }
 
@@ -40,12 +50,14 @@ iframe {
   height: auto;
 }
 
-h1, h2, h3 {
-  font-family: 'Cinzel Decorative', cursive;
+h1,
+h2,
+h3 {
+  font-family: "Cinzel Decorative", cursive;
 }
 
 .hindi-text {
-  font-family: 'Tiro Devanagari Sanskrit', serif;
+  font-family: "Tiro Devanagari Sanskrit", serif;
 }
 
 .section-padding {
@@ -61,14 +73,14 @@ h1, h2, h3 {
 
 .section-title h2 {
   font-size: clamp(1.5rem, 4vw, 2.5rem);
-  color: var(--saffron-dark);
+  color: var(--saffron);
   margin-bottom: 10px;
 }
 
 .section-title .subtitle {
   font-size: 1.1rem;
-  color: var(--text-light);
-  font-family: 'Tiro Devanagari Sanskrit', serif;
+  color: var(--saffron);
+  font-family: "Tiro Devanagari Sanskrit", serif;
 }
 
 .section-title .divider {
@@ -125,7 +137,9 @@ h1, h2, h3 {
   padding: 32px;
   box-shadow: var(--shadow);
   border: 1px solid rgba(255, 107, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .card:hover {
@@ -140,10 +154,10 @@ h1, h2, h3 {
 }
 
 .om-bg::before {
-  content: 'ॐ';
+  content: "ॐ";
   position: absolute;
   font-size: 400px;
-  font-family: 'Tiro Devanagari Sanskrit', serif;
+  font-family: "Tiro Devanagari Sanskrit", serif;
   color: rgba(255, 107, 0, 0.04);
   top: 50%;
   left: 50%;
@@ -155,24 +169,46 @@ h1, h2, h3 {
 /* Pattern border */
 .pattern-border {
   border-top: 4px solid;
-  border-image: repeating-linear-gradient(90deg, var(--saffron) 0, var(--saffron) 10px, var(--gold) 10px, var(--gold) 20px) 1;
+  border-image: repeating-linear-gradient(
+      90deg,
+      var(--saffron) 0,
+      var(--saffron) 10px,
+      var(--gold) 10px,
+      var(--gold) 20px
+    )
+    1;
 }
 
 /* Animations */
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
-.fade-in-up { animation: fadeInUp 0.7s ease forwards; }
+.fade-in-up {
+  animation: fadeInUp 0.7s ease forwards;
+}
 
 /* Form styles */
-.form-group { margin-bottom: 20px; }
+.form-group {
+  margin-bottom: 20px;
+}
 
 .form-group label {
   display: block;
@@ -189,7 +225,7 @@ h1, h2, h3 {
   border: 2px solid #e0d5c8;
   border-radius: 10px;
   font-size: 1rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background: var(--cream);
   transition: border-color 0.3s;
   outline: none;
@@ -201,11 +237,18 @@ h1, h2, h3 {
   border-color: var(--saffron);
 }
 
-.form-group textarea { resize: vertical; min-height: 120px; }
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
 
 /* Page hero */
 .page-hero {
-  background: linear-gradient(135deg, var(--saffron-dark) 0%, var(--maroon) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--saffron-dark) 0%,
+    var(--maroon) 100%
+  );
   color: white;
   padding: 100px 20px 60px;
   text-align: center;
@@ -214,20 +257,31 @@ h1, h2, h3 {
 }
 
 .page-hero::before {
-  content: 'ॐ';
+  content: "ॐ";
   position: absolute;
   font-size: 300px;
-  font-family: 'Tiro Devanagari Sanskrit', serif;
-  color: rgba(255,255,255,0.05);
-  top: -60px; right: -60px;
+  font-family: "Tiro Devanagari Sanskrit", serif;
+  color: rgba(255, 255, 255, 0.05);
+  top: -60px;
+  right: -60px;
   line-height: 1;
 }
 
-.page-hero h1 { font-size: clamp(1.8rem, 5vw, 3rem); margin-bottom: 12px; }
-.page-hero p { font-size: 1.1rem; opacity: 0.9; }
+.page-hero h1 {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  margin-bottom: 12px;
+}
+.page-hero p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
 
 /* Responsive */
 @media (max-width: 768px) {
-  .section-padding { padding: 50px 16px; }
-  .card { padding: 20px; }
+  .section-padding {
+    padding: 50px 16px;
+  }
+  .card {
+    padding: 20px;
+  }
 }
