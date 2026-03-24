@@ -45,15 +45,12 @@ const Complaint = () => (
           </div>
 
             <iframe
-            src="https://forms.gle/X5Sb3dM4oiFrY4oN6"
-            width="100%"
-            height="700"
-            frameBorder="0"
-            marginHeight="0"
-            marginWidth="0"
-            title="Complaint Form"
-            style={{ display: 'block' }}
-          >
+              src="https://forms.gle/X5Sb3dM4oiFrY4oN6"
+              width="100%"
+              frameBorder="0"
+              title="Complaint Form"
+              style={{ display: 'block', height: '100vh' }}  // 👈 full screen height
+            >
             Loading…
           </iframe>
         </div>
