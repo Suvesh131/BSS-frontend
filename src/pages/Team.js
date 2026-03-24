@@ -8,7 +8,7 @@ const teamMembers = [
   { name: 'Team Member 4',  role: 'Treasurer',             roleHindi: 'कोषाध्यक्ष',            image: '/images/member4.png' },
   { name: 'Team Member 5',  role: 'Joint Secretary',       roleHindi: 'संयुक्त सचिव',          image: '/images/member5.png' },
   { name: 'Team Member 6',  role: 'Media In-charge',       roleHindi: 'मीडिया प्रभारी',        image: '/images/member6.png' },
-  { name: 'Team Member 7',  role: 'Youth Wing Head',       roleHindi: 'युवा प्रमुख',           image: '/images/member7.png' },
+  { name: 'Anshu Singh',  role: 'Youth Wing Head',       roleHindi: 'युवा प्रमुख',           image: '/images/yuva.jpeg' },
   { name: 'Team Member 8',  role: 'Legal Advisor',         roleHindi: 'कानूनी सलाहकार',        image: '/images/member8.png' },
   { name: 'Team Member 9',  role: 'Cultural Head',         roleHindi: 'सांस्कृतिक प्रमुख',     image: '/images/member9.png' },
   { name: 'Team Member 10', role: 'Social Media Head',     roleHindi: 'सोशल मीडिया प्रमुख',    image: '/images/member10.png' },

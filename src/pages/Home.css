@@ -345,19 +345,39 @@
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
+  .hero {
+    min-height: auto;
+    padding-bottom: 20px;
+  }
+  .hero-content {
+    padding: 80px 16px 40px;
+    max-width: 720px;
+  }
+  .hero-title {
+    font-size: clamp(1.8rem, 7vw, 3rem);
+  }
+  .hero-eng {
+    font-size: clamp(0.95rem, 4vw, 1.3rem);
+  }
+  .hero-place, .hero-desc { font-size: 0.95rem; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .events-grid { grid-template-columns: 1fr; }
   .about-grid { grid-template-columns: 1fr; gap: 32px; }
   .team-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; }
   .team-card { padding: 30px 18px; }
+  .announcement-bar { flex-wrap: wrap; height: auto; padding: 8px 12px; }
+  .marquee { height: auto; }
+  .marquee-inner span { font-size: 0.82rem; padding-right: 48px; }
 }
 @media (max-width: 600px) {
   .team-grid { grid-template-columns: 1fr; gap: 14px; }
   .team-card { padding: 24px 14px; }
   .services-grid { grid-template-columns: 1fr; }
   .hero-logo-img { width: 100px; height: 100px; }
-
+  .hero-content { padding: 60px 14px 32px; }
+  .hero-title { font-size: clamp(1.6rem, 8vw, 2.4rem); }
+  .hero-desc { margin-bottom: 20px; }
   .about-actions {
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -379,4 +399,11 @@
     padding: 10px 12px;
   }
   .team-card { padding: 20px 12px; }
+  .hero-logo-img { width: 90px; height: 90px; }
+  .hero-content { padding: 45px 12px 28px; }
+  .hero-btns { gap: 12px; }
+  .stats-grid { grid-template-columns: 1fr; }
+  .stat-num { font-size: 1.8rem; }
+  .announcement-bar { padding: 6px 8px; gap: 8px; }
+  .marquee-inner span { font-size: 0.8rem; padding-right: 30px; }
 }

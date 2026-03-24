@@ -18,7 +18,7 @@ const Home = () => {
   { name: 'Team Member 4', role: 'Treasurer', roleHindi: 'कोषाध्यक्ष', image: null },
   { name: 'Team Member 5', role: 'Joint Secretary', roleHindi: 'संयुक्त सचिव', image: null },
   { name: 'Team Member 6', role: 'Media In-charge', roleHindi: 'सदमीडिया प्रभारी', image: null },
-  { name: 'Team Member 7', role: 'Youth Wing Head', roleHindi: 'युवा प्रमुख', image: null },
+  { name: 'Anshu Singh', role: 'Youth Wing Head', roleHindi: 'युवा प्रमुख', image: '/images/yuva.jpeg' },
   { name: 'Team Member 8', role: 'Legal Advisor', roleHindi: 'कानूनी सलाहकार', image: null },
 ];
 
