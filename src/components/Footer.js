@@ -69,7 +69,6 @@ const Footer = () => {
             <h4 className="footer-col-title">Quick Links <span className="hindi-text">/ त्वरित लिंक</span></h4>
             <ul className="footer-nav">
               <li><Link to="/">🏠 Home</Link></li>
-              <li><Link to="/about">ℹ️ About Us</Link></li>
               <li><Link to="/services">🙏 Services</Link></li>
               <li><Link to="/events">📅 Events</Link></li>
               <li><Link to="/team">👥 Our Team</Link></li>
