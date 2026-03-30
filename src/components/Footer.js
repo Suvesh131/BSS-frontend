@@ -61,7 +61,7 @@ const Footer = () => {
                   <path d="M141.537 88.988a66.667 66.667 0 0 0-2.518-1.143c-1.482-27.307-16.403-42.94-41.457-43.1h-.34c-14.986 0-27.449 6.396-35.12 18.036l13.779 9.452c5.73-8.695 14.724-10.548 21.348-10.548h.229c8.249.053 14.474 2.452 18.503 7.129 2.932 3.405 4.893 8.111 5.864 14.05-7.314-1.243-15.224-1.626-23.68-1.14-23.82 1.371-39.134 15.264-38.105 34.568.522 9.792 5.4 18.216 13.735 23.719 7.047 4.652 16.124 6.927 25.557 6.412 12.458-.683 22.231-5.436 29.049-14.127 5.178-6.6 8.453-15.153 9.899-25.93 5.937 3.583 10.337 8.298 12.767 13.966 4.132 9.635 4.373 25.468-8.546 38.318-11.319 11.258-24.925 16.135-45.488 16.286-22.809-.169-40.06-7.484-51.275-21.742C35.236 139.966 29.808 120.682 29.605 96c.203-24.682 5.63-43.966 16.133-57.317C56.954 24.425 74.204 17.11 97.013 16.94c22.975.17 40.526 7.52 52.171 21.847 5.71 7.026 10.015 15.86 12.853 26.162l16.147-4.308c-3.44-12.68-8.853-23.606-16.219-32.668C147.036 9.607 125.204.195 97.07 0h-.113C68.882.195 47.292 9.643 32.788 28.054 19.882 44.511 13.2 67.215 13 96c.2 28.785 6.882 51.489 19.788 67.946C47.292 182.358 68.882 191.805 96.957 192h.113c24.96-.173 42.554-6.708 57.048-21.145 18.963-18.91 18.392-42.571 12.152-57.098-4.494-10.482-13.083-19.079-24.733-24.769zm-41.352 43.835c-10.324.564-21.07-4.054-21.606-13.829-.412-7.727 5.478-16.335 23.23-17.366 2.032-.117 4.031-.174 5.993-.174 6.146 0 11.916.591 17.19 1.739-1.956 24.377-14.484 28.945-24.807 29.63z"/>
                 </svg>
               </a>
-              </div>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -76,6 +76,7 @@ const Footer = () => {
               <li><Link to="/gallery">🖼️ Gallery</Link></li>
               <li><Link to="/donate">💛 Donate</Link></li>
               <li><Link to="/complaint">📋 Complaint</Link></li>
+              <li><Link to="/privacy-policy">🔒 Privacy Policy</Link></li>
             </ul>
           </div>
 
@@ -83,31 +84,28 @@ const Footer = () => {
           <div className="footer-col">
             <h4 className="footer-col-title">Find Us <span className="hindi-text">/ हमारा पता</span></h4>
             <ul className="footer-contact-list">
-              {/* Location */}
-            <li>
-              <span className="fc-icon">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                </svg>
-              </span>
-              <span>Fatehabad, Bihar, India</span>
-            </li>
-
-            {/* Phone */}
-            <li>
-              <span className="fc-icon">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
-                  <path d="M6.62 10.79a15.45 15.45 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.21 2.2z"/>
-                </svg>
-              </span>
-              <a href="tel:+91XXXXXXXXXX">+91 XXXXXXXXXX</a>
-            </li>
               <li>
                 <span className="fc-icon">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2-8 5-8-5h16zm0 12H4V8.235l8 5 8-5V18z"/>
-                </svg>
-              </span>
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                  </svg>
+                </span>
+                <span>Fatehabad, Bihar, India</span>
+              </li>
+              <li>
+                <span className="fc-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                    <path d="M6.62 10.79a15.45 15.45 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.21 2.2z"/>
+                  </svg>
+                </span>
+                <a href="tel:+91XXXXXXXXXX">+91 XXXXXXXXXX</a>
+              </li>
+              <li>
+                <span className="fc-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                    <path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2-8 5-8-5h16zm0 12H4V8.235l8 5 8-5V18z"/>
+                  </svg>
+                </span>
                 <a href="mailto:brahmarshisevasangh@gmail.com">brahmarshisevasangh@gmail.com</a>
               </li>
               <li>
@@ -137,6 +135,11 @@ const Footer = () => {
         <div className="footer-bottom-inner">
           <p>© 2024 <strong>ब्रह्मर्षि सेवा संघ</strong> — Brahmarshi Seva Sangh. All rights reserved.</p>
           <p className="footer-bottom-sub hindi-text">सर्वाधिकार सुरक्षित | फतेहाबाद, बिहार, भारत</p>
+          <p style={{ marginTop: '6px', fontSize: '0.8rem' }}>
+            <Link to="/privacy-policy" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>
+              🔒 Privacy Policy
+            </Link>
+          </p>
         </div>
       </div>
 

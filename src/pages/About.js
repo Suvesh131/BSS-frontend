@@ -9,6 +9,8 @@ const About = () => (
     </div>
     <section className="section-padding">
       <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+
+        {/* WHO WE ARE */}
         <div className="section-title">
           <h2>Who We Are</h2>
           <p className="subtitle hindi-text">हम कौन हैं</p>
@@ -16,17 +18,86 @@ const About = () => (
         </div>
 
         <div className="card" style={{ marginBottom: '24px' }}>
-          <p style={{ lineHeight: '1.9', color: 'var(--text-light)' }}>
-            <strong>Brahmarshi Seva Sangh</strong> is a <strong>non-governmental charitable organization</strong> founded in <strong>2021</strong> in
-            Fatehabad, Bihar State, India by <strong>Prakash Kumar</strong> and his associates.
-          </p>
-          <p className="hindi-text" style={{ marginTop: '16px', lineHeight: '2', color: 'var(--text-light)', fontSize: '0.95rem' }}>
-            ब्रह्मर्षि सेवा संघ एक गैर-सरकारी धर्मार्थ संस्था है जिसकी स्थापना 2021 में फतेहाबाद (बिहार राज्य/भारत)
-            में प्रकाश कुमार और उनके सहयोगियों द्वारा की गई थी। यह संस्था फतेहाबाद में रहने वाले लोगों के साथ-साथ
-            फतेहाबाद से जुड़े समाज को सनातन परिवारों को एकजुट करने और जन कल्याण के लिए सहायता एवं आर्थिक सहायता प्रदान करती है।
-          </p>
+  <p style={{ lineHeight: '2', color: 'var(--text-light)', fontSize: '1rem' }}>
+    <strong style={{ color: 'var(--saffron-dark)' }}>Brahmarshi Seva Sangh (BSS)</strong> is a{' '}
+    <strong>non-governmental charitable organization</strong> founded in <strong>2021</strong> in{' '}
+    <strong>Fatehabad, Bihar, India</strong> by <strong>Shri Prakash Kumar</strong> and his
+    dedicated associates. For over <strong>5+ years</strong>, the organization has been
+    continuously working at the grassroots level with a strong commitment to social service,
+    unity, and cultural values.
+  </p>
+
+  <p style={{ lineHeight: '2', color: 'var(--text-light)', marginTop: '14px', fontSize: '1rem' }}>
+    Since its inception, Brahmarshi Seva Sangh has made a meaningful impact by helping{' '}
+    <strong>50+ families</strong>, supporting needy individuals, and empowering students through
+    various initiatives. The organization has successfully organized <strong>10+ social,
+    religious, and cultural events</strong>, creating awareness and strengthening community bonds.
+    Our efforts are focused on uplifting the underprivileged, promoting education, and standing
+    firmly against injustice and corruption.
+  </p>
+
+  <p style={{ lineHeight: '2', color: 'var(--text-light)', marginTop: '14px', fontSize: '1rem' }}>
+    We believe that true progress comes when every individual in society is given equal respect,
+    opportunity, and support. With a growing network of <strong>50+ active members</strong>, BSS
+    continues to expand its reach and impact, driven by the mission of “Seva, Nyay aur
+    Paradarshita” (Service, Justice, and Transparency).
+  </p>
+
+  <p className="hindi-text" style={{ marginTop: '16px', lineHeight: '2', color: 'var(--text-light)', fontSize: '0.95rem' }}>
+    ब्रह्मर्षि सेवा संघ एक गैर-सरकारी धर्मार्थ संस्था है जिसकी स्थापना 2021 में फतेहाबाद,
+    बिहार में श्री प्रकाश कुमार और उनके सहयोगियों द्वारा की गई। पिछले <strong>5+ वर्षों </strong> 
+    से यह संस्था लगातार समाज सेवा के कार्यों में सक्रिय है।
+  </p>
+
+  <p className="hindi-text" style={{ marginTop: '10px', lineHeight: '2', color: 'var(--text-light)', fontSize: '0.95rem' }}>
+    अब तक संस्था द्वारा <strong>50+ परिवारों की सहायता</strong> की जा चुकी है तथा{' '}
+    <strong>10+ सामाजिक एवं धार्मिक कार्यक्रम</strong> सफलतापूर्वक आयोजित किए गए हैं।
+    हमारा उद्देश्य समाज के हर वर्ग तक पहुंचकर उन्हें सहयोग देना, शिक्षा को बढ़ावा देना,
+    और अन्याय व भ्रष्टाचार के खिलाफ आवाज उठाना है।
+  </p>
+
+  <p className="hindi-text" style={{ marginTop: '10px', lineHeight: '2', color: 'var(--text-light)', fontSize: '0.95rem' }}>
+    हम मानते हैं कि समाज की सेवा ही सच्चा धर्म है और हर व्यक्ति को समान अवसर मिलना चाहिए।
+    ब्रह्मर्षि सेवा संघ अपने <strong>50+ सदस्यों</strong> के साथ लगातार समाज के उत्थान के लिए
+    कार्यरत है।
+  </p>
+</div>
+
+        
+        {/* MISSION & VISION */}
+        <div className="section-title" style={{ marginTop: '40px' }}>
+          <h2>Mission & Vision</h2>
+          <p className="subtitle hindi-text">हमारा उद्देश्य एवं दृष्टिकोण</p>
+          <div className="divider"></div>
         </div>
 
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '32px' }}>
+          <div className="card" style={{ borderTop: '4px solid var(--saffron)' }}>
+            <h3 style={{ color: 'var(--saffron-dark)', fontFamily: 'Poppins', marginBottom: '10px' }}>🎯 Our Mission</h3>
+            <p style={{ lineHeight: '1.9', color: 'var(--text-light)', fontSize: '0.95rem' }}>
+              To empower the underprivileged, preserve Sanatan culture, and create a society
+              where every individual — regardless of their economic background — lives with
+              dignity, justice, and opportunity.
+            </p>
+            <p className="hindi-text" style={{ marginTop: '10px', fontSize: '0.88rem', color: 'var(--text-light)', lineHeight: '1.9' }}>
+              वंचितों को सशक्त बनाना, सनातन संस्कृति की रक्षा करना और एक ऐसे समाज का निर्माण
+              करना जहाँ हर व्यक्ति गरिमा और न्याय के साथ जी सके।
+            </p>
+          </div>
+          <div className="card" style={{ borderTop: '4px solid var(--gold)' }}>
+            <h3 style={{ color: 'var(--saffron-dark)', fontFamily: 'Poppins', marginBottom: '10px' }}>🌟 Our Vision</h3>
+            <p style={{ lineHeight: '1.9', color: 'var(--text-light)', fontSize: '0.95rem' }}>
+              A united, self-reliant, and spiritually grounded community of Fatehabad — where
+              tradition meets progress, and every family is supported in times of need.
+            </p>
+            <p className="hindi-text" style={{ marginTop: '10px', fontSize: '0.88rem', color: 'var(--text-light)', lineHeight: '1.9' }}>
+              फतेहाबाद का एक एकजुट, आत्मनिर्भर और आध्यात्मिक रूप से जागरूक समाज — जहाँ
+              परंपरा और प्रगति साथ चलें।
+            </p>
+          </div>
+        </div>
+
+        {/* OUR WORKS */}
         <div className="section-title" style={{ marginTop: '40px' }}>
           <h2>Our Works</h2>
           <p className="subtitle hindi-text">ब्रह्मर्षि सेवा संघ के कार्य</p>
@@ -39,65 +110,87 @@ const About = () => (
               icon: '🕉️',
               title: 'Religious & Cultural Events',
               hindi: 'धार्मिक एवं सांस्कृतिक आयोजन',
-              desc: 'Brahmarshi Seva Sangh organizes Puja, Havan, Katha, and various religious ceremonies to preserve Sanatan traditions and bring the community together in devotion and faith.',
-              hindiDesc: 'पूजा, हवन, कथा और धार्मिक अनुष्ठानों का आयोजन कर सनातन संस्कृति को जीवित रखना।'
+              desc: 'At Brahmarshi Seva Sangh, faith is not just a belief — it is a way of life. We regularly organize Puja, Havan, Katha, Bhajan Sandhya, and other religious ceremonies to keep the flame of Sanatan Dharma alive. These events are spiritual gatherings as well as a means to strengthen social bonds and pass our rich cultural heritage to the next generation.',
+              hindiDesc: 'हम नियमित रूप से पूजा, हवन, कथा, भजन संध्या और धार्मिक अनुष्ठान आयोजित करते हैं ताकि सनातन संस्कृति जीवित रहे और समाज एकजुट रहे।'
             },
             {
               icon: '📚',
               title: 'Education Support',
               hindi: 'शिक्षा सहायता',
-              desc: 'Providing scholarships, study materials, and educational guidance to deserving youth from economically weaker sections, enabling them to achieve their dreams.',
-              hindiDesc: 'आर्थिक रूप से कमजोर मेधावी छात्रों को छात्रवृत्ति और शैक्षिक सहायता प्रदान करना।'
+              desc: 'Education is the most powerful tool to change the world. BSS is committed to ensuring that no deserving child is deprived of quality education due to financial constraints. We provide scholarships, distribute study materials, offer career guidance, and connect students with the right resources to realize their full potential.',
+              hindiDesc: 'हम आर्थिक रूप से कमजोर मेधावी छात्रों को छात्रवृत्ति, अध्ययन सामग्री और करियर मार्गदर्शन प्रदान करते हैं ताकि कोई भी होनहार बच्चा शिक्षा से वंचित न रहे।'
             },
             {
               icon: '🤝',
               title: 'Social Welfare & Financial Aid',
               hindi: 'समाज कल्याण एवं आर्थिक सहायता',
-              desc: 'Extending financial assistance, food distribution, and emergency support to families in need, especially during times of crisis, illness, or natural calamity.',
-              hindiDesc: 'जरूरतमंद परिवारों को आर्थिक सहायता, राशन वितरण और संकट के समय तत्काल मदद।'
+              desc: 'Life can be unpredictable — a sudden illness, a natural calamity, or financial hardship can push any family to the edge. BSS stands beside such families in their darkest hours. We provide direct financial assistance, ration distribution, medical aid coordination, and emergency support. No one in our community should feel alone — this is our promise.',
+              hindiDesc: 'हम जरूरतमंद परिवारों को सीधी आर्थिक सहायता, राशन वितरण, चिकित्सा सहायता और आपातकालीन मदद प्रदान करते हैं। हमारा वादा है — कोई अकेला नहीं।'
             },
             {
               icon: '⚖️',
               title: 'Fight Against Corruption',
               hindi: 'भ्रष्टाचार के खिलाफ आवाज़',
-              desc: 'Standing firm against injustice and corruption at local levels, raising voice for the rights of common people and ensuring transparency in public dealings.',
-              hindiDesc: 'स्थानीय स्तर पर भ्रष्टाचार के विरुद्ध आवाज उठाना और आम जनता के अधिकारों की रक्षा करना।'
+              desc: 'Brahmarshi Seva Sangh believes that a just society cannot be built on corruption and injustice. We actively work to expose and challenge corruption at the local level, help common citizens access their rightful government benefits, and ensure public services are delivered with transparency and accountability. We are the voice of those who have been silenced.',
+              hindiDesc: 'हम भ्रष्टाचार के विरुद्ध सक्रिय रूप से लड़ते हैं, आम नागरिकों को उनके सरकारी हक दिलाते हैं और पारदर्शिता सुनिश्चित करते हैं।'
             },
             {
               icon: '👥',
               title: 'Community Building',
               hindi: 'समुदाय निर्माण',
-              desc: 'Uniting Sanatan families of Fatehabad and surrounding areas for collective growth, cultural events, and mutual support — building a strong, united society.',
-              hindiDesc: 'फतेहाबाद और आस-पास के क्षेत्रों के सनातन परिवारों को एकजुट कर एक सशक्त समाज का निर्माण।'
+              desc: 'A society is only as strong as the bonds its people share. BSS works to unite the Sanatan families of Fatehabad and surrounding regions through community events, cultural programs, and collective initiatives — fostering brotherhood, mutual respect, and a shared identity. Because together, we are stronger.',
+              hindiDesc: 'हम फतेहाबाद और आस-पास के सनातन परिवारों को सामुदायिक कार्यक्रमों और सांस्कृतिक आयोजनों के माध्यम से एकजुट करते हैं।'
             },
             {
               icon: '🌱',
               title: 'Youth Empowerment',
               hindi: 'युवा सशक्तिकरण',
-              desc: 'Channeling the energy of youth towards constructive social work, leadership development, and community service — making them the true strength of society.',
-              hindiDesc: 'युवाओं को सामाजिक कार्यों में शामिल कर उनकी ऊर्जा को सकारात्मक दिशा में लगाना।'
+              desc: 'The youth are not just the future — they are the present strength of our society. BSS actively engages young people in meaningful social work and leadership development. Our youth wing, led by Anshu Singh, is at the forefront of every campaign — inspiring hundreds of young volunteers to be the change they wish to see.',
+              hindiDesc: 'हमारी युवा शाखा, अंशु सिंह के नेतृत्व में, युवाओं को सकारात्मक सामाजिक बदलाव का माध्यम बना रही है।'
             },
           ].map((item, i) => (
             <div key={i} className="card" style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
               <span style={{ fontSize: '2rem', flexShrink: 0 }}>{item.icon}</span>
-              <div>
+              <div style={{ minWidth: 0, flex: 1 }}>
                 <h3 style={{ color: 'var(--saffron-dark)', marginBottom: '4px', fontFamily: 'Poppins' }}>{item.title}</h3>
-                <p className="hindi-text" style={{ color: 'var(--maroon)', fontWeight: '600', fontSize: '0.9rem', marginBottom: '8px' }}>{item.hindi}</p>
-                <p style={{ lineHeight: '1.8', color: 'var(--text-light)', marginBottom: '6px' }}>{item.desc}</p>
-                <p className="hindi-text" style={{ fontSize: '0.88rem', color: 'var(--text-light)', lineHeight: '1.8' }}>{item.hindiDesc}</p>
+                <p className="hindi-text" style={{ color: 'var(--maroon)', fontWeight: '600', fontSize: '0.9rem', marginBottom: '10px' }}>{item.hindi}</p>
+                <p style={{ lineHeight: '1.9', color: 'var(--text-light)', marginBottom: '8px', fontSize: '0.95rem' }}>{item.desc}</p>
+                <p className="hindi-text" style={{ fontSize: '0.88rem', color: 'var(--text-light)', lineHeight: '1.9', borderTop: '1px solid rgba(255,107,0,0.1)', paddingTop: '8px' }}>{item.hindiDesc}</p>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="card" style={{ background: 'linear-gradient(135deg, var(--saffron-dark), var(--maroon))', color: 'white' }}>
-          <h3 style={{ color: 'var(--gold-light)', marginBottom: '12px', fontFamily: 'Poppins' }}>Our Privacy Policy</h3>
-          <p style={{ lineHeight: '1.9', opacity: 0.9, fontSize: '0.95rem' }}>
-            Brahmarshi Seva Sangh takes your privacy seriously. We do not share, trade, or sell
-            personal information of our donors or members with any other organizations.
-            All financial information is treated as highly confidential.
-          </p>
+        {/* WHY JOIN US */}
+        <div className="section-title" style={{ marginTop: '40px' }}>
+          <h2>Why Join Us?</h2>
+          <p className="subtitle hindi-text">हमसे क्यों जुड़ें?</p>
+          <div className="divider"></div>
         </div>
+
+        <div className="card" style={{ marginBottom: '24px' }}>
+          <p style={{ lineHeight: '2', color: 'var(--text-light)', fontSize: '1rem', marginBottom: '16px' }}>
+            Becoming a member of Brahmarshi Seva Sangh means becoming part of a movement — a
+            movement rooted in <strong>service, justice, and faith</strong>. When you join BSS, you
+            become a pillar of strength for countless families who need it most.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '12px' }}>
+            {[
+              { icon: '✅', text: 'Be part of a trusted community organization' },
+              { icon: '✅', text: 'Contribute to real, grassroots social change' },
+              { icon: '✅', text: 'Participate in religious & cultural events' },
+              { icon: '✅', text: 'Support education for deserving children' },
+              { icon: '✅', text: 'Stand against injustice & corruption' },
+              { icon: '✅', text: 'Empower the youth of Fatehabad' },
+            ].map((p, i) => (
+              <div key={i} style={{ display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
+                <span>{p.icon}</span>
+                <span style={{ color: 'var(--text-light)', fontSize: '0.92rem', lineHeight: '1.7' }}>{p.text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   </div>

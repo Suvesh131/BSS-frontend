@@ -12,6 +12,7 @@ import Donate from './pages/Donate';
 import MemberRegister from './pages/MemberRegister';
 import Team from './pages/Team';
 import Complaint from './pages/Complaint';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 import './assets/css/global.css';
 import './assets/css/animation.css';
 import { initScrollReveal, initCounters } from './utils/scrollReveal';
@@ -21,19 +22,16 @@ const ScrollToTop = () => {
   const observerRef = useRef(null);
 
   useEffect(() => {
-    // Page top pe scroll
     window.scrollTo({ top: 0, behavior: 'instant' });
 
-    // Purana observer cleanup karo
     if (observerRef.current) {
       observerRef.current.disconnect();
     }
 
-    // 300ms baad reinit karo — React DOM ready hone ke baad
     const timer = setTimeout(() => {
       observerRef.current = initScrollReveal();
       initCounters();
-    }, 10); 
+    }, 10);
 
     return () => clearTimeout(timer);
   }, [pathname]);
@@ -46,7 +44,7 @@ function App() {
     const timer = setTimeout(() => {
       initScrollReveal();
       initCounters();
-    }, 10); // ✅ pehli load pe bhi 300ms
+    }, 10);
 
     return () => clearTimeout(timer);
   }, []);
@@ -67,6 +65,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/join" element={<MemberRegister />} />
           <Route path="/complaint" element={<Complaint />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
       </main>
       <Footer />
