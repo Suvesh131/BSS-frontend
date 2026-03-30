@@ -179,7 +179,7 @@
 /* Moving text */
 .marquee-inner {
   display: flex;
-  animation: marqueeScroll 20s linear infinite;
+  animation: marqueeScroll 7s linear infinite;
   will-change: transform;
 }
 

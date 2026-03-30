@@ -79,18 +79,6 @@ const Home = () => {
         सदस्य बनने के लिए रजिस्टर करें | 
         नए सदस्यों का हार्दिक स्वागत है 🙏
       </span>
-
-      <span aria-hidden="true">
-        ब्रह्मर्षि सेवा संघ में आपका स्वागत है | 
-        सेवा, न्याय और ईमानदारी हमारा संकल्प | 
-        गरीबों की सहायता, भ्रष्टाचार के खिलाफ आवाज़ | 
-        समाज सेवा ही हमारा धर्म | 
-        युवा शक्ति – समाज की सच्ची ताकत | 
-        न्याय, सेवा और पारदर्शिता की ओर | 
-        सदस्य बनने के लिए रजिस्टर करें | 
-        नए सदस्यों का हार्दिक स्वागत है 🙏
-      </span>
-
     </div>
   </div>
 </div>
@@ -102,7 +90,7 @@ const Home = () => {
             { num: 5, suffix: '+', label: 'Years of Service', hindi: 'सेवा के वर्ष' },
             { num: 50, suffix: '+', label: 'Members', hindi: 'सदस्य' },
             { num: 10, suffix: '+', label: 'Events', hindi: 'कार्यक्रम' },
-            { num: 30, suffix: '+', label: 'Families Helped', hindi: 'परिवारों की मदद' },
+            { num: 50, suffix: '+', label: 'Families Helped', hindi: 'परिवारों की मदद' },
           ].map((s, i) => (
             <div key={i} className="stat-item reveal">
               <span className="stat-num" data-count={s.num} data-suffix={s.suffix}>{s.num}{s.suffix}</span>
