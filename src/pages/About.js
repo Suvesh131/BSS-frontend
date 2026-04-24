@@ -97,6 +97,63 @@ const About = () => (
           </div>
         </div>
 
+        {/* UDYAM CERTIFICATION */}
+        <div className="section-title" style={{ marginTop: '40px' }}>
+          <h2>UDYAM Registration</h2>
+          <p className="subtitle hindi-text">उद्यम पंजीकरण</p>
+          <div className="divider"></div>
+        </div>
+
+        <div className="card" style={{
+          marginBottom: '32px',
+          borderLeft: '5px solid var(--saffron)',
+          background: 'linear-gradient(135deg, rgba(255,107,0,0.05) 0%, rgba(89,31,0,0.05) 100%)'
+        }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
+            <div>
+              <h3 style={{ color: 'var(--saffron-dark)', marginBottom: '16px', fontFamily: 'Poppins' }}>🏛️ UDYAM Registered</h3>
+              <p style={{ lineHeight: '1.8', color: 'var(--text-light)', fontSize: '0.95rem', marginBottom: '16px' }}>
+                <strong>Brahmarshi Seva Sangh</strong> is proudly registered under the <strong>UDYAM Registration scheme</strong> of the Ministry of Micro, Small and Medium Enterprises, Government of India. This certification recognizes our commitment to formal compliance and social accountability.
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.6)', padding: '12px', borderRadius: '6px' }}>
+                <p style={{ color: 'var(--saffron-dark)', fontWeight: '600', fontSize: '0.9rem', marginBottom: '6px' }}>📋 Registration Details:</p>
+                <p style={{ color: 'var(--text-light)', fontSize: '0.85rem', margin: '6px 0' }}><strong>Reg. No:</strong> UDYAM-BR-23-0120997</p>
+                <p style={{ color: 'var(--text-light)', fontSize: '0.85rem', margin: '6px 0' }}><strong>Enterprise Type:</strong> Micro</p>
+                <p style={{ color: 'var(--text-light)', fontSize: '0.85rem', margin: '6px 0' }}><strong>Major Activity:</strong> Services</p>
+                <p style={{ color: 'var(--text-light)', fontSize: '0.85rem', margin: '6px 0' }}><strong>Social Category:</strong> General</p>
+                <p style={{ color: 'var(--text-light)', fontSize: '0.85rem', margin: '6px 0' }}><strong>Date of Registration:</strong> 04/04/2026</p>
+              </div>
+            </div>
+            <div>
+              <h3 style={{ color: 'var(--saffron-dark)', marginBottom: '16px', fontFamily: 'Poppins' }}>✅ Compliance & Trust</h3>
+              <p style={{ lineHeight: '1.8', color: 'var(--text-light)', fontSize: '0.95rem', marginBottom: '12px' }}>
+                This certification affirms that Brahmarshi Seva Sangh operates with:
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, marginBottom: '12px' }}>
+                <li style={{ color: 'var(--text-light)', fontSize: '0.92rem', margin: '8px 0', display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
+                  <span>✓</span>
+                  <span><strong>Transparency</strong> — Complete disclosure of activities and finances</span>
+                </li>
+                <li style={{ color: 'var(--text-light)', fontSize: '0.92rem', margin: '8px 0', display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
+                  <span>✓</span>
+                  <span><strong>Accountability</strong> — Regular reporting to government bodies</span>
+                </li>
+                <li style={{ color: 'var(--text-light)', fontSize: '0.92rem', margin: '8px 0', display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
+                  <span>✓</span>
+                  <span><strong>Compliance</strong> — Full adherence to MSME framework</span>
+                </li>
+                <li style={{ color: 'var(--text-light)', fontSize: '0.92rem', margin: '8px 0', display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
+                  <span>✓</span>
+                  <span><strong>Social Service</strong> — Government-recognized charitable work</span>
+                </li>
+              </ul>
+              <p className="hindi-text" style={{ fontSize: '0.88rem', color: 'var(--text-light)', lineHeight: '1.8' }}>
+                यह पंजीकरण हमारी प्रतिबद्धता को दर्शाता है कि हम पारदर्शिता, ईमानदारी और सामाजिक कल्याण के साथ काम करते हैं।
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* OUR WORKS */}
         <div className="section-title" style={{ marginTop: '40px' }}>
           <h2>Our Works</h2>
