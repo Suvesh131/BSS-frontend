@@ -65,37 +65,37 @@ const About = () => (
 
         
         {/* MISSION & VISION */}
-        <div className="section-title" style={{ marginTop: '40px' }}>
-          <h2>Mission & Vision</h2>
-          <p className="subtitle hindi-text">हमारा उद्देश्य एवं दृष्टिकोण</p>
-          <div className="divider"></div>
-        </div>
+<div className="section-title" style={{ marginTop: '40px' }}>
+  <h2>Mission & Vision</h2>
+  <p className="subtitle hindi-text">हमारा उद्देश्य एवं दृष्टिकोण</p>
+  <div className="divider"></div>
+</div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '32px' }}>
-          <div className="card" style={{ borderTop: '4px solid var(--saffron)' }}>
-            <h3 style={{ color: 'var(--saffron-dark)', fontFamily: 'Poppins', marginBottom: '10px' }}>🎯 Our Mission</h3>
-            <p style={{ lineHeight: '1.9', color: 'var(--text-light)', fontSize: '0.95rem' }}>
-              To empower the underprivileged, preserve Sanatan culture, and create a society
-              where every individual — regardless of their economic background — lives with
-              dignity, justice, and opportunity.
-            </p>
-            <p className="hindi-text" style={{ marginTop: '10px', fontSize: '0.88rem', color: 'var(--text-light)', lineHeight: '1.9' }}>
-              वंचितों को सशक्त बनाना, सनातन संस्कृति की रक्षा करना और एक ऐसे समाज का निर्माण
-              करना जहाँ हर व्यक्ति गरिमा और न्याय के साथ जी सके।
-            </p>
-          </div>
-          <div className="card" style={{ borderTop: '4px solid var(--gold)' }}>
-            <h3 style={{ color: 'var(--saffron-dark)', fontFamily: 'Poppins', marginBottom: '10px' }}>🌟 Our Vision</h3>
-            <p style={{ lineHeight: '1.9', color: 'var(--text-light)', fontSize: '0.95rem' }}>
-              A united, self-reliant, and spiritually grounded community of Fatehabad — where
-              tradition meets progress, and every family is supported in times of need.
-            </p>
-            <p className="hindi-text" style={{ marginTop: '10px', fontSize: '0.88rem', color: 'var(--text-light)', lineHeight: '1.9' }}>
-              फतेहाबाद का एक एकजुट, आत्मनिर्भर और आध्यात्मिक रूप से जागरूक समाज — जहाँ
-              परंपरा और प्रगति साथ चलें।
-            </p>
-          </div>
-        </div>
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginBottom: '32px' }}>
+  <div className="card" style={{ borderTop: '4px solid var(--saffron)' }}>
+    <h3 style={{ color: 'var(--saffron-dark)', fontFamily: 'Poppins', marginBottom: '10px' }}>🎯 Our Mission</h3>
+    <p style={{ lineHeight: '1.9', color: 'var(--text-light)', fontSize: '0.95rem' }}>
+      To empower the underprivileged, preserve Sanatan culture, and create a society
+      where every individual — regardless of their economic background — lives with
+      dignity, justice, and opportunity.
+    </p>
+    <p className="hindi-text" style={{ marginTop: '10px', fontSize: '0.88rem', color: 'var(--text-light)', lineHeight: '1.9' }}>
+      वंचितों को सशक्त बनाना, सनातन संस्कृति की रक्षा करना और एक ऐसे समाज का निर्माण
+      करना जहाँ हर व्यक्ति गरिमा और न्याय के साथ जी सके।
+    </p>
+  </div>
+  <div className="card" style={{ borderTop: '4px solid var(--gold)' }}>
+    <h3 style={{ color: 'var(--saffron-dark)', fontFamily: 'Poppins', marginBottom: '10px' }}>🌟 Our Vision</h3>
+    <p style={{ lineHeight: '1.9', color: 'var(--text-light)', fontSize: '0.95rem' }}>
+      A united, self-reliant, and spiritually grounded community of Fatehabad — where
+      tradition meets progress, and every family is supported in times of need.
+    </p>
+    <p className="hindi-text" style={{ marginTop: '10px', fontSize: '0.88rem', color: 'var(--text-light)', lineHeight: '1.9' }}>
+      फतेहाबाद का एक एकजुट, आत्मनिर्भर और आध्यात्मिक रूप से जागरूक समाज — जहाँ
+      परंपरा और प्रगति साथ चलें।
+    </p>
+  </div>
+</div>
 
         {/* UDYAM CERTIFICATION */}
         <div className="section-title" style={{ marginTop: '40px' }}>
