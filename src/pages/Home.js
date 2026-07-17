@@ -8,9 +8,9 @@ const API = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 const Home = () => {
   const [events, setEvents] = useState([]);
 
-  useEffect(() => {
-    axios.get(`${API}/api/events`).then(r => setEvents(r.data.slice(0, 3))).catch(() => {});
-  }, []);
+  // useEffect(() => {
+  //   axios.get(`${API}/api/events`).then(r => setEvents(r.data.slice(0, 3))).catch(() => {});
+  // }, []);
   const team = [
   { name: 'Prakash Kumar', role: 'Founder & President', roleHindi: 'संस्थापक एवं अध्यक्ष', image: '/images/prakash.png' },
   { name: 'Manish Tiwari', role: 'Vice President', roleHindi: 'उपाध्यक्ष', image: '/images/manish.png' },
