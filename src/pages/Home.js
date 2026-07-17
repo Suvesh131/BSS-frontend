@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { Helmet } from 'react-helmet-async'; 
 import './Home.css';
 
 const API = process.env.REACT_APP_API_URL || 'http://localhost:5000';
@@ -32,7 +33,15 @@ const Home = () => {
   ];
 
   return (
+    
     <div className="home">
+      <Helmet>
+        <title>Brahmarshi Seva Sangh | Official Website</title>
+        <meta 
+          name="description" 
+          content="Brahmarshi Seva Sangh is a non-governmental charitable organization in Fatehabad, Bihar, working since 2021 for social service, education, cultural events, and community welfare." 
+        />
+      </Helmet>
 
       {/* ── HERO ── */}
       <section className="hero">

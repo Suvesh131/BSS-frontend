@@ -1,7 +1,15 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const Complaint = () => (
   <div>
+    <Helmet>
+      <title>Complaint | Brahmarshi Seva Sangh</title>
+      <meta 
+        name="description" 
+        content="File a complaint with Brahmarshi Seva Sangh (BSS). Our team reviews all complaints confidentially and responds within 3-5 working days." 
+      />
+    </Helmet>
     <div className="page-hero">
       <h1>Complaint</h1>
       <p className="hindi-text">शिकायत दर्ज करें</p>

@@ -16,6 +16,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import './assets/css/global.css';
 import './assets/css/animation.css';
 import { initScrollReveal, initCounters } from './utils/scrollReveal';
+import { HelmetProvider } from 'react-helmet-async';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -50,26 +51,28 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <ScrollToTop />
-      <Navbar />
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/donate" element={<Donate />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/join" element={<MemberRegister />} />
-          <Route path="/complaint" element={<Complaint />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        </Routes>
-      </main>
-      <Footer />
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <ScrollToTop />
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/team" element={<Team />} />
+            <Route path="/donate" element={<Donate />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/join" element={<MemberRegister />} />
+            <Route path="/complaint" element={<Complaint />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          </Routes>
+        </main>
+        <Footer />
+      </Router>
+    </HelmetProvider>
   );
 }
 

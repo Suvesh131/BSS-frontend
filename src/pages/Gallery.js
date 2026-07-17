@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const galleryData = [
   {
@@ -42,6 +43,13 @@ const Gallery = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Gallery | Brahmarshi Seva Sangh</title>
+        <meta 
+          name="description" 
+          content="View photos from Brahmarshi Seva Sangh events, Chhath Puja celebrations, and community meetings in Fatehabad, Bihar." 
+        />
+      </Helmet>
       <div className="page-hero">
         <h1>Gallery</h1>
         <p className="hindi-text">गैलरी — हमारे कार्यक्रमों की झलकियां</p>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import './Team.css';
 
 const teamMembers = [
@@ -48,6 +49,13 @@ const TeamCard = ({ member }) => (
 
 const Team = () => (
   <div>
+    <Helmet>
+      <title>Our Team | Brahmarshi Seva Sangh</title>
+      <meta 
+        name="description" 
+        content="Meet the dedicated team and executive committee of Brahmarshi Seva Sangh (BSS) - founders, coordinators, and members working for social service in Fatehabad, Bihar." 
+      />
+    </Helmet>
     <div className="page-hero">
       <h1>Our Team</h1>
       <p className="hindi-text">हमारी टीम — कार्यकारिणी समिति</p>

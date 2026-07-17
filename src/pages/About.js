@@ -1,8 +1,17 @@
 // About.js
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
+
 
 const About = () => (
   <div>
+    <Helmet>
+      <title>About Us | Brahmarshi Seva Sangh</title>
+      <meta 
+        name="description" 
+        content="Know about Brahmarshi Seva Sangh (BSS) - a charitable organization founded in 2021 in Fatehabad, Bihar. Learn about our mission, UDYAM registration, education support, and social welfare work." 
+      />
+    </Helmet>
     <div className="page-hero">
       <h1>About BSS</h1>
       <p className="hindi-text">ब्रह्मर्षि सेवा संघ के बारे में</p>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Helmet } from 'react-helmet-async';
 
 const API = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
@@ -23,6 +24,13 @@ const Events = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Events | Brahmarshi Seva Sangh</title>
+        <meta 
+          name="description" 
+          content="Check upcoming and past events organized by Brahmarshi Seva Sangh - Chhath Puja, Holi Milan, Mahapanchayat and other community gatherings in Fatehabad, Bihar." 
+        />
+      </Helmet>
       <div className="page-hero">
         <h1>Events</h1>
         <p className="hindi-text">कार्यक्रम</p>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://www.brahmarshisevasangh.in/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://www.brahmarshisevasangh.in/about</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.brahmarshisevasangh.in/services</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.brahmarshisevasangh.in/events</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.brahmarshisevasangh.in/gallery</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.brahmarshisevasangh.in/team</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.brahmarshisevasangh.in/donate</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.brahmarshisevasangh.in/contact</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.brahmarshisevasangh.in/join</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.brahmarshisevasangh.in/complaint</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.brahmarshisevasangh.in/privacy-policy</loc>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>

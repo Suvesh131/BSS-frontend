@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import './MemberRegister.css';
 
 const GOOGLE_FORM_LINK = 'https://forms.gle/rMy8oVoZbhNBkguD7';
@@ -25,6 +26,14 @@ const MemberRegister = () => {
 
   return (
     <div className="join-page">
+      <Helmet>
+        <title>Join Us | Brahmarshi Seva Sangh</title>
+        <meta 
+          name="description" 
+          content="Become a member of Brahmarshi Seva Sangh (BSS) and contribute to social service, cultural events, and community welfare in Fatehabad, Bihar." 
+        />
+      </Helmet>
+
       {/* Background particles */}
       <div className="join-particles">
         {[...Array(8)].map((_, i) => (

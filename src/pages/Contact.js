@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Helmet } from 'react-helmet-async';
 import './Contact.css';
 
 const API = process.env.REACT_APP_API_URL || 'http://localhost:5000';
@@ -24,6 +25,13 @@ const Contact = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Contact Us | Brahmarshi Seva Sangh</title>
+        <meta 
+          name="description" 
+          content="Get in touch with Brahmarshi Seva Sangh in Fatehabad, Bihar. Contact us via phone, email, or the online form for queries, support, or collaboration." 
+        />
+      </Helmet>
       <div className="page-hero">
         <h1>Contact Us</h1>
         <p className="hindi-text">हमसे संपर्क करें</p>

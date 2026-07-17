@@ -1,5 +1,6 @@
 // Services.js
 import React from 'react';
+import { Helmet } from 'react-helmet-async'; 
 import { Link } from 'react-router-dom';
 
 const services = [
@@ -13,6 +14,13 @@ const services = [
 
 const Services = () => (
   <div>
+    <Helmet>
+      <title>Our Services | Brahmarshi Seva Sangh</title>
+      <meta 
+        name="description" 
+        content="Explore BSS services - religious events, education support, financial assistance, women empowerment, community welfare, and youth development programs in Fatehabad, Bihar." 
+      />
+    </Helmet>
     <div className="page-hero">
       <h1>Our Services</h1>
       <p className="hindi-text">हमारी सेवाएं</p>

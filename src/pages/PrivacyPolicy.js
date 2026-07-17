@@ -1,8 +1,16 @@
 // PrivacyPolicy.js
 import React from 'react';
+import { Helmet } from 'react-helmet-async'; 
 
 const PrivacyPolicy = () => (
   <div>
+    <Helmet>
+      <title>Privacy Policy | Brahmarshi Seva Sangh</title>
+      <meta 
+        name="description" 
+        content="Read the Privacy Policy of Brahmarshi Seva Sangh (BSS) - how we collect, use, and protect your personal information as a member, donor, or website visitor." 
+      />
+    </Helmet>
     <div className="page-hero">
       <h1>Privacy Policy</h1>
       <p className="hindi-text">गोपनीयता नीति</p>

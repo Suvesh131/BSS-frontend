@@ -1,8 +1,16 @@
 // Donate.js
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const Donate = () => (
   <div>
+    <Helmet>
+      <title>Donate | Brahmarshi Seva Sangh</title>
+      <meta 
+        name="description" 
+        content="Support Brahmarshi Seva Sangh's mission - donate to help fund social service, education, cultural events, and financial assistance for families in Fatehabad, Bihar." 
+      />
+    </Helmet>
     <div className="page-hero">
       <h1>Donate</h1>
       <p className="hindi-text">दान करें — सेवा में सहयोग करें</p>
