@@ -24,7 +24,6 @@ const Complaint = () => (
           <div className="divider"></div>
         </div>
 
-        {/* Info Card */}
         <div className="card" style={{ marginBottom: '32px', display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
           <span style={{ fontSize: '2rem', flexShrink: 0 }}>📋</span>
           <div>
@@ -40,7 +39,6 @@ const Complaint = () => (
           </div>
         </div>
 
-        {/* Google Form Embed */}
         <div className="card" style={{ padding: '0', overflow: 'hidden', borderRadius: '16px' }}>
           <div style={{
             background: 'linear-gradient(135deg, var(--saffron-dark), var(--maroon))',
@@ -52,18 +50,17 @@ const Complaint = () => (
             </span>
           </div>
 
-            <iframe
-              src="https://forms.gle/X5Sb3dM4oiFrY4oN6"
-              width="100%"
-              frameBorder="0"
-              title="Complaint Form"
-              style={{ display: 'block', height: '100vh' }}  // 👈 full screen height
-            >
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSeel6bL7_hb5Ac9bHY0eElLGe8adlti_1PZvU0qAFdEgnkl-g/viewform?embedded=true"
+            width="100%"
+            frameBorder="0"
+            title="Complaint Form"
+            style={{ display: 'block', height: '1200px' }}
+          >
             Loading…
           </iframe>
         </div>
 
-        {/* Contact fallback */}
         <div className="card" style={{ marginTop: '24px', textAlign: 'center', background: 'var(--cream-dark)' }}>
           <p style={{ color: 'var(--text-light)', fontSize: '0.9rem' }}>
             Don't see the form? Email directly to:
