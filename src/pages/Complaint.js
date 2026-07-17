@@ -10,6 +10,7 @@ const Complaint = () => (
         content="File a complaint with Brahmarshi Seva Sangh (BSS). Our team reviews all complaints confidentially and responds within 3-5 working days." 
       />
     </Helmet>
+
     <div className="page-hero">
       <h1>Complaint</h1>
       <p className="hindi-text">शिकायत दर्ज करें</p>
@@ -24,6 +25,7 @@ const Complaint = () => (
           <div className="divider"></div>
         </div>
 
+        {/* Info Card */}
         <div className="card" style={{ marginBottom: '32px', display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
           <span style={{ fontSize: '2rem', flexShrink: 0 }}>📋</span>
           <div>
@@ -39,6 +41,7 @@ const Complaint = () => (
           </div>
         </div>
 
+        {/* Google Form Embed */}
         <div className="card" style={{ padding: '0', overflow: 'hidden', borderRadius: '16px' }}>
           <div style={{
             background: 'linear-gradient(135deg, var(--saffron-dark), var(--maroon))',
@@ -55,12 +58,48 @@ const Complaint = () => (
             width="100%"
             frameBorder="0"
             title="Complaint Form"
-            style={{ display: 'block', height: '1200px' }}
+            style={{ display: 'block', height: '500px' }}
           >
             Loading…
           </iframe>
+
+          <div style={{ padding: '20px', textAlign: 'center', background: 'var(--cream-dark)' }}>
+            <p style={{ color: 'var(--text-light)', fontSize: '0.85rem', marginBottom: '12px' }}>
+              Form theek se nahi khul raha?
+            </p>
+            <a 
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeel6bL7_hb5Ac9bHY0eElLGe8adlti_1PZvU0qAFdEgnkl-g/viewform" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                background: 'linear-gradient(135deg, var(--saffron-dark), var(--maroon))',
+                color: 'white',
+                fontWeight: '600',
+                fontSize: '0.92rem',
+                textDecoration: 'none',
+                padding: '12px 28px',
+                borderRadius: '50px',
+                boxShadow: '0 4px 16px rgba(180,60,0,0.35)',
+                transition: 'transform 0.2s, box-shadow 0.2s',
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 8px 24px rgba(180,60,0,0.45)';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 16px rgba(180,60,0,0.35)';
+              }}
+            >
+              📋 Open Full Form in New Tab ↗
+            </a>
+          </div>
         </div>
 
+        {/* Contact fallback */}
         <div className="card" style={{ marginTop: '24px', textAlign: 'center', background: 'var(--cream-dark)' }}>
           <p style={{ color: 'var(--text-light)', fontSize: '0.9rem' }}>
             Don't see the form? Email directly to:
