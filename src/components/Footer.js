@@ -132,7 +132,7 @@ const Footer = () => {
       {/* Bottom */}
       <div className="footer-bottom">
         <div className="footer-bottom-inner">
-          <p>© 2024 <strong>ब्रह्मर्षि सेवा संघ</strong> — Brahmarshi Seva Sangh. All rights reserved.</p>
+          <p> © {new Date().getFullYear()} ब्रह्मर्षि सेवा संघ — Brahmarshi Seva Sangh. All rights reserved </p>
           <p className="footer-bottom-sub hindi-text">सर्वाधिकार सुरक्षित | फतेहाबाद, बिहार, भारत</p>
           <p style={{ marginTop: '6px', fontSize: '0.8rem' }}>
             <Link to="/privacy-policy" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>
