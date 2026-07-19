@@ -11,6 +11,7 @@ const About = () => (
         name="description" 
         content="Know about Brahmarshi Seva Sangh (BSS) - a charitable organization founded in 2021 in Fatehabad, Bihar. Learn about our mission, UDYAM registration, education support, and social welfare work." 
       />
+      <link rel="canonical" href="https://www.brahmarshisevasangh.in/about" />
     </Helmet>
     <div className="page-hero">
       <h1>About BSS</h1>

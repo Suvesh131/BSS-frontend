@@ -31,6 +31,7 @@ const Contact = () => {
           name="description" 
           content="Get in touch with Brahmarshi Seva Sangh in Fatehabad, Bihar. Contact us via phone, email, or the online form for queries, support, or collaboration." 
         />
+        <link rel="canonical" href="https://www.brahmarshisevasangh.in/contact" />
       </Helmet>
       <div className="page-hero">
         <h1>Contact Us</h1>

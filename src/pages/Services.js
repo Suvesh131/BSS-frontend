@@ -20,6 +20,7 @@ const Services = () => (
         name="description" 
         content="Explore BSS services - religious events, education support, financial assistance, women empowerment, community welfare, and youth development programs in Fatehabad, Bihar." 
       />
+      <link rel="canonical" href="https://www.brahmarshisevasangh.in/services" />
     </Helmet>
     <div className="page-hero">
       <h1>Our Services</h1>

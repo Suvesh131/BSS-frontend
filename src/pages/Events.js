@@ -30,6 +30,7 @@ const Events = () => {
           name="description" 
           content="Check upcoming and past events organized by Brahmarshi Seva Sangh - Chhath Puja, Holi Milan, Mahapanchayat and other community gatherings in Fatehabad, Bihar." 
         />
+        <link rel="canonical" href="https://www.brahmarshisevasangh.in/" />
       </Helmet>
       <div className="page-hero">
         <h1>Events</h1>

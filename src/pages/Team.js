@@ -55,6 +55,7 @@ const Team = () => (
         name="description" 
         content="Meet the dedicated team and executive committee of Brahmarshi Seva Sangh (BSS) - founders, coordinators, and members working for social service in Fatehabad, Bihar." 
       />
+      <link rel="canonical" href="https://www.brahmarshisevasangh.in/team" />
     </Helmet>
     <div className="page-hero">
       <h1>Our Team</h1>

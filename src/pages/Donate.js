@@ -10,6 +10,7 @@ const Donate = () => (
         name="description" 
         content="Support Brahmarshi Seva Sangh's mission - donate to help fund social service, education, cultural events, and financial assistance for families in Fatehabad, Bihar." 
       />
+      <link rel="canonical" href="https://www.brahmarshisevasangh.in/donate" />
     </Helmet>
     <div className="page-hero">
       <h1>Donate</h1>

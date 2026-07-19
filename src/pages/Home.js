@@ -41,6 +41,7 @@ const Home = () => {
           name="description" 
           content="Brahmarshi Seva Sangh is a non-governmental charitable organization in Fatehabad, Bihar, working since 2021 for social service, education, cultural events, and community welfare." 
         />
+        <link rel="canonical" href="https://www.brahmarshisevasangh.in/" />
       </Helmet>
 
       {/* ── HERO ── */}

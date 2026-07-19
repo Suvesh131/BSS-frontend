@@ -9,6 +9,7 @@ const Complaint = () => (
         name="description" 
         content="File a complaint with Brahmarshi Seva Sangh (BSS). Our team reviews all complaints confidentially and responds within 3-5 working days." 
       />
+      <link rel="canonical" href="https://www.brahmarshisevasangh.in/complaint" />
     </Helmet>
 
     <div className="page-hero">

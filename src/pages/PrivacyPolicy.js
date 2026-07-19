@@ -10,6 +10,7 @@ const PrivacyPolicy = () => (
         name="description" 
         content="Read the Privacy Policy of Brahmarshi Seva Sangh (BSS) - how we collect, use, and protect your personal information as a member, donor, or website visitor." 
       />
+      <link rel="canonical" href="https://www.brahmarshisevasangh.in/privacy-policy" />
     </Helmet>
     <div className="page-hero">
       <h1>Privacy Policy</h1>

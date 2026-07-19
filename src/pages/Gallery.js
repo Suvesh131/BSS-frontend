@@ -17,6 +17,7 @@ const Gallery = () => {
           name="description" 
           content="View photos from Brahmarshi Seva Sangh events, Chhath Puja celebrations, and community meetings in Fatehabad, Bihar." 
         />
+        <link rel="canonical" href="https://www.brahmarshisevasangh.in/gallery" />
       </Helmet>
 
       <div className="page-hero">

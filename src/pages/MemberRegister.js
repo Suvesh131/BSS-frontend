@@ -32,6 +32,7 @@ const MemberRegister = () => {
           name="description" 
           content="Become a member of Brahmarshi Seva Sangh (BSS) and contribute to social service, cultural events, and community welfare in Fatehabad, Bihar." 
         />
+        <link rel="canonical" href="https://www.brahmarshisevasangh.in/join" />
       </Helmet>
 
       {/* Background particles */}
