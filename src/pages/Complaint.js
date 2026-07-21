@@ -8,6 +8,7 @@ const complaintData = [
     date: '21/07/2026',
     latterNo: 'LTR-001',
     refNo: 'REF609900',
+    refLink: 'https://drive.google.com/file/d/1o-Vx_CXdUl-zHk4zjz0xHVNm3ZgoRGOK/view',
     description: 'Road repair complaint in Fatehabad area',
     response: '',
     status: 'PENDING',
@@ -17,6 +18,7 @@ const complaintData = [
     date: '20/07/2026',
     latterNo: 'LTR-002',
     refNo: 'REF609544',
+    refLink: 'https://drive.google.com/file/d/YOUR_SECOND_FILE_ID/view',
     description: 'Water supply issue',
     response: 'Team assigned, work in progress',
     status: 'PROCESS',
@@ -26,6 +28,7 @@ const complaintData = [
     date: '15/07/2026',
     latterNo: 'LTR-003',
     refNo: 'REF609321',
+    refLink: 'https://drive.google.com/file/d/YOUR_THIRD_FILE_ID/view',
     description: 'Electricity pole damaged',
     response: 'Issue resolved on site',
     status: 'CLOSED',
@@ -315,7 +318,25 @@ const Complaint = () => {
                           <td style={{ padding: '10px 12px' }}>{row.slNo}</td>
                           <td style={{ padding: '10px 12px' }}>{row.date}</td>
                           <td style={{ padding: '10px 12px' }}>{row.latterNo}</td>
-                          <td style={{ padding: '10px 12px', fontWeight: '600', color: 'var(--saffron-dark)' }}>{row.refNo}</td>
+                          <td style={{ padding: '10px 12px', fontWeight: '600' }}>
+                            {row.refLink ? (
+                              <a
+                                href={row.refLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{
+                                  color: 'var(--saffron-dark)',
+                                  textDecoration: 'underline',
+                                  fontWeight: '600',
+                                  cursor: 'pointer',
+                                }}
+                              >
+                                {row.refNo}
+                              </a>
+                            ) : (
+                              row.refNo
+                            )}
+                          </td>
                           <td style={{ padding: '10px 12px' }}>{row.description}</td>
                           <td style={{ padding: '10px 12px' }}>{row.response || '-'}</td>
                           <td style={{ padding: '10px 12px' }}>
