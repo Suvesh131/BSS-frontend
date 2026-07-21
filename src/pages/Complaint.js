@@ -84,8 +84,10 @@ const Complaint = () => {
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
 
           <div className="section-title">
-            <h2>Submit a Complaint</h2>
-            <p className="subtitle hindi-text">अपनी शिकायत यहाँ दर्ज करें</p>
+            <h2>{activeTab === 'register' ? 'Register Complaint' : 'View Complaint Status'}</h2>
+            <p className="subtitle hindi-text">
+              {activeTab === 'register' ? 'अपनी शिकायत यहाँ दर्ज करें' : 'अपनी शिकायत की स्थिति देखें'}
+            </p>
             <div className="divider"></div>
           </div>
 
@@ -97,26 +99,6 @@ const Complaint = () => {
             marginBottom: '32px',
             flexWrap: 'wrap',
           }}>
-            <button
-              onClick={() => setActiveTab('status')}
-              style={{
-                padding: '12px 28px',
-                borderRadius: '50px',
-                border: activeTab === 'status' ? 'none' : '2px solid var(--saffron-dark)',
-                background: activeTab === 'status'
-                  ? 'linear-gradient(135deg, var(--saffron-dark), var(--maroon))'
-                  : 'transparent',
-                color: activeTab === 'status' ? 'white' : 'var(--saffron-dark)',
-                fontWeight: '600',
-                fontSize: '0.95rem',
-                cursor: 'pointer',
-                boxShadow: activeTab === 'status' ? '0 4px 16px rgba(180,60,0,0.35)' : 'none',
-                transition: 'all 0.2s',
-              }}
-            >
-              📄 View Complaint Status
-            </button>
-
             <button
               onClick={() => setActiveTab('register')}
               style={{
@@ -135,6 +117,26 @@ const Complaint = () => {
               }}
             >
               📝 Register Complaint
+            </button>
+
+            <button
+              onClick={() => setActiveTab('status')}
+              style={{
+                padding: '12px 28px',
+                borderRadius: '50px',
+                border: activeTab === 'status' ? 'none' : '2px solid var(--saffron-dark)',
+                background: activeTab === 'status'
+                  ? 'linear-gradient(135deg, var(--saffron-dark), var(--maroon))'
+                  : 'transparent',
+                color: activeTab === 'status' ? 'white' : 'var(--saffron-dark)',
+                fontWeight: '600',
+                fontSize: '0.95rem',
+                cursor: 'pointer',
+                boxShadow: activeTab === 'status' ? '0 4px 16px rgba(180,60,0,0.35)' : 'none',
+                transition: 'all 0.2s',
+              }}
+            >
+              📄 View Complaint Status
             </button>
           </div>
 
@@ -183,7 +185,7 @@ const Complaint = () => {
                   <p style={{ color: 'var(--text-light)', fontSize: '0.85rem', marginBottom: '12px' }}>
                     Form theek se nahi khul raha?
                   </p>
-                  
+
                   <a href="https://docs.google.com/forms/d/e/1FAIpQLSeel6bL7_hb5Ac9bHY0eElLGe8adlti_1PZvU0qAFdEgnkl-g/viewform"
                     target="_blank"
                     rel="noopener noreferrer"
