@@ -2,35 +2,52 @@ import React, { useState, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 // Placeholder data — apni entries yahan add karte jao
+// IMPORTANT: jab bhi kisi complaint ka status/response update karo,
+// uski "lastUpdated" date-time ko current time se replace kar do.
+// Jiski lastUpdated sabse latest hogi, wo table me sabse upar (No. 1) dikhegi.
 const complaintData = [
   {
     slNo: 1,
     date: '21/07/2026',
-    latterNo: 'LTR-001',
-    refNo: 'REF609900',
-    refLink: 'https://drive.google.com/file/d/1o-Vx_CXdUl-zHk4zjz0xHVNm3ZgoRGOK/view',
-    description: 'Road repair complaint in Fatehabad area',
+    lastUpdated: '2026-07-21T10:00:00',
+    latterNo: 'BSS-020',
+    refNo: 'REF609544',
+    refLink: 'https://drive.google.com/file/d/1JATEOGzElM4tuZPF3eDwCPxJIV23k7Fd/view',
+    description: 'फतेहाबाद अंतर्गत वार्ड नं 1 से 16 के लिए बिजली भुक्तान की जांच की मांग',
     response: '',
     status: 'PENDING',
   },
   {
     slNo: 2,
-    date: '20/07/2026',
-    latterNo: 'LTR-002',
-    refNo: 'REF609544',
-    refLink: 'https://drive.google.com/file/d/YOUR_SECOND_FILE_ID/view',
-    description: 'Water supply issue',
-    response: 'Team assigned, work in progress',
+    date: '21/07/2026',
+    lastUpdated: '2026-07-21T10:00:00',
+    latterNo: 'BSS-019',
+    refNo: 'REF609900',
+    refLink: 'https://drive.google.com/file/d/1HhkLtZOT47M0TMs1YJ0WUXCOTJMnu2X2/view',
+    description: 'फतेहाबाद अंतर्गत वार्ड नं 10 में कुआं संबंधित',
+    response: 'कार्रवाई किया गया',
     status: 'PROCESS',
   },
   {
     slNo: 3,
-    date: '15/07/2026',
-    latterNo: 'LTR-003',
-    refNo: 'REF609321',
-    refLink: 'https://drive.google.com/file/d/YOUR_THIRD_FILE_ID/view',
-    description: 'Electricity pole damaged',
-    response: 'Issue resolved on site',
+    date: '20/07/2026',
+    lastUpdated: '2026-07-21T10:00:00',
+    latterNo: 'BSS-018',
+    refNo: 'REF604207',
+    refLink: 'https://drive.google.com/file/d/1YjKZne1My5D2nDMyTfB7h6S03NsBI3S5/view',
+    description: 'फतेहाबाद अंतर्गत स्वस्थ केंद्र के लिए आवेदन',
+    response: '',
+    status: 'PENDING',
+  },
+  {
+    slNo: 4,
+    date: '19/07/2026',
+    lastUpdated: '2026-07-21T10:00:00',
+    latterNo: 'BSS-017',
+    refNo: 'REF602634',
+    refLink: 'https://drive.google.com/file/d/1XFf8EckMZlXOcX2l9tcpBAaxhar_Ahil/view',
+    description: 'फतेहाबाद अंतर्गत वार्ड नं 1 से 16 के बिजली बिल भुक्तान की जांच की मांग',
+    response: 'पंचायत द्वारा जवाब में बताया गया कि नल-जल चालकों को मान देय के लिए भुक्तान किया गया',
     status: 'CLOSED',
   },
 ];
@@ -54,14 +71,23 @@ const Complaint = () => {
     return { total, pending, process, closed };
   }, []);
 
+  // Sorted + filtered data — jo abhi recently update hui, wo sabse upar
   const filteredData = useMemo(() => {
-    if (!search.trim()) return complaintData;
-    const q = search.toLowerCase();
-    return complaintData.filter((row) =>
-      Object.values(row).some((val) =>
-        String(val).toLowerCase().includes(q)
-      )
-    );
+    let data = [...complaintData];
+
+    if (search.trim()) {
+      const q = search.toLowerCase();
+      data = data.filter((row) =>
+        Object.values(row).some((val) =>
+          String(val).toLowerCase().includes(q)
+        )
+      );
+    }
+
+    // Sabse recent lastUpdated wali entry sabse upar
+    data.sort((a, b) => new Date(b.lastUpdated) - new Date(a.lastUpdated));
+
+    return data;
   }, [search]);
 
   return (
@@ -315,9 +341,9 @@ const Complaint = () => {
                         </td>
                       </tr>
                     ) : (
-                      filteredData.map((row) => (
+                      filteredData.map((row, index) => (
                         <tr key={row.slNo} style={{ borderBottom: '1px solid #eee' }}>
-                          <td style={{ padding: '10px 12px' }}>{row.slNo}</td>
+                          <td style={{ padding: '10px 12px' }}>{index + 1}</td>
                           <td style={{ padding: '10px 12px' }}>{row.date}</td>
                           <td style={{ padding: '10px 12px' }}>{row.latterNo}</td>
                           <td style={{ padding: '10px 12px', fontWeight: '600' }}>
