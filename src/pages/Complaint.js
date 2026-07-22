@@ -48,7 +48,7 @@ const complaintData = [
     refLink: 'https://drive.google.com/file/d/1XFf8EckMZlXOcX2l9tcpBAaxhar_Ahil/view',
     description: 'फतेहाबाद अंतर्गत वार्ड नं 1 से 16 के बिजली बिल भुक्तान की जांच की मांग',
     response: 'पंचायत द्वारा जवाब में बताया गया कि नल-जल चालकों को मान देय के लिए भुक्तान किया गया',
-    status: 'CLOSED',
+    status: 'FORWARD',
   },
   {
     slNo: 5,
