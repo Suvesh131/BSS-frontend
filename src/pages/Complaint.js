@@ -127,6 +127,17 @@ const complaintData = [
     response: '',
     status: 'PENDING',
   },
+  {
+    slNo: 12,
+    date: '22/07/2026',
+    lastUpdated: '2026-07-22T07:00:00',
+    latterNo: 'BSS-022',
+    refNo: 'REF629881',
+    refLink: 'https://drive.google.com/file/d/1S9-s8RFa_mQPArFbG8_GDMsMdPpzdogH/view',
+    description: 'फतेहाबाद बाजार में भारी वर्षा के कारण होने वाले जलजमाव की समस्या के स्थायी समाधान हेतु आवेदन',
+    response: '',
+    status: 'PENDING',
+  },
 ];
 
 const statusStyles = {
