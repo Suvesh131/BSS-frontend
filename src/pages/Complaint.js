@@ -56,7 +56,7 @@ const complaintData = [
     lastUpdated: '2026-07-21T10:00:00',
     latterNo: 'BSS-016',
     refNo: 'REF601542',
-    refLink: 'https://drive.google.com/file/d/1tE0rv7gxYRXJTq1ByHJcjJTMeAgihY5J/view',
+    refLink: 'https://drive.google.com/file/d/1XFf8EckMZlXOcX2l9tcpBAaxhar_Ahil/view',
     description: 'फतेहाबाद पंचायत अंतर्गत वार्ड संख्या 10 में सार्वजनिक कुएँ की मरम्मत हेतु',
     response: 'पंचायत द्वार झूठा दावा मरम्मत हो चूका है',
     status: 'FORWARD',
@@ -67,7 +67,7 @@ const complaintData = [
     lastUpdated: '2026-07-16T10:00:00',
     latterNo: 'BSS-015',
     refNo: 'REF594857',
-    refLink: 'https://drive.google.com/file/d/1NuS9mSUHyJjgfmjqMHYthSh2t7leWLoe/view',
+    refLink: 'https://drive.google.com/file/d/1XFf8EckMZlXOcX2l9tcpBAaxhar_Ahil/view',
     description: 'फतेहाबाद पंचायत में स्वच्छता मद में व्यय की गई राशि के बावजूद नियमित कचरा संग्रहण सेवा नहीं मिलने एवं जांच कर कार्रवाई किए जाने हेतु',
     response: '',
     status: 'PENDING',
@@ -78,7 +78,7 @@ const complaintData = [
     lastUpdated: '2026-07-14T10:00:00',
     latterNo: 'BSS-014',
     refNo: 'REF577636',
-    refLink: 'https://drive.google.com/file/d/1-azgBxIC5ynCJD-mwIsQIyZQdyIj2sG6/view',
+    refLink: 'https://drive.google.com/file/d/1XFf8EckMZlXOcX2l9tcpBAaxhar_Ahil/view',
     description: 'फतेहाबाद पंचायत में जिम सेंटर निर्माण के नाम पर सरकारी राशि के कथित गबन एवं फर्जी भुगतान की जांच कर आवश्यक कार्रवाई करने हेतु',
     response: '',
     status: 'PENDING',
@@ -89,7 +89,7 @@ const complaintData = [
     lastUpdated: '2026-07-14T10:00:00',
     latterNo: 'BSS-013',
     refNo: 'REF573757',
-    refLink: 'https://drive.google.com/file/d/1yjGomofYgy3AFcS23BDcz5g9mAY6Zw0l/view',
+    refLink: 'https://drive.google.com/file/d/1XFf8EckMZlXOcX2l9tcpBAaxhar_Ahil/view',
     description: 'फतेहाबाद पंचायत एवं आस पास के सभी पंचायती में मच्छरों के बढ़ते प्रकोप एवं फॉगिंग कराने हेतु ',
     response: '',
     status: 'CLOSED',
@@ -100,7 +100,7 @@ const complaintData = [
     lastUpdated: '2026-07-01T10:00:00',
     latterNo: 'BSS-008',
     refNo: 'REF573805',
-    refLink: 'https://drive.google.com/file/d/1IsoBCRAmqx4ApMZScavwjBNwJWTUQ816/view',
+    refLink: 'https://drive.google.com/file/d/1XFf8EckMZlXOcX2l9tcpBAaxhar_Ahil/view',
     description: 'फतेहाबाद पंचायत के वार्ड संख्या 09 में अधूरे पड़े कुआं मरम्मत कार्य को शीघ्र पूर्ण कराने एवं जांच कराने हेतु',
     response: 'कार्रवाई किया गया',
     status: 'PROCESS',
@@ -111,7 +111,7 @@ const complaintData = [
     lastUpdated: '2026-06-26T10:00:00',
     latterNo: 'BSS-REF01',
     refNo: 'REF457873',
-    refLink: 'https://drive.google.com/file/d/1dhmAyODJVy18fqSKejZxSWQPHsUvZIef/view',
+    refLink: 'https://drive.google.com/file/d/1XFf8EckMZlXOcX2l9tcpBAaxhar_Ahil/view',
     description: 'कमलपरा (BASAITHA) से फतेहाबाद (प्रखण्ड - पारू) तक जर्जर सड़क के निर्माण से संबंधित',
     response: 'कार्रवाई किया गया',
     status: 'CLOSED',
@@ -139,6 +139,8 @@ const statusStyles = {
 const Complaint = () => {
   const [activeTab, setActiveTab] = useState('register'); // 'register' | 'status'
   const [search, setSearch] = useState('');
+  // null = koi filter nahi (sab dikhayega). Card click karne par ye us status se set ho jayega.
+  const [statusFilter, setStatusFilter] = useState(null);
 
   // Auto-calculated counts
   const counts = useMemo(() => {
@@ -150,9 +152,18 @@ const Complaint = () => {
     return { total, pending, process, closed, forward };
   }, []);
 
+  // Card click karne par filter set/toggle karta hai
+  const handleCardClick = (status) => {
+    setStatusFilter((prev) => (prev === status ? null : status));
+  };
+
   // Sorted + filtered data — jo abhi recently update hui, wo sabse upar
   const filteredData = useMemo(() => {
     let data = [...complaintData];
+
+    if (statusFilter) {
+      data = data.filter((row) => row.status === statusFilter);
+    }
 
     if (search.trim()) {
       const q = search.toLowerCase();
@@ -167,7 +178,7 @@ const Complaint = () => {
     data.sort((a, b) => new Date(b.lastUpdated) - new Date(a.lastUpdated));
 
     return data;
-  }, [search]);
+  }, [search, statusFilter]);
 
   return (
     <div>
@@ -345,46 +356,83 @@ const Complaint = () => {
                 gap: '16px',
                 marginBottom: '24px',
               }}>
-                <div className="card" style={{
-                  background: 'linear-gradient(135deg, #dbeafe, #eff6ff)',
-                  padding: '20px', borderRadius: '14px',
-                }}>
+                <div
+                  className="card"
+                  onClick={() => handleCardClick(null)}
+                  style={{
+                    background: 'linear-gradient(135deg, #dbeafe, #eff6ff)',
+                    padding: '20px', borderRadius: '14px',
+                    cursor: 'pointer',
+                    border: statusFilter === null ? '2px solid #1d4ed8' : '2px solid transparent',
+                    transition: 'border 0.15s',
+                  }}
+                >
                   <div style={{ fontSize: '1.8rem', fontWeight: '700', color: '#1d4ed8' }}>{counts.total}</div>
                   <div style={{ fontSize: '0.85rem', color: 'var(--text-light)', fontWeight: '600' }}>Total Complaints</div>
                 </div>
 
-                <div className="card" style={{
-                  background: 'linear-gradient(135deg, #fff3cd, #fffbeb)',
-                  padding: '20px', borderRadius: '14px',
-                }}>
+                <div
+                  className="card"
+                  onClick={() => handleCardClick('PENDING')}
+                  style={{
+                    background: 'linear-gradient(135deg, #fff3cd, #fffbeb)',
+                    padding: '20px', borderRadius: '14px',
+                    cursor: 'pointer',
+                    border: statusFilter === 'PENDING' ? '2px solid #b45f00' : '2px solid transparent',
+                    transition: 'border 0.15s',
+                  }}
+                >
                   <div style={{ fontSize: '1.8rem', fontWeight: '700', color: '#b45f00' }}>{counts.pending}</div>
                   <div style={{ fontSize: '0.85rem', color: 'var(--text-light)', fontWeight: '600' }}>Pending</div>
                 </div>
 
-                <div className="card" style={{
-                  background: 'linear-gradient(135deg, #d6e4ff, #eef2ff)',
-                  padding: '20px', borderRadius: '14px',
-                }}>
+                <div
+                  className="card"
+                  onClick={() => handleCardClick('PROCESS')}
+                  style={{
+                    background: 'linear-gradient(135deg, #d6e4ff, #eef2ff)',
+                    padding: '20px', borderRadius: '14px',
+                    cursor: 'pointer',
+                    border: statusFilter === 'PROCESS' ? '2px solid #1d4ed8' : '2px solid transparent',
+                    transition: 'border 0.15s',
+                  }}
+                >
                   <div style={{ fontSize: '1.8rem', fontWeight: '700', color: '#1d4ed8' }}>{counts.process}</div>
                   <div style={{ fontSize: '0.85rem', color: 'var(--text-light)', fontWeight: '600' }}>In Process</div>
                 </div>
 
-                <div className="card" style={{
-                  background: 'linear-gradient(135deg, #d4edda, #eefdf1)',
-                  padding: '20px', borderRadius: '14px',
-                }}>
-                  <div style={{ fontSize: '1.8rem', fontWeight: '700', color: '#1e7e34' }}>{counts.closed}</div>
-                  <div style={{ fontSize: '0.85rem', color: 'var(--text-light)', fontWeight: '600' }}>Closed</div>
-                </div>
-
-                <div className="card" style={{
-                  background: 'linear-gradient(135deg, #e0d4ff, #f3ecff)',
-                  padding: '20px', borderRadius: '14px',
-                }}>
+                <div
+                  className="card"
+                  onClick={() => handleCardClick('FORWARD')}
+                  style={{
+                    background: 'linear-gradient(135deg, #e0d4ff, #f3ecff)',
+                    padding: '20px', borderRadius: '14px',
+                    cursor: 'pointer',
+                    border: statusFilter === 'FORWARD' ? '2px solid #6b21a8' : '2px solid transparent',
+                    transition: 'border 0.15s',
+                  }}
+                >
                   <div style={{ fontSize: '1.8rem', fontWeight: '700', color: '#6b21a8' }}>{counts.forward}</div>
                   <div style={{ fontSize: '0.85rem', color: 'var(--text-light)', fontWeight: '600' }}>Forwarded</div>
                 </div>
+
+                <div
+                  className="card"
+                  onClick={() => handleCardClick('CLOSED')}
+                  style={{
+                    background: 'linear-gradient(135deg, #d4edda, #eefdf1)',
+                    padding: '20px', borderRadius: '14px',
+                    cursor: 'pointer',
+                    border: statusFilter === 'CLOSED' ? '2px solid #1e7e34' : '2px solid transparent',
+                    transition: 'border 0.15s',
+                  }}
+                >
+                  <div style={{ fontSize: '1.8rem', fontWeight: '700', color: '#1e7e34' }}>{counts.closed}</div>
+                  <div style={{ fontSize: '0.85rem', color: 'var(--text-light)', fontWeight: '600' }}>Closed</div>
+                </div>
               </div>
+
+
 
               {/* Table Card */}
               <div className="card" style={{ padding: '20px', borderRadius: '16px' }}>
