@@ -116,6 +116,17 @@ const complaintData = [
     response: 'कार्रवाई किया गया',
     status: 'CLOSED',
   },
+  {
+    slNo: 11,
+    date: '22/07/2026',
+    lastUpdated: '2026-07-22T06:00:00',
+    latterNo: 'BSS-021',
+    refNo: 'REF629035',
+    refLink: 'https://drive.google.com/file/d/1irVm1bLL_QMlvUXbMZcqV593iE0EuLXh/view',
+    description: 'फतेहाबाद बाजार स्थित सार्वजनिक बस स्टैंड पर अवैध कब्जा हटाकर यात्रियों के लिए मूलभूत सुविधाएं उपलब्ध कराने हेतु आवेदन।',
+    response: '',
+    status: 'PENDING',
+  },
 ];
 
 const statusStyles = {
