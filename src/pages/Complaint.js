@@ -47,7 +47,7 @@ const complaintData = [
     refNo: 'REF602634',
     refLink: 'https://drive.google.com/file/d/1XFf8EckMZlXOcX2l9tcpBAaxhar_Ahil/view',
     description: 'फतेहाबाद अंतर्गत वार्ड नं 1 से 16 के बिजली बिल भुक्तान की जांच की मांग',
-    response: 'पंचायत द्वारा जवाब में बताया गया कि नल-जल चालकों को मान देय के लिए भुक्तान किया गया',
+    response: 'पंचायत द्वारा जवाब में बताया गया कि नल-जल चालकों को मान देय के लिए भुक्तान किया गया 2nd Appeal BSS-020',
     status: 'FORWARD',
   },
   {
@@ -58,7 +58,7 @@ const complaintData = [
     refNo: 'REF601542',
     refLink: 'https://drive.google.com/file/d/1XFf8EckMZlXOcX2l9tcpBAaxhar_Ahil/view',
     description: 'फतेहाबाद पंचायत अंतर्गत वार्ड संख्या 10 में सार्वजनिक कुएँ की मरम्मत हेतु',
-    response: 'पंचायत द्वार झूठा दावा मरम्मत हो चूका है',
+    response: 'पंचायत द्वार झूठा दावा मरम्मत हो चूका है 2nd Appeal BSS-019',
     status: 'FORWARD',
   },
   {
@@ -80,8 +80,8 @@ const complaintData = [
     refNo: 'REF577636',
     refLink: 'https://drive.google.com/file/d/1XFf8EckMZlXOcX2l9tcpBAaxhar_Ahil/view',
     description: 'फतेहाबाद पंचायत में जिम सेंटर निर्माण के नाम पर सरकारी राशि के कथित गबन एवं फर्जी भुगतान की जांच कर आवश्यक कार्रवाई करने हेतु',
-    response: '',
-    status: 'PENDING',
+    response: 'पंचायत सचिव द्वारा उत्तर जमीन अधिष्ठापन पर खर्च की गई  2nd Appeal BSS-024',
+    status: 'FORWARD',
   },
   {
     slNo: 8,
@@ -135,6 +135,17 @@ const complaintData = [
     refNo: 'REF629881',
     refLink: 'https://drive.google.com/file/d/1S9-s8RFa_mQPArFbG8_GDMsMdPpzdogH/view',
     description: 'फतेहाबाद बाजार में भारी वर्षा के कारण होने वाले जलजमाव की समस्या के स्थायी समाधान हेतु आवेदन',
+    response: '',
+    status: 'PENDING',
+  },
+  {
+    slNo: 13,
+    date: '24/07/2026',
+    lastUpdated: '2026-07-24T07:00:00',
+    latterNo: 'BSS-024',
+    refNo: 'REF637810',
+    refLink: 'https://drive.google.com/file/d/1nWlQsKji3ctqxVXI5F8Eh4yoPsSQduyw/view',
+    description: 'वास्तव में राशि जिम अवस्थापित पर व्यय की गई है तो फतेहाबाद पंचायत में अभी तक जिम सेंटर क्यों नहीं बना',
     response: '',
     status: 'PENDING',
   },
@@ -443,8 +454,6 @@ const Complaint = () => {
                 </div>
               </div>
 
-
-
               {/* Table Card */}
               <div className="card" style={{ padding: '20px', borderRadius: '16px' }}>
                 <div style={{ marginBottom: '16px', display: 'flex', justifyContent: 'flex-end' }}>
@@ -470,7 +479,16 @@ const Complaint = () => {
                   overflowX: 'auto',
                   borderRadius: '8px',
                 }}>
-                  <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.88rem' }}>
+                  <table style={{ width: '100%', minWidth: '790px', borderCollapse: 'collapse', fontSize: '0.88rem', tableLayout: 'fixed' }}>
+                    <colgroup>
+                      <col style={{ width: '50px' }} />
+                      <col style={{ width: '95px' }} />
+                      <col style={{ width: '90px' }} />
+                      <col style={{ width: '90px' }} />
+                      <col style={{ width: '190px' }} />
+                      <col style={{ width: '175px' }} />
+                      <col style={{ width: '110px' }} />
+                    </colgroup>
                     <thead>
                       <tr style={{ background: 'var(--cream-dark)' }}>
                         {['Sl. No.', 'Date', 'Latter No.', 'Ref. No', 'Complaint Description', 'Response', 'Status'].map((h) => (
@@ -478,8 +496,8 @@ const Complaint = () => {
                             padding: '10px 12px',
                             textAlign: 'left',
                             borderBottom: '2px solid var(--saffron-dark)',
+                            borderRight: '1px solid #e8dfce',
                             color: 'var(--saffron-dark)',
-                            whiteSpace: 'nowrap',
                             position: 'sticky',
                             top: 0,
                             background: 'var(--cream-dark)',
@@ -500,10 +518,10 @@ const Complaint = () => {
                       ) : (
                         filteredData.map((row, index) => (
                           <tr key={row.slNo} style={{ borderBottom: '1px solid #eee' }}>
-                            <td style={{ padding: '10px 12px' }}>{index + 1}</td>
-                            <td style={{ padding: '10px 12px' }}>{row.date}</td>
-                            <td style={{ padding: '10px 12px', whiteSpace: 'nowrap' }}>{row.latterNo}</td>
-                            <td style={{ padding: '10px 12px', fontWeight: '600' }}>
+                            <td style={{ padding: '10px 12px', borderRight: '1px solid #eee' }}>{index + 1}</td>
+                            <td style={{ padding: '10px 12px', borderRight: '1px solid #eee' }}>{row.date}</td>
+                            <td style={{ padding: '10px 12px', whiteSpace: 'nowrap', borderRight: '1px solid #eee' }}>{row.latterNo}</td>
+                            <td style={{ padding: '10px 12px', fontWeight: '600', borderRight: '1px solid #eee' }}>
                               {row.refLink ? (
                                 <a
                                   href={row.refLink}
@@ -522,14 +540,16 @@ const Complaint = () => {
                                 row.refNo
                               )}
                             </td>
-                            <td style={{ padding: '10px 12px' }}>{row.description}</td>
-                            <td style={{ padding: '10px 12px' }}>{row.response || '-'}</td>
+                            <td style={{ padding: '10px 12px', wordBreak: 'break-word', borderRight: '1px solid #eee' }}>{row.description}</td>
+                            <td style={{ padding: '10px 12px', wordBreak: 'break-word', borderRight: '1px solid #eee' }}>{row.response || '-'}</td>
                             <td style={{ padding: '10px 12px' }}>
                               <span style={{
-                                padding: '4px 12px',
+                                padding: '4px 10px',
                                 borderRadius: '20px',
-                                fontSize: '0.78rem',
+                                fontSize: '0.75rem',
                                 fontWeight: '600',
+                                whiteSpace: 'nowrap',
+                                display: 'inline-block',
                                 background: statusStyles[row.status]?.bg || '#eee',
                                 color: statusStyles[row.status]?.color || '#333',
                               }}>
