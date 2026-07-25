@@ -52,7 +52,7 @@ function Dashboard() {
         <form className="dash-login-card" onSubmit={handleLogin}>
           <img src="/images/logo.jpeg" alt="Brahmarshi Seva Sangh" className="dash-logo" />
           <h1>Brahmarshi Seva Sangh Portal</h1>
-          <p>Apna ID aur Password daalkar login karein</p>
+          <p>Enter your ID and Password to login</p>
           <div className="dash-field">
             <label>ID</label>
             <input value={id} onChange={(e) => setId(e.target.value)} required />
