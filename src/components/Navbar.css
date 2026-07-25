@@ -242,7 +242,6 @@
 .drawer-links {
   list-style: none;
   padding: 12px 0;
-  flex: 1;
 }
 
 .drawer-links li a {
