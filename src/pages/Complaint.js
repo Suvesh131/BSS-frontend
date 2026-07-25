@@ -156,10 +156,10 @@ const statusStyles = {
 const Complaint = () => {
   const [activeTab, setActiveTab] = useState('register'); // 'register' | 'status'
   const [search, setSearch] = useState('');
-  // null = koi filter nahi (sab dikhayega). Card click karne par ye us status se set ho jayega.
+  
   const [statusFilter, setStatusFilter] = useState(null);
 
-  // Auto-calculated counts
+ 
   const counts = useMemo(() => {
     const total = complaintData.length;
     const pending = complaintData.filter((c) => c.status === 'PENDING').length;
@@ -169,12 +169,12 @@ const Complaint = () => {
     return { total, pending, process, closed, forward };
   }, []);
 
-  // Card click karne par filter set/toggle karta hai
+  
   const handleCardClick = (status) => {
     setStatusFilter((prev) => (prev === status ? null : status));
   };
 
-  // Sorted + filtered data — jo abhi recently update hui, wo sabse upar
+  
   const filteredData = useMemo(() => {
     let data = [...complaintData];
 
@@ -191,7 +191,7 @@ const Complaint = () => {
       );
     }
 
-    // Sabse recent lastUpdated wali entry sabse upar
+    
     data.sort((a, b) => new Date(b.lastUpdated) - new Date(a.lastUpdated));
 
     return data;

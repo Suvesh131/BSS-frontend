@@ -13,8 +13,10 @@ import MemberRegister from './pages/MemberRegister';
 import Team from './pages/Team';
 import Complaint from './pages/Complaint';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import Dashboard from './pages/Dashboard';
 import './assets/css/global.css';
 import './assets/css/animation.css';
+import './assets/css/dashboard.css';
 import { initScrollReveal, initCounters } from './utils/scrollReveal';
 import { HelmetProvider } from 'react-helmet-async';
 
@@ -68,6 +70,7 @@ function App() {
             <Route path="/join" element={<MemberRegister />} />
             <Route path="/complaint" element={<Complaint />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
         </main>
         <Footer />

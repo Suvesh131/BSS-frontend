@@ -59,6 +59,14 @@ const Navbar = () => {
             <li>
               <Link to="/join" className="btn-join">Join BSS</Link>
             </li>
+            <li>
+              <Link to="/dashboard" className="btn-dashboard" aria-label="Dashboard">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="5" y="11" width="14" height="10" rx="2" />
+                  <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+                </svg>
+              </Link>
+            </li>
           </ul>
 
           {/* Hamburger */}
@@ -107,6 +115,13 @@ const Navbar = () => {
         <div className="drawer-footer">
           <Link to="/join" className="btn-primary drawer-join" onClick={toggleMenu}>
             Join BSS — सदस्य बनें
+          </Link>
+          <Link to="/dashboard" className="drawer-dashboard" onClick={toggleMenu}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="5" y="11" width="14" height="10" rx="2" />
+              <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+            </svg>
+            <span>Login</span>
           </Link>
         </div>
       </div>

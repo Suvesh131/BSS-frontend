@@ -325,3 +325,60 @@
 .drawer-link-hindi {
   color: rgba(255, 255, 255, 0.75);
 }
+/* ── DASHBOARD ACCESS (premium icon button) ── */
+.btn-dashboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin-left: 10px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(212, 160, 23, 0.55);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--gold-light);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.btn-dashboard svg {
+  width: 16px;
+  height: 16px;
+}
+
+.btn-dashboard:hover {
+  background: rgba(212, 160, 23, 0.18);
+  border-color: var(--gold);
+  box-shadow: 0 0 14px rgba(212, 160, 23, 0.45);
+  transform: translateY(-1px);
+}
+
+/* Mobile drawer version */
+.drawer-dashboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px !important;
+  border-radius: 12px;
+  border: 1.5px solid rgba(212, 160, 23, 0.4);
+  background: rgba(212, 160, 23, 0.06);
+  color: var(--gold-light) !important;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.drawer-dashboard svg {
+  width: 17px;
+  height: 17px;
+  color: var(--gold);
+}
+
+.drawer-dashboard:hover {
+  background: rgba(212, 160, 23, 0.14);
+  border-color: var(--gold);
+}
