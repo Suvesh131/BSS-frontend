@@ -4,9 +4,9 @@ import './Team.css';
 
 const teamMembers = [
   { name: 'Prakash Kumar',  role: 'Founder & President',  roleHindi: 'संस्थापक एवं अध्यक्ष',  image: '/images/prakash.png' },
-  { name: 'Manish Tiwari',  role: 'Vice President',        roleHindi: 'उपाध्यक्ष',             image: '/images/manish.png' },
   { name: 'Anshu Singh',  role: 'Youth Wing Head',     roleHindi: 'युवा प्रमुख',               image: '/images/yuva.jpeg' },
   { name: 'Gaurav Singh', role: 'Executive Member',      roleHindi: 'कार्यकारी सदस्य',       image: '/images/karyakari.jpg' },
+  { name: 'Team Member 4',  role: 'Vice President',        roleHindi: 'उपाध्यक्ष',             image: '/images/member3.png' },
   { name: 'Team Member 5',  role: 'Treasurer',             roleHindi: 'कोषाध्यक्ष',            image: '/images/member4.png' },
   { name: 'Team Member 6',  role: 'Joint Secretary',       roleHindi: 'संयुक्त सचिव',          image: '/images/member5.png' },
   { name: 'Team Member 7',  role: 'Media In-charge',       roleHindi: 'मीडिया प्रभारी',        image: '/images/member6.png' },
