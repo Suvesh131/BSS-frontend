@@ -16,11 +16,11 @@ const Home = () => {
   { name: 'Prakash Kumar', role: 'Founder & President', roleHindi: 'संस्थापक एवं अध्यक्ष', image: '/images/prakash.png' },
   { name: 'Anshu Singh', role: 'Youth Wing Head', roleHindi: 'युवा प्रमुख', image: '/images/yuva.jpeg' },
   { name: 'Gaurav Singh', role: 'Executive Member', roleHindi: 'कार्यकारी सदस्य', image: '/images/karyakari.jpg' },
-  { name: 'Team Member 4', role: 'Vice President', roleHindi: 'उपाध्यक्ष', image: null},
-  { name: 'Team Member 5', role: 'Treasurer', roleHindi: 'कोषाध्यक्ष', image: null },
-  { name: 'Team Member 6', role: 'Joint Secretary', roleHindi: 'संयुक्त सचिव', image: null },
-  { name: 'Team Member 7', role: 'General Secretary', roleHindi: 'महासचिव', image: null },
-  { name: 'Team Member 8', role: 'Legal Advisor', roleHindi: 'कानूनी सलाहकार', image: null },
+  { name: 'Bittu Pandey', role: 'Executive Member',      roleHindi: 'कार्यकारी सदस्य',       image: '/images/bittu.jpeg' },
+  { name: 'Team Member 5', role: 'Vice President', roleHindi: 'उपाध्यक्ष', image: null},
+  { name: 'Team Member 6', role: 'Treasurer', roleHindi: 'कोषाध्यक्ष', image: null },
+  { name: 'Team Member 7', role: 'Joint Secretary', roleHindi: 'संयुक्त सचिव', image: null },
+  { name: 'Team Member 8', role: 'General Secretary', roleHindi: 'महासचिव', image: null },
 ];
 
   
