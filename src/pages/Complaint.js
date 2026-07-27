@@ -29,10 +29,10 @@ const complaintData = [
     lastUpdated: '2026-07-21T10:00:00',
     latterNo: 'BSS-018',
     refNo: 'REF604207',
-    refLink: 'https://drive.google.com/file/d/1YjKZne1My5D2nDMyTfB7h6S03NsBI3S5/view',
+    refLink: 'https://drive.google.com/file/d/1YxHEWF9W1zfdkOhAIjhwsBdQeockbR05/view',
     description: 'फतेहाबाद अंतर्गत स्वस्थ केंद्र के लिए आवेदन',
-    response: '',
-    status: 'PENDING',
+    response: 'स्वास्थ्य केन्द्र के लिए जमीन चिन्हित किया गया है।',
+    status: 'CLOSED',
   },
   {
     slNo: 4,
