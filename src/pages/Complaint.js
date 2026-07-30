@@ -155,6 +155,17 @@ const complaintData = [
     response: '',
     status: 'PENDING',
   },
+  {
+    slNo: 15,
+    date: '30/07/2026',
+    lastUpdated: '2026-07-30T07:00:00',
+    latterNo: 'BSS-027',
+    refNo: 'REF665302',
+    refLink: 'https://drive.google.com/file/d/1dcfjXWMVRYEr5aqIF1lkfiBVCsw2GdgT/view',
+    description: 'पवित्र सावन माह के दौरान विशेष रूप से सोमवार के दिन मांस एवं मछली की दुकानों के संचालन के संबंध में आवश्यक जांच हेतु।',
+    response: '',
+    status: 'PENDING',
+  },
 ];
 
 const statusStyles = {
