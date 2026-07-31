@@ -150,10 +150,10 @@ const complaintData = [
     lastUpdated: '2026-07-28T07:00:00',
     latterNo: 'BSS-025',
     refNo: 'REF656410',
-    refLink: 'https://drive.google.com/file/d/174S69K260CXTRD2DmRgewqd0y97Cxnx-/view',
+    refLink: 'https://drive.google.com/file/d/1MOogpOjSf0Hj3pun0WuP0dv5432UF6mn/view',
     description: 'फतेहाबाद में पूर्व से चिन्हित भूमि पर स्वास्थ्य केंद्र का शीघ्र निर्माण कराने एवं निर्माण कार्य में हो रही देरी के संबंध में',
-    response: '',
-    status: 'PENDING',
+    response: 'करवाई हेतु स्वस्थ विभाग पटना को पत्र स्थानांतरण किया गया।',
+    status: 'CLOSED',
   },
   {
     slNo: 15,
