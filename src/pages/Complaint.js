@@ -62,10 +62,10 @@ const complaintData = [
     lastUpdated: '2026-07-16T10:00:00',
     latterNo: 'BSS-015',
     refNo: 'REF594857',
-    refLink: 'https://drive.google.com/file/d/1NuS9mSUHyJjgfmjqMHYthSh2t7leWLoe/view',
+    refLink: 'https://drive.google.com/file/d/1Kwk2KEpGem_tSLVeuIKbe29LxxmeKOzx/view',
     description: 'फतेहाबाद पंचायत में स्वच्छता मद में व्यय की गई राशि के बावजूद नियमित कचरा संग्रहण सेवा नहीं मिलने एवं जांच कर कार्रवाई किए जाने हेतु',
-    response: '',
-    status: 'PENDING',
+    response: 'पैडल रिक्शा द्वारा कचरा कचरा का उठाव कार्य जल्द शुरू किया जाएगा।',
+    status: 'CLOSED',
   },
   {
     slNo: 7,
