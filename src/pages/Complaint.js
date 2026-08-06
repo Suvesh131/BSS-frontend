@@ -166,6 +166,17 @@ const complaintData = [
     response: '',
     status: 'PENDING',
   },
+  {
+    slNo: 16,
+    date: '06/08/2026',
+    lastUpdated: '2026-08-06T07:00:00',
+    latterNo: 'BSS-028',
+    refNo: 'REF693878',
+    refLink: 'https://drive.google.com/file/d/1L6oS0j24uGVPOjkdQjt4BBoBKuj8Wv6u/view',
+    description: 'फतेहाबाद पंचायत अंतर्गत बाजार में दुकानदारों से कथित अवैध वसूली की जांच एवं सरकारी कर/शुल्क संबंधी जानकारी उपलब्ध कराने हेतु आवेदन',
+    response: '',
+    status: 'PENDING',
+  },
 ];
 
 const statusStyles = {
