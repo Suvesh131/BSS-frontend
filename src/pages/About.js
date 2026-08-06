@@ -258,6 +258,116 @@ const About = () => (
           </div>
         </div>
 
+        {/* PRESIDENT'S MESSAGE */}
+        <div className="section-title" style={{ marginTop: '40px' }}>
+          <h2>President's Message</h2>
+          <p className="subtitle hindi-text">अध्यक्ष का संदेश</p>
+          <div className="divider"></div>
+        </div>
+
+        <div
+          className="card"
+          style={{
+            maxWidth: '700px',
+            margin: '0 auto 24px',
+            borderLeft: '4px solid var(--saffron)',
+            position: 'relative',
+          }}
+        >
+          <span
+            style={{
+              fontFamily: 'Georgia, serif',
+              fontSize: '3rem',
+              color: 'var(--gold)',
+              lineHeight: '0.5',
+              display: 'block',
+              marginBottom: '12px',
+            }}
+          >
+            "
+          </span>
+
+          {/* English */}
+          <p
+            style={{
+              fontSize: '1rem',
+              lineHeight: '1.9',
+              color: 'var(--text)',
+              marginBottom: '16px',
+            }}
+          >
+            <strong>Every caste has its own unique beauty.</strong>
+            <br /><br />
+            It is unfortunate that some people consider one caste superior or inferior to
+            another, while others exploit caste divisions for their own personal gain — and
+            this is wrong.
+            <br /><br />
+            Our effort should be to preserve the identity, art, skill, and contribution
+            associated with every caste. This is true unity in diversity — this is the
+            beauty of our nation.
+          </p>
+
+          {/* Hindi */}
+          <p
+            className="hindi-text"
+            style={{
+              fontSize: '1.05rem',
+              lineHeight: '2',
+              color: 'var(--text)',
+              borderTop: '1px solid rgba(255,107,0,0.1)',
+              paddingTop: '14px',
+              marginBottom: '10px',
+            }}
+          >
+            <strong>हर जाति की अपनी विशेष सुंदरता है।</strong>
+            <br /><br />
+            यह बात अलग है कि कुछ लोग छोटा-बड़ा मानते हैं, तो कुछ लोग अपने फायदे के लिए
+            जातियों का इस्तेमाल करते हैं। जो कि गलत है।
+            <br /><br />
+            प्रयास यह होना चाहिए कि हर जाति से जुड़ी उसकी पहचान, उसकी कला, उसका कौशल,
+            उसके योगदान को संरक्षित किया जाए। यही तो अनेकता में एकता है, यही तो हमारे
+            देश की सुंदरता है।
+          </p>
+
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
+              marginTop: '20px',
+              paddingTop: '16px',
+              borderTop: '1px solid rgba(255, 107, 0, 0.1)',
+            }}
+          >
+            <div
+              style={{
+                width: '44px',
+                height: '44px',
+                borderRadius: '50%',
+                background: 'linear-gradient(135deg, var(--saffron), var(--maroon))',
+                border: '2px solid var(--gold)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#fff',
+                fontWeight: '700',
+                fontSize: '1.1rem',
+                flexShrink: 0,
+              }}
+            >
+              प्र
+            </div>
+            <div>
+              <p style={{ fontWeight: '700', color: 'var(--saffron-dark)', margin: 0, fontSize: '0.95rem' }}>
+                Prakash Tiwari
+              </p>
+              <p className="hindi-text" style={{ color: 'var(--text-light)', margin: 0, fontSize: '0.82rem' }}>
+                अध्यक्ष (President), ब्रह्मर्षि सेवा संघ
+              </p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   </div>
