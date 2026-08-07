@@ -141,8 +141,8 @@ const complaintData = [
     refNo: 'REF637810',
     refLink: 'https://drive.google.com/file/d/1nWlQsKji3ctqxVXI5F8Eh4yoPsSQduyw/view',
     description: 'वास्तव में राशि जिम अवस्थापित पर व्यय की गई है तो फतेहाबाद पंचायत में अभी तक जिम सेंटर क्यों नहीं बना',
-    response: '',
-    status: 'PENDING',
+    response: 'मुसहर टोला में विद्यालय में बनाया गया है हालांकि, ब्रह्मर्षि सेवा संघ (BSS) की टीम द्वारा अभी तक इसका भौतिक सत्यापन नहीं किया गया है।',
+    status: 'CLOSED',
   },
   {
     slNo: 14,
