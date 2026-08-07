@@ -97,8 +97,8 @@ const complaintData = [
     refNo: 'REF573805',
     refLink: 'https://drive.google.com/file/d/1IsoBCRAmqx4ApMZScavwjBNwJWTUQ816/view',
     description: 'फतेहाबाद पंचायत के वार्ड संख्या 09 में अधूरे पड़े कुआं मरम्मत कार्य को शीघ्र पूर्ण कराने एवं जांच कराने हेतु',
-    response: 'कार्रवाई किया गया',
-    status: 'PROCESS',
+    response: 'कुआं का निर्माण कार्य पूरा कर दिया गया है।',
+    status: 'CLOSED',
   },
   {
     slNo: 10,
