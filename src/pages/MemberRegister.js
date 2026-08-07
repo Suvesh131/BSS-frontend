@@ -1,29 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import './MemberRegister.css';
 
-const GOOGLE_FORM_LINK = 'https://forms.gle/rMy8oVoZbhNBkguD7';
+const WHATSAPP_GROUP_LINK = 'https://chat.whatsapp.com/DHHmNsSDEB4Gr7Eiaz1kO9';
 
 const MemberRegister = () => {
-  const [countdown, setCountdown] = useState(5);
-  const [redirected, setRedirected] = useState(false);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCountdown(prev => {
-        if (prev <= 1) {
-          clearInterval(timer);
-          window.open(GOOGLE_FORM_LINK, '_blank');
-          setRedirected(true);
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <div className="join-page">
       <Helmet>
@@ -66,53 +48,27 @@ const MemberRegister = () => {
           <h1 className="join-title">Join BSS</h1>
           <p className="join-title-hindi hindi-text">सदस्यता पंजीकरण</p>
 
-          {!redirected ? (
-            <>
-              <p className="join-desc">
-                Brahmarshi Seva Sangh ka hissa banen aur samaj seva mein yogdan den.
-              </p>
-              <p className="join-desc hindi-text">
-                ब्रह्मर्षि सेवा संघ का हिस्सा बनें और समाज सेवा में योगदान दें।
-              </p>
+          <p className="join-desc">
+            Brahmarshi Seva Sangh ka hissa banen aur samaj seva mein yogdan den.
+          </p>
+          <p className="join-desc hindi-text">
+            ब्रह्मर्षि सेवा संघ का हिस्सा बनें और समाज सेवा में योगदान दें।
+          </p>
 
-              {/* Countdown */}
-              <div className="join-countdown">
-                <div className="countdown-circle">
-                  <svg viewBox="0 0 60 60">
-                    <circle cx="30" cy="30" r="26" fill="none" stroke="rgba(255,107,0,0.15)" strokeWidth="4"/>
-                    <circle cx="30" cy="30" r="26" fill="none" stroke="#FF6B00" strokeWidth="4"
-                      strokeDasharray="163" strokeDashoffset={163 - (163 * (5 - countdown) / 5)}
-                      strokeLinecap="round" transform="rotate(-90 30 30)"
-                      style={{ transition: 'stroke-dashoffset 1s ease' }}
-                    />
-                  </svg>
-                  <span className="countdown-num">{countdown}</span>
-                </div>
-                <p className="countdown-text">seconds mein form khulega</p>
-                <p className="countdown-text hindi-text">सेकंड में फॉर्म खुलेगा</p>
-              </div>
-
-              <a href={GOOGLE_FORM_LINK} target="_blank" rel="noopener noreferrer" className="join-btn-primary">
-                Abhi Join Karein — अभी जुड़ें 🙏
-              </a>
-            </>
-          ) : (
-            <div className="join-success">
-              <div className="success-icon">🎉</div>
-              <h3></h3>
-              <p className="hindi-text"></p>
-              <p>If the form does not open, click below:</p>
-              <a href={GOOGLE_FORM_LINK} target="_blank" rel="noopener noreferrer" className="join-btn-primary" style={{ marginTop: '16px' }}>
-                Click Here to Open Form 📋
-              </a>
-            </div>
-          )}
+          <a href={WHATSAPP_GROUP_LINK} target="_blank" rel="noopener noreferrer" className="join-btn-primary">
+            💬 Join WhatsApp Group — व्हाट्सएप ग्रुप जॉइन करें
+          </a>
 
           {/* Manual link */}
           <div className="join-manual">
-            <p>To open the form manually:</p>
-            <a href={GOOGLE_FORM_LINK} target="_blank" rel="noopener noreferrer" className="join-manual-link">
-              🔗 Click Here to Open Form
+            <p>Registration ke liye WhatsApp group join karein:</p>
+            <a
+              href={WHATSAPP_GROUP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="join-manual-link"
+            >
+              🔗 Click Here to Join WhatsApp Group
             </a>
           </div>
         </div>
