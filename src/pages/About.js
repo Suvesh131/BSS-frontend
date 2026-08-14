@@ -73,6 +73,47 @@ const About = () => (
   </p>
 </div>
 
+        {/* JANTA DARBAR */}
+        <div className="section-title" style={{ marginTop: '40px' }}>
+          <h2>Janta Darbar</h2>
+          <p className="subtitle hindi-text">जनता दरबार</p>
+          <div className="divider"></div>
+        </div>
+
+        <div className="card" style={{
+          marginBottom: '32px',
+          borderLeft: '5px solid var(--saffron)',
+          background: 'linear-gradient(135deg, rgba(255,107,0,0.05) 0%, rgba(89,31,0,0.05) 100%)'
+        }}>
+          <h3 style={{ color: 'var(--saffron-dark)', marginBottom: '10px', fontFamily: 'Poppins' }}>🔁 Every Sunday • 4:00 PM to 6:00 PM</h3>
+          <p style={{ lineHeight: '1.9', color: 'var(--text-light)', fontSize: '0.95rem', marginBottom: '12px' }}>
+            Join us every Sunday in the BSS Virtual Meeting Room for Janta Darbar — an open forum
+            where members of the community can directly raise concerns, ask questions, and be
+            heard by the Sangh.
+          </p>
+          <p className="hindi-text" style={{ lineHeight: '1.9', color: 'var(--text-light)', fontSize: '0.9rem', marginBottom: '16px' }}>
+            हर रविवार, शाम 4:00 बजे से 6:00 बजे तक, ब्रह्मर्षि सेवा संघ की ऑनलाइन बैठक में
+            "जनता दरबार" का आयोजन किया जाता है, जहाँ समाज के लोग सीधे अपनी समस्याएं और सुझाव रख सकते हैं।
+          </p>
+          <a
+            href="https://calendar.app.google/DqqZZE2mzQzqxgCJ9"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-block',
+              padding: '10px 22px',
+              background: 'linear-gradient(135deg, var(--saffron), var(--saffron-dark))',
+              color: '#fff',
+              borderRadius: '50px',
+              textDecoration: 'none',
+              fontWeight: '600',
+              fontSize: '0.85rem'
+            }}
+          >
+            🎥 Join Janta Darbar
+          </a>
+        </div>
+
         
         {/* MISSION & VISION */}
 <div className="section-title" style={{ marginTop: '40px' }}>

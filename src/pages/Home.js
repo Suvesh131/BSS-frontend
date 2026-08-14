@@ -136,7 +136,7 @@ const Home = () => {
             </p>
             <div className="about-actions">
               <Link to="/about" className="btn-primary">Read More</Link>
-              <Link to="/join" className="btn-secondary">Join BSS</Link>
+              <Link to="/about" className="btn-secondary">Janta Darbar</Link>
               <a 
                 href="https://sites.google.com/view/brahmarshisevasangh" 
                 target="_blank" 

@@ -128,10 +128,10 @@ const complaintData = [
     lastUpdated: '2026-07-22T07:00:00',
     latterNo: 'BSS-022',
     refNo: 'REF629881',
-    refLink: 'https://drive.google.com/file/d/1S9-s8RFa_mQPArFbG8_GDMsMdPpzdogH/view',
+    refLink: 'https://drive.google.com/file/d/1ECEKizeRrJvYOJAT6wCDx08j1KuUU4A2/view',
     description: 'फतेहाबाद बाजार में भारी वर्षा के कारण होने वाले जलजमाव की समस्या के स्थायी समाधान हेतु आवेदन',
-    response: '',
-    status: 'PENDING',
+    response: 'ग्रामीण कार्य विभाग को BDO द्वारा समाधान के लिए ज्ञापन सौका गया।',
+    status: 'CLOSED',
   },
   {
     slNo: 13,
