@@ -96,7 +96,7 @@ const About = () => (
             "जनता दरबार" का आयोजन किया जाता है, जहाँ समाज के लोग सीधे अपनी समस्याएं और सुझाव रख सकते हैं।
           </p>
           <a
-            href="https://calendar.app.google/DqqZZE2mzQzqxgCJ9"
+            href="https://meet.google.com/svu-rdia-rdy"
             target="_blank"
             rel="noopener noreferrer"
             style={{

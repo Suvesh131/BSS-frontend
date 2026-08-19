@@ -171,8 +171,8 @@ const complaintData = [
     date: '06/08/2026',
     lastUpdated: '2026-08-06T07:00:00',
     latterNo: 'BSS-028',
-    refNo: 'REF693878',
-    refLink: 'https://drive.google.com/file/d/1L6oS0j24uGVPOjkdQjt4BBoBKuj8Wv6u/view',
+    refNo: 'REF749882',
+    refLink: 'https://drive.google.com/file/d/1a79tbYA5uIM0kmMVpkVeSeKBEW4zlyww/view',
     description: 'फतेहाबाद पंचायत अंतर्गत बाजार में दुकानदारों से कथित अवैध वसूली की जांच एवं सरकारी कर/शुल्क संबंधी जानकारी उपलब्ध कराने हेतु आवेदन',
     response: '',
     status: 'PENDING',
@@ -183,10 +183,10 @@ const complaintData = [
     lastUpdated: '2026-08-07T07:00:00',
     latterNo: 'BSS-029',
     refNo: 'REF694701',
-    refLink: 'https://drive.google.com/file/d/1g4RDQqSWOQgfF6UmYzCIKVCcD2j2a-J_/view',
+    refLink: 'https://drive.google.com/file/d/1Rt2A4Ob-WgnhT0alkUPgExRt01256xxx/view',
     description: 'फतेहाबाद पंचायत में स्ट्रीट और सोलर लाइट पर करीब ₹18.73 लाख खर्च, फिर भी अंधेरा क्यों, जांच हेतु आवेदन',
-    response: '',
-    status: 'PENDING',
+    response: 'पंचायत सचिव द्वारा प्रस्तुत जवाब में आवश्यक तथ्यों एवं साक्ष्यों का स्पष्ट उल्लेख नहीं किया गया है। जवाब तथ्यात्मक रूप से अपूर्ण एवं असंतोषजनक है।',
+    status: 'CLOSED',
   },
   {
     slNo: 18,
@@ -210,6 +210,7 @@ const complaintData = [
     response: '',
     status: 'PENDING',
   },
+  
 ];
 
 const statusStyles = {
