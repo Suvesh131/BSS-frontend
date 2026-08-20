@@ -161,10 +161,10 @@ const complaintData = [
     lastUpdated: '2026-07-30T07:00:00',
     latterNo: 'BSS-027',
     refNo: 'REF665302',
-    refLink: 'https://drive.google.com/file/d/1dcfjXWMVRYEr5aqIF1lkfiBVCsw2GdgT/view',
+    refLink: 'https://drive.google.com/file/d/1B8aiPQY1iypPKpy2bYcq0Gp_SjxoZV9n/view',
     description: 'पवित्र सावन माह के दौरान विशेष रूप से सोमवार के दिन मांस एवं मछली की दुकानों के संचालन के संबंध में आवश्यक जांच हेतु।',
-    response: '',
-    status: 'PENDING',
+    response: 'कार्रवाई किया गया, प्रशासन सभी चौक चौराहे पर तैनात रहेंगे।',
+    status: 'CLOSED',
   },
   {
     slNo: 16,
@@ -205,11 +205,12 @@ const complaintData = [
     lastUpdated: '2026-08-07T11:00:00',
     latterNo: 'BSS-031',
     refNo: 'REF697585',
-    refLink: 'https://drive.google.com/file/d/1qfOWUp2Wl8Bl4xw8eFErrZgkAhUM9MfQ/view',
+    refLink: 'https://drive.google.com/file/d/1c8wd-VYPyeZsdHlALIbD4Ut72cpDYf2U/view',
     description: 'मुजफ्फरपुर एवं सारण को जोड़ने वाले फतेहाबाद-चंचलिया पुल निर्माण कार्य की विस्तृत जानकारी उपलब्ध कराने हेतु।',
-    response: '',
-    status: 'PENDING',
+    response: 'कार्रवाई किया गया, सभी उत्तर संलग्न है।',
+    status: 'CLOSED',
   },
+
   
 ];
 
