@@ -213,7 +213,7 @@ const complaintData = [
   {
     slNo: 20,
     date: '22/08/2026',
-    lastUpdated: '2026-08-07T11:00:00',
+    lastUpdated: '2026-08-07T12:00:00',
     latterNo: 'BSS-032',
     refNo: 'REF760262',
     refLink: 'https://drive.google.com/file/d/1p1NT48w6hUjLgM7W_xgAAmoHrxEpaWcL/view',
@@ -224,7 +224,7 @@ const complaintData = [
   {
     slNo: 21,
     date: '23/08/2026',
-    lastUpdated: '2026-08-07T11:00:00',
+    lastUpdated: '2026-08-07T13:00:00',
     latterNo: 'BSS-033',
     refNo: 'REF763079',
     refLink: 'OFFICIAL',
