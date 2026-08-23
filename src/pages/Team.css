@@ -13,6 +13,7 @@
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
   border-radius: 12px;
+  cursor: pointer;
 }
 
 .team-card:hover {
@@ -49,14 +50,14 @@
   object-fit: cover;
   object-position: top center;
   display: block;
-  transition: transform 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
 }
 
 .team-img-wrap:hover .team-img {
   transform: scale(1.05);
 }
 
-/* Placeholder when no image */
+/* Placeholder when no image / while loading */
 .team-img-placeholder {
   width: 100%;
   height: 100%;
@@ -64,6 +65,8 @@
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, var(--saffron), var(--maroon));
+  position: absolute;
+  inset: 0;
 }
 
 /* Upload overlay on hover */
@@ -149,6 +152,7 @@
 @media (max-width: 600px) {
   .team-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
 /* ===== Team Detail Modal - Flip Animation ===== */
 .team-modal-overlay {
   position: fixed;
@@ -253,6 +257,7 @@
   aspect-ratio: 4 / 3;
   overflow: hidden;
   background: linear-gradient(135deg, var(--saffron), var(--maroon));
+  position: relative;
 }
 
 .team-modal-img {
@@ -261,6 +266,29 @@
   object-fit: cover;
   object-position: top center;
   display: block;
+}
+
+/* Loading spinner shown while modal image loads */
+.team-modal-spinner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--saffron), var(--maroon));
+}
+
+.spinner-circle {
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 .team-modal-body {

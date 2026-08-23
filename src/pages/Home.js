@@ -55,8 +55,8 @@ const Home = () => {
           <p className="hero-eng">Brahmarshi Seva Sangh</p>
           <p className="hero-place hindi-text">फतेहाबाद, बिहार | समाज सेवा</p>
           <p className="hero-desc">
-            A non-governmental charitable organization uniting Sanatan families<br />
-            for public welfare since 2021 — Fatehabad, Bihar
+            A non-governmental charitable organization uniting Sanatan families
+            for public welfare <br />since 2021 — Fatehabad, Bihar
           </p>
           <div className="hero-btns">
             <Link to="/join" className="btn-primary">सदस्य बनें — Join Now</Link>
@@ -100,7 +100,7 @@ const Home = () => {
             { num: 5, suffix: '+', label: 'Years of Service', hindi: 'सेवा के वर्ष' },
             { num: 50, suffix: '+', label: 'Members', hindi: 'सदस्य' },
             { num: 10, suffix: '+', label: 'Events', hindi: 'कार्यक्रम' },
-            { num: 50, suffix: '+', label: 'Families Helped', hindi: 'परिवारों की मदद' },
+            { num: 100, suffix: '+', label: 'Families Helped', hindi: 'परिवारों की मदद' },
           ].map((s, i) => (
             <div key={i} className="stat-item reveal">
               <span className="stat-num" data-count={s.num} data-suffix={s.suffix}>{s.num}{s.suffix}</span>

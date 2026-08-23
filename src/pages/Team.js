@@ -53,36 +53,46 @@ const teamMembers = [
   { name: 'Team Member 16', role: 'Executive Member',  roleHindi: 'कार्यकारी सदस्य',    image: '/images/member14.png', birthday: 'N/A', address: 'फतेहाबाद, पारू, मुजफ्फरपुर, बिहार – 843107', contact: 'उपलब्ध नहीं (N/A)' },
 ];
 
-const TeamCard = ({ member, onClick }) => (
-  <div className="team-card card" onClick={() => onClick(member)}>
-    <div className="team-img-wrap">
-      <img
-        src={member.image}
-        alt={member.name}
-        className="team-img"
-        onError={(e) => {
-          e.target.style.display = 'none';
-          e.target.parentElement.classList.add('no-img');
-        }}
-      />
-      <div className="team-img-placeholder">
-        <svg viewBox="0 0 24 24" fill="white" width="48" height="48">
-          <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
-        </svg>
+const TeamCard = ({ member, onClick }) => {
+  const [imgLoaded, setImgLoaded] = useState(false);
+
+  return (
+    <div className="team-card card" onClick={() => onClick(member)}>
+      <div className="team-img-wrap">
+        {!imgLoaded && (
+          <div className="team-img-placeholder">
+            <svg viewBox="0 0 24 24" fill="white" width="48" height="48">
+              <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+            </svg>
+          </div>
+        )}
+        <img
+          src={member.image}
+          alt={member.name}
+          className="team-img"
+          loading="lazy"
+          onLoad={() => setImgLoaded(true)}
+          onError={(e) => {
+            e.target.style.display = 'none';
+          }}
+          style={{ opacity: imgLoaded ? 1 : 0 }}
+        />
+        <div className="team-img-overlay">
+          <span>Detail dekhein</span>
+        </div>
       </div>
-      <div className="team-img-overlay">
-        <span>Detail dekhein</span>
+      <div className="team-card-body">
+        <h3 className="team-name">{member.name}</h3>
+        <p className="team-role">{member.role}</p>
+        <p className="team-role-hindi hindi-text">{member.roleHindi}</p>
       </div>
     </div>
-    <div className="team-card-body">
-      <h3 className="team-name">{member.name}</h3>
-      <p className="team-role">{member.role}</p>
-      <p className="team-role-hindi hindi-text">{member.roleHindi}</p>
-    </div>
-  </div>
-);
+  );
+};
 
 const TeamModal = ({ member, closing, onClose }) => {
+  const [imgLoaded, setImgLoaded] = useState(false);
+
   if (!member) return null;
 
   return (
@@ -99,11 +109,21 @@ const TeamModal = ({ member, closing, onClose }) => {
         </button>
 
         <div className="team-modal-img-wrap">
+          {!imgLoaded && (
+            <div className="team-modal-spinner">
+              <div className="spinner-circle"></div>
+            </div>
+          )}
           <img
             src={member.image}
             alt={member.name}
             className="team-modal-img"
-            onError={(e) => { e.target.style.display = 'none'; }}
+            onLoad={() => setImgLoaded(true)}
+            onError={(e) => {
+              e.target.style.display = 'none';
+              setImgLoaded(true);
+            }}
+            style={{ opacity: imgLoaded ? 1 : 0, transition: 'opacity 0.3s' }}
           />
         </div>
 
