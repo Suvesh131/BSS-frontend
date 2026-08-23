@@ -210,8 +210,28 @@ const complaintData = [
     response: 'कार्रवाई किया गया, सभी उत्तर संलग्न है।',
     status: 'CLOSED',
   },
-
-  
+  {
+    slNo: 20,
+    date: '22/08/2026',
+    lastUpdated: '2026-08-07T11:00:00',
+    latterNo: 'BSS-032',
+    refNo: 'REF760262',
+    refLink: 'https://drive.google.com/file/d/1p1NT48w6hUjLgM7W_xgAAmoHrxEpaWcL/view',
+    description: 'फतेहाबाद–कमलपुरा सड़क के चौड़ीकरण एवं पुनर्निर्माण, चंचलिया पुल निर्माण के पश्चात प्रस्तावित मुख्य मार्ग तथा यातायात व्यवस्था के संबंध में विस्तृत जानकारी एवं आवश्यक कार्रवाई हेतु आवेदन।',
+    response: '',
+    status: 'PENDING',
+  },
+  {
+    slNo: 21,
+    date: '23/08/2026',
+    lastUpdated: '2026-08-07T11:00:00',
+    latterNo: 'BSS-033',
+    refNo: 'REF763079',
+    refLink: 'OFFICIAL',
+    description: 'फतेहाबाद पंचायत अंतर्गत सभी विद्यालयों में शैक्षणिक व्यवस्था एवं मूलभूत सुविधाओं के जायजा हेतु निरीक्षण की अनुमति आवेदन',
+    response: '',
+    status: 'PENDING',
+  },
 ];
 
 const statusStyles = {
