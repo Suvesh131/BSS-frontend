@@ -55,7 +55,7 @@ const Home = () => {
           <p className="hero-eng">Brahmarshi Seva Sangh</p>
           <p className="hero-place hindi-text">फतेहाबाद, बिहार | समाज सेवा</p>
           <p className="hero-desc">
-            A non-governmental charitable organization uniting Sanatan families
+            A non-governmental charitable organization uniting <br/>Sanatan families
             for public welfare <br />since 2021 — Fatehabad, Bihar
           </p>
           <div className="hero-btns">
