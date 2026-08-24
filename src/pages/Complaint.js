@@ -232,6 +232,17 @@ const complaintData = [
     response: '',
     status: 'PENDING',
   },
+  {
+    slNo: 22,
+    date: '24/08/2026',
+    lastUpdated: '2026-08-24T12:00:00',
+    latterNo: 'BSS-034',
+    refNo: 'REF767253',
+    refLink: 'https://drive.google.com/file/d/1rge9cksaXe7LZ0NHC9gq12tpGKzjeXTL/view',
+    description: 'सोशल मीडिया पर जातिसूचक, धार्मिक एवं अश्लील/अपमानजनक वीडियो, पोस्ट एवं टिप्पणियों के माध्यम से सामाजिक सौहार्द बिगाड़ने के संबंध में शिकायत एवं उचित कानूनी कार्रवाई हेतु।',
+    response: '',
+    status: 'PENDING',
+  },
 ];
 
 const statusStyles = {
