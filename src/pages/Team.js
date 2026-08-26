@@ -7,7 +7,7 @@ const teamMembers = [
     name: 'प्रकाश कुमार तिवारी',
     role: 'Founder & President',
     roleHindi: 'संस्थापक सह अध्यक्ष',
-    image: '/images/prakash.png',
+    image: '/images/prakash1.jpg',
     birthday: '10 अक्टूबर',
     address: 'फतेहाबाद, पारू, मुजफ्फरपुर, बिहार – 843107',
     contact: 'brahmarshisevasangh@gmail.com'
@@ -39,18 +39,26 @@ const teamMembers = [
     address: 'फतेहाबाद, पारू, मुजफ्फरपुर, बिहार – 843107',
     contact: 'उपलब्ध नहीं (N/A)'
   },
-  { name: 'Team Member 5',  role: 'Vice President',    roleHindi: 'उपाध्यक्ष',          image: '/images/member3.png',  birthday: 'N/A', address: 'फतेहाबाद, पारू, मुजफ्फरपुर, बिहार – 843107', contact: 'उपलब्ध नहीं (N/A)' },
-  { name: 'Team Member 6',  role: 'Treasurer',         roleHindi: 'कोषाध्यक्ष',         image: '/images/member4.png',  birthday: 'N/A', address: 'फतेहाबाद, पारू, मुजफ्फरपुर, बिहार – 843107', contact: 'उपलब्ध नहीं (N/A)' },
-  { name: 'Team Member 7',  role: 'Joint Secretary',   roleHindi: 'संयुक्त सचिव',       image: '/images/member5.png',  birthday: 'N/A', address: 'फतेहाबाद, पारू, मुजफ्फरपुर, बिहार – 843107', contact: 'उपलब्ध नहीं (N/A)' },
-  { name: 'Team Member 8',  role: 'Media In-charge',   roleHindi: 'मीडिया प्रभारी',     image: '/images/member6.png',  birthday: 'N/A', address: 'फतेहाबाद, पारू, मुजफ्फरपुर, बिहार – 843107', contact: 'उपलब्ध नहीं (N/A)' },
-  { name: 'Team Member 9',  role: 'General Secretary', roleHindi: 'महासचिव',            image: '/images/member7.png',  birthday: 'N/A', address: 'फतेहाबाद, पारू, मुजफ्फरपुर, बिहार – 843107', contact: 'उपलब्ध नहीं (N/A)' },
-  { name: 'Team Member 10', role: 'Legal Advisor',     roleHindi: 'कानूनी सलाहकार',     image: '/images/member8.png',  birthday: 'N/A', address: 'फतेहाबाद, पारू, मुजफ्फरपुर, बिहार – 843107', contact: 'उपलब्ध नहीं (N/A)' },
-  { name: 'Team Member 11', role: 'Cultural Head',     roleHindi: 'सांस्कृतिक प्रमुख',  image: '/images/member9.png',  birthday: 'N/A', address: 'फतेहाबाद, पारू, मुजफ्फरपुर, बिहार – 843107', contact: 'उपलब्ध नहीं (N/A)' },
-  { name: 'Team Member 12', role: 'Social Media Head', roleHindi: 'सोशल मीडिया प्रमुख', image: '/images/member10.png', birthday: 'N/A', address: 'फतेहाबाद, पारू, मुजफ्फरपुर, बिहार – 843107', contact: 'उपलब्ध नहीं (N/A)' },
-  { name: 'Team Member 13', role: 'State Coordinator', roleHindi: 'राज्य समन्वयक',      image: '/images/member11.png', birthday: 'N/A', address: 'फतेहाबाद, पारू, मुजफ्फरपुर, बिहार – 843107', contact: 'उपलब्ध नहीं (N/A)' },
-  { name: 'Team Member 14', role: 'Executive Member',  roleHindi: 'कार्यकारी सदस्य',    image: '/images/member12.png', birthday: 'N/A', address: 'फतेहाबाद, पारू, मुजफ्फरपुर, बिहार – 843107', contact: 'उपलब्ध नहीं (N/A)' },
-  { name: 'Team Member 15', role: 'Executive Member',  roleHindi: 'कार्यकारी सदस्य',    image: '/images/member13.png', birthday: 'N/A', address: 'फतेहाबाद, पारू, मुजफ्फरपुर, बिहार – 843107', contact: 'उपलब्ध नहीं (N/A)' },
-  { name: 'Team Member 16', role: 'Executive Member',  roleHindi: 'कार्यकारी सदस्य',    image: '/images/member14.png', birthday: 'N/A', address: 'फतेहाबाद, पारू, मुजफ्फरपुर, बिहार – 843107', contact: 'उपलब्ध नहीं (N/A)' },
+  {
+    name: 'आदित्य कुमार',
+    role: 'Executive Member',
+    roleHindi: 'कार्यकारी सदस्य',
+    image: '/images/aditya.png',
+    birthday: '09 सितंबर',
+    address: 'फतेहाबाद, पारू, मुजफ्फरपुर, बिहार – 843107',
+    contact: 'उपलब्ध नहीं (N/A)'
+  },
+  { name: 'Team Member 6',  role: 'Vice President',    roleHindi: 'उपाध्यक्ष',          image: '/images/member3.png',  birthday: 'N/A', address: 'फतेहाबाद, पारू, मुजफ्फरपुर, बिहार – 843107', contact: 'उपलब्ध नहीं (N/A)' },
+  { name: 'Team Member 7',  role: 'Treasurer',         roleHindi: 'कोषाध्यक्ष',         image: '/images/member4.png',  birthday: 'N/A', address: 'फतेहाबाद, पारू, मुजफ्फरपुर, बिहार – 843107', contact: 'उपलब्ध नहीं (N/A)' },
+  { name: 'Team Member 8',  role: 'Joint Secretary',   roleHindi: 'संयुक्त सचिव',       image: '/images/member5.png',  birthday: 'N/A', address: 'फतेहाबाद, पारू, मुजफ्फरपुर, बिहार – 843107', contact: 'उपलब्ध नहीं (N/A)' },
+  { name: 'Team Member 9',  role: 'Media In-charge',   roleHindi: 'मीडिया प्रभारी',     image: '/images/member6.png',  birthday: 'N/A', address: 'फतेहाबाद, पारू, मुजफ्फरपुर, बिहार – 843107', contact: 'उपलब्ध नहीं (N/A)' },
+  { name: 'Team Member 10', role: 'General Secretary', roleHindi: 'महासचिव',            image: '/images/member7.png',  birthday: 'N/A', address: 'फतेहाबाद, पारू, मुजफ्फरपुर, बिहार – 843107', contact: 'उपलब्ध नहीं (N/A)' },
+  { name: 'Team Member 11', role: 'Legal Advisor',     roleHindi: 'कानूनी सलाहकार',     image: '/images/member8.png',  birthday: 'N/A', address: 'फतेहाबाद, पारू, मुजफ्फरपुर, बिहार – 843107', contact: 'उपलब्ध नहीं (N/A)' },
+  { name: 'Team Member 12', role: 'Cultural Head',     roleHindi: 'सांस्कृतिक प्रमुख',  image: '/images/member9.png',  birthday: 'N/A', address: 'फतेहाबाद, पारू, मुजफ्फरपुर, बिहार – 843107', contact: 'उपलब्ध नहीं (N/A)' },
+  { name: 'Team Member 13', role: 'Social Media Head', roleHindi: 'सोशल मीडिया प्रमुख', image: '/images/member10.png', birthday: 'N/A', address: 'फतेहाबाद, पारू, मुजफ्फरपुर, बिहार – 843107', contact: 'उपलब्ध नहीं (N/A)' },
+  { name: 'Team Member 14', role: 'State Coordinator', roleHindi: 'राज्य समन्वयक',      image: '/images/member11.png', birthday: 'N/A', address: 'फतेहाबाद, पारू, मुजफ्फरपुर, बिहार – 843107', contact: 'उपलब्ध नहीं (N/A)' },
+  { name: 'Team Member 15', role: 'Executive Member',  roleHindi: 'कार्यकारी सदस्य',    image: '/images/member12.png', birthday: 'N/A', address: 'फतेहाबाद, पारू, मुजफ्फरपुर, बिहार – 843107', contact: 'उपलब्ध नहीं (N/A)' },
+  { name: 'Team Member 16', role: 'Executive Member',  roleHindi: 'कार्यकारी सदस्य',    image: '/images/member13.png', birthday: 'N/A', address: 'फतेहाबाद, पारू, मुजफ्फरपुर, बिहार – 843107', contact: 'उपलब्ध नहीं (N/A)' },
 ];
 
 const TeamCard = ({ member, onClick }) => {
