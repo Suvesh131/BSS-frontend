@@ -107,6 +107,8 @@
   font-weight: 600;
   color: var(--dark);
   margin-bottom: 4px;
+  white-space: normal;   
+  word-spacing: normal;
 }
 
 .team-role {
