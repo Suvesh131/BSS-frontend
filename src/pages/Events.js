@@ -19,6 +19,17 @@ const newsFullText = `ब्रह्मर्षि सेवा संघ द�
 
 const newsPreview = 'ब्रह्मर्षि सेवा संघ द्वारा फतेहाबाद पंचायत में हो रहे कथित अनियमित एवं गलत कार्यों को लेकर प्रशासन से शिकायत की गई थी। शिकायत को गंभीरता से लेते हुए दिनांक 31 जुलाई 2026 को प्रखंड विकास पदाधिकारी (BDO) अजीत कुमार सिंह जी...';
 
+const floodReliefFull = `बाढ़ से प्रभावित लोगों की सहायता के लिए ब्रह्मर्षि सेवा संघ द्वारा एक विशेष राहत टीम का गठन किया गया। इस टीम में युवा प्रमुख श्री अंशु सिंह, श्री रॉकी सिंह, श्री सौरव तिवारी, श्री राहुल पांडेय, श्री आदित्य सिंह, श्री शुभम सिंह, श्री राजा तिवारी, श्री अमित तिवारी, श्री गौरव सिंह, श्री अभिषेक तिवारी, श्री चंदन तिवारी सहित अन्य सदस्य शामिल रहे।
+
+संघ के अध्यक्ष श्री प्रकाश कुमार तिवारी के नेतृत्व में दिनांक 29 सितंबर से 3 अक्टूबर 2026 तक चले इस राहत अभियान के दौरान हजारों लोगों तक सहायता पहुंचाई गई। संकट की इस घड़ी में टीम के सदस्यों ने दिन-रात मेहनत कर जरूरतमंदों की मदद की।
+
+ब्रह्मर्षि सेवा संघ का संकल्प है कि हर संकट में समाज के साथ खड़े रहें और जरूरतमंदों की सेवा करते रहें।
+
+ब्रह्मर्षि सेवा संघ ✊
+सेवा • समर्पण • समाज`;
+
+const floodReliefPreview = 'बाढ़ से प्रभावित लोगों की सहायता के लिए ब्रह्मर्षि सेवा संघ द्वारा एक विशेष राहत टीम का गठन किया गया। संघ के अध्यक्ष श्री प्रकाश कुमार तिवारी के नेतृत्व में 29 सितंबर से 3 अक्टूबर तक हजारों लोगों की मदद की गई...';
+
 const mahapanchayatFull = 'A grand gathering of Sanatan families from Fatehabad and surrounding areas, bringing together hundreds of households for a day of unity, culture, and community dialogue. The Mahapanchayat will address key social issues, celebrate our shared heritage, and strengthen the bonds between families who stand together for justice and tradition.';
 const mahapanchayatPreview = 'A grand gathering of Sanatan families from Fatehabad and surrounding areas, bringing together hundreds of households for a day of unity, culture...';
 
@@ -40,6 +51,15 @@ const Events = () => {
   }, []);
 
   const defaultEvents = [
+    {
+      title: 'बाढ़ राहत अभियान — ब्रह्मर्षि सेवा संघ की सेवा',
+      titleHindi: '',
+      lastUpdated: '2026-10-03T18:00:00',
+      description: floodReliefPreview,
+      fullDescription: floodReliefFull,
+      hasReadMore: true,
+      isHindi: true
+    },
     {
       title: 'ब्रह्मर्षि सेवा संघ की शिकायत पर फतेहाबाद पंचायत में जांच',
       titleHindi: '',
@@ -93,17 +113,20 @@ const Events = () => {
         />
         <link rel="canonical" href="https://www.brahmarshisevasangh.in/" />
       </Helmet>
+
       <div className="page-hero">
         <h1>Events</h1>
         <p className="hindi-text">कार्यक्रम</p>
       </div>
+
       <section className="section-padding">
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          <div className="section-title">
-            <h2>Our Events</h2>
-            <p className="subtitle hindi-text">हमारे कार्यक्रम</p>
+          <div className="section-title" style={{ marginBottom: '24px' }}>
+            <h2 style={{ fontSize: '1.8rem', marginBottom: '4px' }}>Our Events</h2>
+            <p className="subtitle hindi-text" style={{ marginBottom: '4px' }}>हमारे कार्यक्रम</p>
             <div className="divider"></div>
           </div>
+
           {loading ? <p style={{ textAlign: 'center' }}>Loading...</p> : (
             <div style={{
               display: 'grid',
