@@ -36,7 +36,7 @@ const mahapanchayatPreview = 'A grand gathering of Sanatan families from Fatehab
 const chhathFull = 'Brahmarshi Seva Sangh organized the annual Chhath Puja celebration at Fatehabad, bringing together devotees to honor Surya Dev and Chhathi Maiya with traditional rituals, fasting, and evening Arghya at the ghat. The event reflected the community\u2019s deep faith and served as an occasion for families to come together in devotion and festivity.';
 const chhathPreview = 'Brahmarshi Seva Sangh organized the annual Chhath Puja celebration at Fatehabad, bringing together devotees to honor Surya Dev and Chhathi Maiya...';
 
-const holiFull = 'Brahmarshi Seva Sangh organized a vibrant Holi Milan Samaroh, bringing together families from Fatehabad and neighboring villages to celebrate the festival of colors with traditional songs, sweets, and community bonhomie. The event was a joyful reminder of unity in diversity, as people from all walks of life came together to spread warmth, laughter, and goodwill.';
+const holiFull = 'rahmarshi Seva Sangh organized a vibrant Holi Milan Samaroh, bringing together families from Fatehabad and neighboring villages to celebrate the festival of colors with traditional songs, sweets, and community bonhomie. The event was a joyful reminder of unity in diversity, as people from all walks of life came together to spread warmth, laughter, and goodwill.';
 const holiPreview = 'Brahmarshi Seva Sangh organized a vibrant Holi Milan Samaroh, bringing together families from Fatehabad and neighboring villages to celebrate...';
 
 const Events = () => {
