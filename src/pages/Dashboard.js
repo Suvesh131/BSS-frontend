@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { verifyCredentials, createSession, isSessionValid, destroySession } from '../utils/auth';
+import { verifyLogin, createSession, isSessionValid, destroySession, getRole } from '../utils/auth';
 import '../assets/css/dashboard.css';
 
 const FORM_LINKS = {
@@ -7,29 +7,35 @@ const FORM_LINKS = {
   donation: 'https://forms.gle/VNnB2fsxepRQDVN6A',
   expenses: 'https://forms.gle/WfpKn3EdQ2cqPVVTA',
   asset: 'https://forms.gle/nrgkSxF5AWe4G2uB6',
+  store: 'https://script.google.com/macros/s/AKfycbw5cmC9BTCLVSRQBNrBVDyAPyvjWx_HDFe_MxwYwdTWkHKy-P4SzylH2wfqVsblqOi3/exec',
 };
 
 function Dashboard() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [checking, setChecking] = useState(true);
+  const [role, setRole] = useState('admin');
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  useEffect(() => {
-  setLoggedIn(isSessionValid());
-  setChecking(false);
-}, []);
 
   useEffect(() => {
-  document.title = loggedIn ? 'Dashboard | Samiti Portal' : 'Login | Samiti Portal';
-}, [loggedIn]);
+    const valid = isSessionValid();
+    setLoggedIn(valid);
+    if (valid) setRole(getRole());
+    setChecking(false);
+  }, []);
+
+  useEffect(() => {
+    document.title = loggedIn ? 'Dashboard | Samiti Portal' : 'Login | Samiti Portal';
+  }, [loggedIn]);
 
   const handleLogin = async (e) => {
     e.preventDefault();
     setError('');
-    const ok = await verifyCredentials(id.trim(), password);
-    if (ok) {
-      createSession();
+    const userRole = await verifyLogin(id.trim(), password);
+    if (userRole) {
+      createSession(userRole);
+      setRole(userRole);
       setLoggedIn(true);
     } else {
       setError('Galat ID ya Password. Dobara koshish karein.');
@@ -40,6 +46,7 @@ function Dashboard() {
   const handleLogout = () => {
     destroySession();
     setLoggedIn(false);
+    setRole('admin');
     setId('');
     setPassword('');
   };
@@ -56,7 +63,7 @@ function Dashboard() {
           <div className="dash-field">
             <label>ID</label>
             <input value={id} onChange={(e) => setId(e.target.value)} required />
-          </div> 
+          </div>
           <div className="dash-field">
             <label>Password</label>
             <input
@@ -77,24 +84,33 @@ function Dashboard() {
     <div className="dash-wrap">
       <div className="dash-topbar">
         <div className="dash-topbar-brand">
-            <img src="/images/logo.jpeg" alt="Brahmarshi Seva Sangh" className="dash-topbar-logo" />
-            <h2>Brahmarshi Seva Sangh</h2>
+          <img src="/images/logo.jpeg" alt="Brahmarshi Seva Sangh" className="dash-topbar-logo" />
+          <h2>Brahmarshi Seva Sangh</h2>
         </div>
         <button onClick={handleLogout}>Logout</button>
       </div>
+
       <div className="dash-grid">
-        <a className="dash-card" href={FORM_LINKS.member} target="_blank" rel="noopener noreferrer">
-          Member Registration
-        </a>
-        <a className="dash-card" href={FORM_LINKS.donation} target="_blank" rel="noopener noreferrer">
-          Donation Entry
-        </a>
-        <a className="dash-card" href={FORM_LINKS.expenses} target="_blank" rel="noopener noreferrer">
-          Expenses Entry
-        </a>
-        <a className="dash-card" href={FORM_LINKS.asset} target="_blank" rel="noopener noreferrer">
-          Asset In / Out
-        </a>
+        {role === 'store' ? (
+          <a className="dash-card" href={FORM_LINKS.store} target="_blank" rel="noopener noreferrer">
+            Store Department
+          </a>
+        ) : (
+          <>
+            <a className="dash-card" href={FORM_LINKS.member} target="_blank" rel="noopener noreferrer">
+              Member Registration
+            </a>
+            <a className="dash-card" href={FORM_LINKS.donation} target="_blank" rel="noopener noreferrer">
+              Donation Entry
+            </a>
+            <a className="dash-card" href={FORM_LINKS.expenses} target="_blank" rel="noopener noreferrer">
+              Expenses Entry
+            </a>
+            <a className="dash-card" href={FORM_LINKS.asset} target="_blank" rel="noopener noreferrer">
+              Asset In / Out
+            </a>
+          </>
+        )}
       </div>
     </div>
   );
