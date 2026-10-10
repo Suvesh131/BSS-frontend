@@ -7,7 +7,7 @@ async function sha256(text) {
 }
 
 const CREDENTIAL_HASHES = {
-  admin: 'dc11c2a0c7bcbf6db237d314c0c433b31bbf398a70634c703d243a549b149cdb',
+  admin: '68401de8bc05681739b47c1227588f4fb51e6c39ed78b0e75b4e5fcdff3e837e',
   store: '9b7f209dbe2fba6c936dc2f923dbbce15c44ca28db873da736e64f1857ebc1fa',
 };
 
