@@ -39,7 +39,7 @@ const About = () => (
 
   <p style={{ lineHeight: '2', color: 'var(--text-light)', marginTop: '14px', fontSize: '1rem' }}>
     Since its inception, Brahmarshi Seva Sangh has made a meaningful impact by helping{' '}
-    <strong>50+ families</strong>, supporting needy individuals, and empowering students through
+    <strong>1000+ families</strong>, supporting needy individuals, and empowering students through
     various initiatives. The organization has successfully organized <strong>10+ social,
     religious, and cultural events</strong>, creating awareness and strengthening community bonds.
     Our efforts are focused on uplifting the underprivileged, promoting education, and standing
@@ -48,7 +48,7 @@ const About = () => (
 
   <p style={{ lineHeight: '2', color: 'var(--text-light)', marginTop: '14px', fontSize: '1rem' }}>
     We believe that true progress comes when every individual in society is given equal respect,
-    opportunity, and support. With a growing network of <strong>50+ active members</strong>, BSS
+    opportunity, and support. With a growing network of <strong>200+ active members</strong>, BSS
     continues to expand its reach and impact, driven by the mission of “Seva, Nyay aur
     Paradarshita” (Service, Justice, and Transparency).
   </p>
@@ -60,7 +60,7 @@ const About = () => (
   </p>
 
   <p className="hindi-text" style={{ marginTop: '10px', lineHeight: '2', color: 'var(--text-light)', fontSize: '0.95rem' }}>
-    अब तक संस्था द्वारा <strong>50+ परिवारों की सहायता</strong> की जा चुकी है तथा{' '}
+    अब तक संस्था द्वारा <strong>1000+ परिवारों की सहायता</strong> की जा चुकी है तथा{' '}
     <strong>10+ सामाजिक एवं धार्मिक कार्यक्रम</strong> सफलतापूर्वक आयोजित किए गए हैं।
     हमारा उद्देश्य समाज के हर वर्ग तक पहुंचकर उन्हें सहयोग देना, शिक्षा को बढ़ावा देना,
     और अन्याय व भ्रष्टाचार के खिलाफ आवाज उठाना है।
@@ -68,7 +68,7 @@ const About = () => (
 
   <p className="hindi-text" style={{ marginTop: '10px', lineHeight: '2', color: 'var(--text-light)', fontSize: '0.95rem' }}>
     हम मानते हैं कि समाज की सेवा ही सच्चा धर्म है और हर व्यक्ति को समान अवसर मिलना चाहिए।
-    ब्रह्मर्षि सेवा संघ अपने <strong>50+ सदस्यों</strong> के साथ लगातार समाज के उत्थान के लिए
+    ब्रह्मर्षि सेवा संघ अपने <strong>200+ सदस्यों</strong> के साथ लगातार समाज के उत्थान के लिए
     कार्यरत है।
   </p>
 </div>
@@ -92,7 +92,7 @@ const About = () => (
             heard by the Sangh.
           </p>
           <p className="hindi-text" style={{ lineHeight: '1.9', color: 'var(--text-light)', fontSize: '0.9rem', marginBottom: '16px' }}>
-            हर रविवार, शाम 4:00 बजे से 6:00 बजे तक, ब्रह्मर्षि सेवा संघ की ऑनलाइन बैठक में
+            हर रविवार, ब्रह्मर्षि सेवा संघ की ऑनलाइन बैठक में
             "जनता दरबार" का आयोजन किया जाता है, जहाँ समाज के लोग सीधे अपनी समस्याएं और सुझाव रख सकते हैं।
           </p>
           <a

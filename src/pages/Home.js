@@ -98,9 +98,9 @@ const Home = () => {
         <div className="stats-grid reveal-stagger">
           {[
             { num: 5, suffix: '+', label: 'Years of Service', hindi: 'सेवा के वर्ष' },
-            { num: 50, suffix: '+', label: 'Members', hindi: 'सदस्य' },
+            { num: 200, suffix: '+', label: 'Members', hindi: 'सदस्य' },
             { num: 10, suffix: '+', label: 'Events', hindi: 'कार्यक्रम' },
-            { num: 100, suffix: '+', label: 'Families Helped', hindi: 'परिवारों की मदद' },
+            { num: 1000, suffix: '+', label: 'Families Helped', hindi: 'परिवारों की मदद' },
           ].map((s, i) => (
             <div key={i} className="stat-item reveal">
               <span className="stat-num" data-count={s.num} data-suffix={s.suffix}>{s.num}{s.suffix}</span>
