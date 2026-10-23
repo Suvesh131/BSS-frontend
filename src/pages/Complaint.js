@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
+
 const complaintData = [
   {
     slNo: 1,
@@ -97,7 +98,7 @@ const complaintData = [
     refNo: 'REF573805',
     refLink: 'https://drive.google.com/file/d/1IsoBCRAmqx4ApMZScavwjBNwJWTUQ816/view',
     description: 'फतेहाबाद पंचायत के वार्ड संख्या 09 में अधूरे पड़े कुआं मरम्मत कार्य को शीघ्र पूर्ण कराने एवं जांच कराने हेतु',
-    response: 'कुआं का निर्माण कार्य पूरा कर दिया गया है।',
+    response: 'कुआं का निर्माण कार्य पूरा कर दिया गया।',
     status: 'CLOSED',
   },
   {
@@ -276,7 +277,7 @@ const complaintData = [
     response: 'प्रखंड विकास पदाधिकारी (BDO), अमनौर, सारण ने आपकी शिकायत को आगे पथ प्रमंडल, छपरा के कार्यपालक अभियंता को भेजा है।',
     status: 'CLOSED',
   },
-   {
+  {
     slNo: 26,
     date: '14/09/2026',
     lastUpdated: '2026-09-14T12:00:00',
@@ -307,13 +308,13 @@ const statusStyles = {
   FORWARD: { bg: '#e0d4ff', color: '#6b21a8' },
 };
 
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwgDWhuPeYG78bh6OjCartoABEPAzqsNvgGysl3rUvLVIrHjhDVIP6iQuig6Rt4A0fuXA/exec';
+
 const Complaint = () => {
-  const [activeTab, setActiveTab] = useState('register'); // 'register' | 'status'
+  const [activeTab, setActiveTab] = useState('register');
   const [search, setSearch] = useState('');
-  
   const [statusFilter, setStatusFilter] = useState(null);
 
- 
   const counts = useMemo(() => {
     const total = complaintData.length;
     const pending = complaintData.filter((c) => c.status === 'PENDING').length;
@@ -323,223 +324,125 @@ const Complaint = () => {
     return { total, pending, process, closed, forward };
   }, []);
 
-  
   const handleCardClick = (status) => {
     setStatusFilter((prev) => (prev === status ? null : status));
   };
 
-  
   const filteredData = useMemo(() => {
     let data = [...complaintData];
-
     if (statusFilter) {
       data = data.filter((row) => row.status === statusFilter);
     }
-
     if (search.trim()) {
       const q = search.toLowerCase();
       data = data.filter((row) =>
-        Object.values(row).some((val) =>
-          String(val).toLowerCase().includes(q)
-        )
+        Object.values(row).some((val) => String(val).toLowerCase().includes(q))
       );
     }
-
-    
     data.sort((a, b) => new Date(b.lastUpdated) - new Date(a.lastUpdated));
-
     return data;
   }, [search, statusFilter]);
+
+  const handleRegisterComplaint = () => {
+    window.open(SCRIPT_URL, '_blank', 'noopener,noreferrer');
+  };
+
+  const tabBtnStyle = (active) => ({
+    padding: '8px 20px',
+    borderRadius: '50px',
+    border: active ? 'none' : '2px solid var(--saffron-dark)',
+    background: active ? 'linear-gradient(135deg, var(--saffron-dark), var(--maroon))' : 'transparent',
+    color: active ? 'white' : 'var(--saffron-dark)',
+    fontWeight: '600',
+    fontSize: '0.9rem',
+    cursor: 'pointer',
+    boxShadow: active ? '0 4px 12px rgba(180,60,0,0.3)' : 'none',
+    transition: 'all 0.2s',
+  });
 
   return (
     <div>
       <Helmet>
         <title>Complaint | Brahmarshi Seva Sangh</title>
-        <meta
-          name="description"
-          content="File a complaint with Brahmarshi Seva Sangh (BSS). Our team reviews all complaints confidentially and responds within 3-5 working days."
-        />
+        <meta name="description" content="File a complaint with Brahmarshi Seva Sangh (BSS) or view complaint status." />
         <link rel="canonical" href="https://www.brahmarshisevasangh.in/complaint" />
       </Helmet>
 
-      <div className="page-hero">
-        <h1>Complaint</h1>
-        <p className="hindi-text">शिकायत दर्ज करें</p>
+      <div className="page-hero" style={{ padding: '30px 20px' }}>
+        <h1 style={{ margin: '0 0 5px' }}>Complaint Portal</h1>
+        <p className="hindi-text" style={{ margin: 0 }}>शिकायत एवं कार्रवाई पोर्टल</p>
       </div>
 
-      <section className="section-padding">
+      <section className="section-padding" style={{ padding: '20px 10px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-
-          <div className="section-title">
-            <h2>{activeTab === 'register' ? 'Register Complaint' : 'View Complaint Status'}</h2>
-            <p className="subtitle hindi-text">
-              {activeTab === 'register' ? 'अपनी शिकायत यहाँ दर्ज करें' : 'अपनी शिकायत की स्थिति देखें'}
-            </p>
-            <div className="divider"></div>
-          </div>
-
+          
           {/* Top Toggle Buttons */}
-          <div style={{
-            display: 'flex',
-            gap: '16px',
-            justifyContent: 'center',
-            marginBottom: '32px',
-            flexWrap: 'wrap',
-          }}>
-            <button
-              onClick={() => setActiveTab('register')}
-              style={{
-                padding: '12px 28px',
-                borderRadius: '50px',
-                border: activeTab === 'register' ? 'none' : '2px solid var(--saffron-dark)',
-                background: activeTab === 'register'
-                  ? 'linear-gradient(135deg, var(--saffron-dark), var(--maroon))'
-                  : 'transparent',
-                color: activeTab === 'register' ? 'white' : 'var(--saffron-dark)',
-                fontWeight: '600',
-                fontSize: '0.95rem',
-                cursor: 'pointer',
-                boxShadow: activeTab === 'register' ? '0 4px 16px rgba(180,60,0,0.35)' : 'none',
-                transition: 'all 0.2s',
-              }}
-            >
-              📝 Register Complaint
+          <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', marginBottom: '20px', flexWrap: 'wrap' }}>
+            <button onClick={() => setActiveTab('register')} style={tabBtnStyle(activeTab === 'register')}>
+              📝 नई शिकायत (Register)
             </button>
-
-            <button
-              onClick={() => setActiveTab('status')}
-              style={{
-                padding: '12px 28px',
-                borderRadius: '50px',
-                border: activeTab === 'status' ? 'none' : '2px solid var(--saffron-dark)',
-                background: activeTab === 'status'
-                  ? 'linear-gradient(135deg, var(--saffron-dark), var(--maroon))'
-                  : 'transparent',
-                color: activeTab === 'status' ? 'white' : 'var(--saffron-dark)',
-                fontWeight: '600',
-                fontSize: '0.95rem',
-                cursor: 'pointer',
-                boxShadow: activeTab === 'status' ? '0 4px 16px rgba(180,60,0,0.35)' : 'none',
-                transition: 'all 0.2s',
-              }}
-            >
-              📄 View Complaint Status
+            <button onClick={() => setActiveTab('status')} style={tabBtnStyle(activeTab === 'status')}>
+              📄 स्थिति देखें (Status)
             </button>
           </div>
 
           {/* ---------- REGISTER COMPLAINT TAB ---------- */}
           {activeTab === 'register' && (
-            <>
-              {/* Info Card */}
-              <div className="card" style={{ marginBottom: '32px', display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                <span style={{ fontSize: '2rem', flexShrink: 0 }}>📋</span>
-                <div>
-                  <h3 style={{ fontFamily: 'Poppins', color: 'var(--saffron-dark)', marginBottom: '8px', fontSize: '1rem' }}>
-                    How to File a Complaint
-                  </h3>
-                  <p style={{ color: 'var(--text-light)', lineHeight: '1.8', fontSize: '0.92rem' }}>
-                    Fill out the form below with your details and complaint. Our team will review your complaint and respond within 3–5 working days. All complaints are treated with strict confidentiality.
-                  </p>
-                  <p className="hindi-text" style={{ color: 'var(--text-light)', fontSize: '0.88rem', marginTop: '8px', lineHeight: '1.8' }}>
-                    नीचे दिए गए फॉर्म में अपनी जानकारी और शिकायत भरें। हमारी टीम 3–5 कार्य दिवसों में आपकी शिकायत की समीक्षा करेगी।
-                  </p>
-                </div>
+            <div className="card" style={{ padding: '20px', borderRadius: '12px', borderTop: '4px solid var(--saffron-dark)' }}>
+              <h2 style={{ fontSize: '1.4rem', color: 'var(--saffron-dark)', marginBottom: '10px' }}>शिकायत कैसे दर्ज करें?</h2>
+              <p style={{ color: 'var(--text-light)', fontSize: '0.9rem', marginBottom: '15px' }}>
+                शिकायत दर्ज करने के लिए नीचे दिए गए बटन पर क्लिक करें। यह आपको हमारे आधिकारिक फॉर्म पोर्टल पर ले जाएगा।
+              </p>
+              
+              <div style={{ background: '#fef8f5', padding: '15px', borderRadius: '8px', marginBottom: '20px', border: '1px solid #fce8df' }}>
+                <h4 style={{ margin: '0 0 10px', color: '#b45f00' }}>📋 फॉर्म भरने के निर्देश:</h4>
+                <ul style={{ margin: 0, paddingLeft: '20px', fontSize: '0.88rem', color: '#444', lineHeight: '1.6' }}>
+                  <li><b>व्यक्तिगत विवरण:</b> अपना नाम, पिता का नाम, पूरा पता और 10 अंकों का मोबाइल नंबर सही-सही भरें।</li>
+                  <li><b>अपील (पूर्व शिकायत):</b> यदि यह पहले की गई शिकायत पर अपील है, तो 'पूर्व शिकायत नंबर' (उदा. BSS-CMP-2026-00001) अवश्य डालें।</li>
+                  <li><b>शिकायत विवरण:</b> बॉक्स में अपनी समस्या को स्पष्ट रूप से लिखें।</li>
+                  <li><b>दस्तावेज़ (Optional):</b> आप अपनी शिकायत से जुड़ी PDF फाइल (अधिकतम 1 MB) अपलोड कर सकते हैं।</li>
+                  <li><b>ट्रैकिंग (Status):</b> फॉर्म Submit करने के बाद आपको एक <strong>शिकायत नंबर</strong> प्राप्त होगा। इस नंबर का उपयोग करके आप <em>'स्थिति देखें (Status)'</em> सेक्शन या ट्रैकिंग पेज पर अपनी शिकायत का स्टेटस जान सकते हैं।</li>
+                </ul>
               </div>
 
-              {/* Google Form Embed */}
-              <div className="card" style={{ padding: '0', overflow: 'hidden', borderRadius: '16px' }}>
-                <div style={{
-                  background: 'linear-gradient(135deg, var(--saffron-dark), var(--maroon))',
-                  padding: '16px 24px', display: 'flex', alignItems: 'center', gap: '10px'
-                }}>
-                  <span style={{ fontSize: '1.3rem' }}>📝</span>
-                  <span style={{ color: 'white', fontWeight: '600', fontSize: '0.95rem' }}>
-                    Complaint Form / शिकायत फॉर्म
-                  </span>
-                </div>
-
-                <iframe
-                  src="https://docs.google.com/forms/d/e/1FAIpQLSeel6bL7_hb5Ac9bHY0eElLGe8adlti_1PZvU0qAFdEgnkl-g/viewform?embedded=true"
-                  width="100%"
-                  frameBorder="0"
-                  title="Complaint Form"
-                  style={{ display: 'block', height: '500px' }}
+              <div style={{ textAlign: 'center' }}>
+                <button 
+                  onClick={handleRegisterComplaint} 
+                  style={{
+                    padding: '12px 30px',
+                    borderRadius: '8px',
+                    border: 'none',
+                    background: 'var(--saffron-dark)',
+                    color: 'white',
+                    fontWeight: 'bold',
+                    fontSize: '1rem',
+                    cursor: 'pointer',
+                    boxShadow: '0 4px 10px rgba(0,0,0,0.15)',
+                  }}
                 >
-                  Loading…
-                </iframe>
-
-                <div style={{ padding: '20px', textAlign: 'center', background: 'var(--cream-dark)' }}>
-                  <p style={{ color: 'var(--text-light)', fontSize: '0.85rem', marginBottom: '12px' }}>
-                    Form theek se nahi khul raha?
-                  </p>
-
-                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSeel6bL7_hb5Ac9bHY0eElLGe8adlti_1PZvU0qAFdEgnkl-g/viewform"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      background: 'linear-gradient(135deg, var(--saffron-dark), var(--maroon))',
-                      color: 'white',
-                      fontWeight: '600',
-                      fontSize: '0.92rem',
-                      textDecoration: 'none',
-                      padding: '12px 28px',
-                      borderRadius: '50px',
-                      boxShadow: '0 4px 16px rgba(180,60,0,0.35)',
-                      transition: 'transform 0.2s, box-shadow 0.2s',
-                    }}
-                    onMouseEnter={e => {
-                      e.currentTarget.style.transform = 'translateY(-2px)';
-                      e.currentTarget.style.boxShadow = '0 8px 24px rgba(180,60,0,0.45)';
-                    }}
-                    onMouseLeave={e => {
-                      e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.boxShadow = '0 4px 16px rgba(180,60,0,0.35)';
-                    }}
-                  >
-                    📋 Open Full Form in New Tab ↗
-                  </a>
-                </div>
+                  शिकायत फॉर्म पर जाएं ➔
+                </button>
               </div>
-
-              {/* Contact fallback */}
-              <div className="card" style={{ marginTop: '24px', textAlign: 'center', background: 'var(--cream-dark)' }}>
-                <p style={{ color: 'var(--text-light)', fontSize: '0.9rem' }}>
-                  Don't see the form? Email directly to:
-                </p>
-                <a href="mailto:brahmarshisevasangh@gmail.com"
-                  style={{ color: 'var(--saffron-dark)', fontWeight: '600', fontSize: '0.95rem', textDecoration: 'none' }}>
-                  brahmarshisevasangh@gmail.com
-                </a>
-              </div>
-            </>
+            </div>
           )}
 
           {/* ---------- VIEW COMPLAINT STATUS TAB ---------- */}
           {activeTab === 'status' && (
             <>
-              {/* Summary Stat Cards — sirf isi tab me */}
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
-                gap: '16px',
-                marginBottom: '24px',
-              }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '12px', marginBottom: '16px' }}>
                 <div
                   className="card"
                   onClick={() => handleCardClick(null)}
                   style={{
                     background: 'linear-gradient(135deg, #dbeafe, #eff6ff)',
-                    padding: '20px', borderRadius: '14px',
+                    padding: '15px',
+                    borderRadius: '10px',
                     cursor: 'pointer',
                     border: statusFilter === null ? '2px solid #1d4ed8' : '2px solid transparent',
-                    transition: 'border 0.15s',
                   }}
                 >
-                  <div style={{ fontSize: '1.8rem', fontWeight: '700', color: '#1d4ed8' }}>{counts.total}</div>
-                  <div style={{ fontSize: '0.85rem', color: 'var(--text-light)', fontWeight: '600' }}>Total Complaints</div>
+                  <div style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1d4ed8' }}>{counts.total}</div>
+                  <div style={{ fontSize: '0.8rem', color: '#444', fontWeight: '600' }}>Total Complaints</div>
                 </div>
 
                 <div
@@ -547,14 +450,14 @@ const Complaint = () => {
                   onClick={() => handleCardClick('PENDING')}
                   style={{
                     background: 'linear-gradient(135deg, #fff3cd, #fffbeb)',
-                    padding: '20px', borderRadius: '14px',
+                    padding: '15px',
+                    borderRadius: '10px',
                     cursor: 'pointer',
                     border: statusFilter === 'PENDING' ? '2px solid #b45f00' : '2px solid transparent',
-                    transition: 'border 0.15s',
                   }}
                 >
-                  <div style={{ fontSize: '1.8rem', fontWeight: '700', color: '#b45f00' }}>{counts.pending}</div>
-                  <div style={{ fontSize: '0.85rem', color: 'var(--text-light)', fontWeight: '600' }}>Pending</div>
+                  <div style={{ fontSize: '1.5rem', fontWeight: '700', color: '#b45f00' }}>{counts.pending}</div>
+                  <div style={{ fontSize: '0.8rem', color: '#444', fontWeight: '600' }}>Pending</div>
                 </div>
 
                 <div
@@ -562,14 +465,14 @@ const Complaint = () => {
                   onClick={() => handleCardClick('PROCESS')}
                   style={{
                     background: 'linear-gradient(135deg, #d6e4ff, #eef2ff)',
-                    padding: '20px', borderRadius: '14px',
+                    padding: '15px',
+                    borderRadius: '10px',
                     cursor: 'pointer',
                     border: statusFilter === 'PROCESS' ? '2px solid #1d4ed8' : '2px solid transparent',
-                    transition: 'border 0.15s',
                   }}
                 >
-                  <div style={{ fontSize: '1.8rem', fontWeight: '700', color: '#1d4ed8' }}>{counts.process}</div>
-                  <div style={{ fontSize: '0.85rem', color: 'var(--text-light)', fontWeight: '600' }}>In Process</div>
+                  <div style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1d4ed8' }}>{counts.process}</div>
+                  <div style={{ fontSize: '0.8rem', color: '#444', fontWeight: '600' }}>In Process</div>
                 </div>
 
                 <div
@@ -577,14 +480,14 @@ const Complaint = () => {
                   onClick={() => handleCardClick('FORWARD')}
                   style={{
                     background: 'linear-gradient(135deg, #e0d4ff, #f3ecff)',
-                    padding: '20px', borderRadius: '14px',
+                    padding: '15px',
+                    borderRadius: '10px',
                     cursor: 'pointer',
                     border: statusFilter === 'FORWARD' ? '2px solid #6b21a8' : '2px solid transparent',
-                    transition: 'border 0.15s',
                   }}
                 >
-                  <div style={{ fontSize: '1.8rem', fontWeight: '700', color: '#6b21a8' }}>{counts.forward}</div>
-                  <div style={{ fontSize: '0.85rem', color: 'var(--text-light)', fontWeight: '600' }}>Forwarded</div>
+                  <div style={{ fontSize: '1.5rem', fontWeight: '700', color: '#6b21a8' }}>{counts.forward}</div>
+                  <div style={{ fontSize: '0.8rem', color: '#444', fontWeight: '600' }}>Forwarded</div>
                 </div>
 
                 <div
@@ -592,69 +495,76 @@ const Complaint = () => {
                   onClick={() => handleCardClick('CLOSED')}
                   style={{
                     background: 'linear-gradient(135deg, #d4edda, #eefdf1)',
-                    padding: '20px', borderRadius: '14px',
+                    padding: '15px',
+                    borderRadius: '10px',
                     cursor: 'pointer',
                     border: statusFilter === 'CLOSED' ? '2px solid #1e7e34' : '2px solid transparent',
-                    transition: 'border 0.15s',
                   }}
                 >
-                  <div style={{ fontSize: '1.8rem', fontWeight: '700', color: '#1e7e34' }}>{counts.closed}</div>
-                  <div style={{ fontSize: '0.85rem', color: 'var(--text-light)', fontWeight: '600' }}>Closed</div>
+                  <div style={{ fontSize: '1.5rem', fontWeight: '700', color: '#1e7e34' }}>{counts.closed}</div>
+                  <div style={{ fontSize: '0.8rem', color: '#444', fontWeight: '600' }}>Closed</div>
                 </div>
               </div>
 
-              {/* Table Card */}
-              <div className="card" style={{ padding: '20px', borderRadius: '16px' }}>
-                <div style={{ marginBottom: '16px', display: 'flex', justifyContent: 'flex-end' }}>
+              <div className="card" style={{ padding: '16px', borderRadius: '12px' }}>
+                <div style={{ marginBottom: '12px', display: 'flex', justifyContent: 'flex-end' }}>
                   <input
                     type="text"
                     placeholder="Search complaint..."
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                     style={{
-                      padding: '10px 16px',
-                      borderRadius: '8px',
+                      padding: '8px 14px',
+                      borderRadius: '6px',
                       border: '1px solid #ddd',
-                      fontSize: '0.9rem',
-                      minWidth: '220px',
+                      fontSize: '0.85rem',
+                      width: '100%',
+                      maxWidth: '250px',
                     }}
                   />
                 </div>
 
-                {/* Scrollable wrapper — ~5 rows visible, baaki scroll par */}
-                <div style={{
-                  maxHeight: '320px',
-                  overflowY: 'auto',
-                  overflowX: 'auto',
-                  borderRadius: '8px',
-                }}>
-                  <table style={{ width: '100%', minWidth: '790px', borderCollapse: 'collapse', fontSize: '0.88rem', tableLayout: 'fixed' }}>
+                <div style={{ maxHeight: '350px', overflowY: 'auto', overflowX: 'auto', borderRadius: '6px' }}>
+                  <table
+                    style={{
+                      width: '100%',
+                      minWidth: '790px',
+                      borderCollapse: 'collapse',
+                      fontSize: '0.85rem',
+                      tableLayout: 'fixed',
+                    }}
+                  >
                     <colgroup>
                       <col style={{ width: '50px' }} />
-                      <col style={{ width: '95px' }} />
+                      <col style={{ width: '90px' }} />
                       <col style={{ width: '90px' }} />
                       <col style={{ width: '90px' }} />
                       <col style={{ width: '190px' }} />
                       <col style={{ width: '175px' }} />
-                      <col style={{ width: '110px' }} />
+                      <col style={{ width: '100px' }} />
                     </colgroup>
                     <thead>
                       <tr style={{ background: 'var(--cream-dark)' }}>
-                        {['Sl. No.', 'Date', 'Latter No.', 'Ref. No', 'Complaint Description', 'Response', 'Status'].map((h) => (
-                          <th key={h} style={{
-                            padding: '10px 12px',
-                            textAlign: 'left',
-                            borderBottom: '2px solid var(--saffron-dark)',
-                            borderRight: '1px solid #e8dfce',
-                            color: 'var(--saffron-dark)',
-                            position: 'sticky',
-                            top: 0,
-                            background: 'var(--cream-dark)',
-                            zIndex: 1,
-                          }}>
-                            {h}
-                          </th>
-                        ))}
+                        {['Sl. No.', 'Date', 'Latter No.', 'Ref. No', 'Complaint Description', 'Response', 'Status'].map(
+                          (h) => (
+                            <th
+                              key={h}
+                              style={{
+                                padding: '10px',
+                                textAlign: 'left',
+                                borderBottom: '2px solid var(--saffron-dark)',
+                                borderRight: '1px solid #e8dfce',
+                                color: 'var(--saffron-dark)',
+                                position: 'sticky',
+                                top: 0,
+                                background: 'var(--cream-dark)',
+                                zIndex: 1,
+                              }}
+                            >
+                              {h}
+                            </th>
+                          )
+                        )}
                       </tr>
                     </thead>
                     <tbody>
@@ -667,10 +577,12 @@ const Complaint = () => {
                       ) : (
                         filteredData.map((row, index) => (
                           <tr key={row.slNo} style={{ borderBottom: '1px solid #eee' }}>
-                            <td style={{ padding: '10px 12px', borderRight: '1px solid #eee' }}>{index + 1}</td>
-                            <td style={{ padding: '10px 12px', borderRight: '1px solid #eee' }}>{row.date}</td>
-                            <td style={{ padding: '10px 12px', whiteSpace: 'nowrap', borderRight: '1px solid #eee' }}>{row.latterNo}</td>
-                            <td style={{ padding: '10px 12px', fontWeight: '600', borderRight: '1px solid #eee' }}>
+                            <td style={{ padding: '8px 10px', borderRight: '1px solid #eee' }}>{index + 1}</td>
+                            <td style={{ padding: '8px 10px', borderRight: '1px solid #eee' }}>{row.date}</td>
+                            <td style={{ padding: '8px 10px', whiteSpace: 'nowrap', borderRight: '1px solid #eee' }}>
+                              {row.latterNo}
+                            </td>
+                            <td style={{ padding: '8px 10px', fontWeight: '600', borderRight: '1px solid #eee' }}>
                               {row.refLink ? (
                                 <a
                                   href={row.refLink}
@@ -679,7 +591,6 @@ const Complaint = () => {
                                   style={{
                                     color: 'var(--saffron-dark)',
                                     textDecoration: 'underline',
-                                    fontWeight: '600',
                                     cursor: 'pointer',
                                   }}
                                 >
@@ -689,19 +600,25 @@ const Complaint = () => {
                                 row.refNo
                               )}
                             </td>
-                            <td style={{ padding: '10px 12px', wordBreak: 'break-word', borderRight: '1px solid #eee' }}>{row.description}</td>
-                            <td style={{ padding: '10px 12px', wordBreak: 'break-word', borderRight: '1px solid #eee' }}>{row.response || '-'}</td>
-                            <td style={{ padding: '10px 12px' }}>
-                              <span style={{
-                                padding: '4px 10px',
-                                borderRadius: '20px',
-                                fontSize: '0.75rem',
-                                fontWeight: '600',
-                                whiteSpace: 'nowrap',
-                                display: 'inline-block',
-                                background: statusStyles[row.status]?.bg || '#eee',
-                                color: statusStyles[row.status]?.color || '#333',
-                              }}>
+                            <td style={{ padding: '8px 10px', wordBreak: 'break-word', borderRight: '1px solid #eee' }}>
+                              {row.description}
+                            </td>
+                            <td style={{ padding: '8px 10px', wordBreak: 'break-word', borderRight: '1px solid #eee' }}>
+                              {row.response || '-'}
+                            </td>
+                            <td style={{ padding: '8px 10px' }}>
+                              <span
+                                style={{
+                                  padding: '4px 8px',
+                                  borderRadius: '20px',
+                                  fontSize: '0.7rem',
+                                  fontWeight: '600',
+                                  whiteSpace: 'nowrap',
+                                  display: 'inline-block',
+                                  background: statusStyles[row.status]?.bg || '#eee',
+                                  color: statusStyles[row.status]?.color || '#333',
+                                }}
+                              >
                                 {row.status}
                               </span>
                             </td>
@@ -714,7 +631,6 @@ const Complaint = () => {
               </div>
             </>
           )}
-
         </div>
       </section>
     </div>
