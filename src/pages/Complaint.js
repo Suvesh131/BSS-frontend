@@ -309,6 +309,8 @@ const statusStyles = {
 };
 
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwgDWhuPeYG78bh6OjCartoABEPAzqsNvgGysl3rUvLVIrHjhDVIP6iQuig6Rt4A0fuXA/exec';
+const FORM_FILE_ID = '1NSnJ61VQCQ-r0B-D4230983pIbx_iufn';
+const FORM_DOWNLOAD_URL = `https://drive.google.com/uc?export=download&id=${FORM_FILE_ID}`;
 
 const Complaint = () => {
   const [activeTab, setActiveTab] = useState('register');
@@ -425,6 +427,41 @@ const Complaint = () => {
               </div>
             </div>
           )}
+          {/* ---------- OFFLINE FORM DOWNLOAD ---------- */}
+<div
+  style={{
+    marginTop: '24px',
+    paddingTop: '20px',
+    borderTop: '1px dashed #e0cfc2',
+    textAlign: 'center',
+  }}
+>
+  <h4 style={{ margin: '0 0 6px', color: 'var(--saffron-dark)', fontSize: '1.05rem' }}>
+    📥 ऑफलाइन शिकायत के लिए
+  </h4>
+  <p style={{ margin: '0 0 14px', fontSize: '0.85rem', color: 'var(--text-light)' }}>
+    यदि आपके पास इंटरनेट की सुविधा नहीं है, तो शिकायत फॉर्म डाउनलोड कर प्रिंट निकालें, उसे भरें और BSS कार्यालय में जमा करें अथवा WhatsApp के माध्यम से भेजें।
+  </p>
+
+  <button
+  type="button"
+  onClick={() => window.open(FORM_DOWNLOAD_URL, '_blank', 'noopener,noreferrer')}
+  style={{
+    padding: '12px 28px',
+    borderRadius: '8px',
+    border: '2px solid var(--saffron-dark)',
+    background: 'var(--saffron-dark)',
+    color: '#ffffff',
+    fontWeight: 'bold',
+    fontSize: '0.95rem',
+    cursor: 'pointer',
+    boxShadow: '0 4px 10px rgba(0,0,0,0.15)',
+    lineHeight: '1.4',
+  }}
+>
+  📄 Complaint Form Download / शिकायत फॉर्म डाउनलोड
+</button>
+</div>
 
           {/* ---------- VIEW COMPLAINT STATUS TAB ---------- */}
           {activeTab === 'status' && (

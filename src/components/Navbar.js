@@ -2,6 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
+const LOGIN_URL =
+  'https://script.google.com/macros/s/AKfycbyXBYBbpWH4h4qdZirmu5gklQUUUKeF1qteq448DOC55O9breKAMEJtBHzyW7a4zF4/exec';
+
+const LockIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="5" y="11" width="14" height="10" rx="2" />
+    <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+  </svg>
+);
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -60,12 +70,16 @@ const Navbar = () => {
               <Link to="/join" className="btn-join">Join BSS</Link>
             </li>
             <li>
-              <Link to="/dashboard" className="btn-dashboard" aria-label="Dashboard">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="5" y="11" width="14" height="10" rx="2" />
-                  <path d="M8 11V7a4 4 0 0 1 8 0v4" />
-                </svg>
-              </Link>
+              <a
+                href={LOGIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-dashboard"
+                aria-label="Login"
+                title="Login"
+              >
+                <LockIcon />
+              </a>
             </li>
           </ul>
 
@@ -111,18 +125,21 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Join button */}
+        {/* Join + Login buttons */}
         <div className="drawer-footer">
           <Link to="/join" className="btn-primary drawer-join" onClick={toggleMenu}>
             Join BSS — सदस्य बनें
           </Link>
-          <Link to="/dashboard" className="drawer-dashboard" onClick={toggleMenu}>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="5" y="11" width="14" height="10" rx="2" />
-              <path d="M8 11V7a4 4 0 0 1 8 0v4" />
-            </svg>
+          <a
+            href={LOGIN_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="drawer-dashboard"
+            onClick={toggleMenu}
+          >
+            <LockIcon />
             <span>Login</span>
-          </Link>
+          </a>
         </div>
       </div>
     </>

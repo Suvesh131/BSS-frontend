@@ -199,6 +199,16 @@ const Team = () => {
               <TeamCard key={i} member={member} onClick={setSelectedMember} />
             ))}
           </div>
+          <div style={{ textAlign: 'center', marginTop: '40px' }}>
+  <a
+    href="https://script.google.com/macros/s/AKfycbxQMD1vaaIsjuXnesaklH6ys5krQaA_ULzdZGgOlivci61e9IduzoDwVWNCk529Lz8D/exec"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="btn-view-team"
+  >
+    View All Team — पूरी टीम देखें →
+  </a>
+</div>
 
           <div className="card" style={{
             marginTop: '48px', textAlign: 'center',

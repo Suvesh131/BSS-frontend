@@ -371,8 +371,7 @@
 /* ── TEAM ── */
 .team-section {
   background: var(--cream-dark);
-  padding-top: 20px;
-  padding-bottom: 50px;
+  padding: 50px 0 40px;
   position: relative;
   z-index: 1;
 }
@@ -442,7 +441,7 @@
 .donate-cta {
   background: linear-gradient(135deg, var(--saffron) 0%, var(--maroon) 100%);
   text-align: center;
-  padding: 80px 20px;
+  padding: 40px 20px;
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -731,5 +730,28 @@
   }
   .stat-num {
     font-size: 1.35rem;
+  }
+}
+/* ── Reduce vertical gaps across home page ── */
+.home .section-padding {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.home .section-title {
+  margin-bottom: 28px;
+}
+
+.stats-section {
+  padding: 36px 20px;
+}
+
+@media (max-width: 600px) {
+  .home .section-padding {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+  .donate-cta {
+    padding: 40px 14px;
   }
 }

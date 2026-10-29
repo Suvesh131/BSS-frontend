@@ -151,7 +151,7 @@ const Home = () => {
       </section>
 
       {/* ── SERVICES ── */}
-      <section style={{ background: 'var(--cream-dark)', padding: '80px 20px' }}>
+      <section style={{ background: 'var(--cream-dark)', padding: '0px 20px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div className="section-title reveal">
             <h2>Our Services</h2>
@@ -205,7 +205,7 @@ const Home = () => {
 
       {/* ── TEAM ── */}
       <section className="team-section">
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 20px' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0px 20px' }}>
           <div className="section-title reveal">
             <h2>Our Team</h2>
             <p className="subtitle hindi-text">हमारी टीम — कार्यकारिणी</p>
@@ -229,9 +229,16 @@ const Home = () => {
               </div>
             ))}
           </div>
-          <div style={{ textAlign: 'center', marginTop: '40px' }} className="reveal">
-            <Link to="/team" className="btn-secondary">View Full Team →</Link>
-          </div>
+          <div style={{ textAlign: 'center', marginTop: '40px' }}>
+  <a
+    href="https://script.google.com/macros/s/AKfycbxQMD1vaaIsjuXnesaklH6ys5krQaA_ULzdZGgOlivci61e9IduzoDwVWNCk529Lz8D/exec"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="btn-view-team"
+  >
+    View All Team — पूरी टीम देखें →
+  </a>
+</div>
         </div>
       </section>
 
