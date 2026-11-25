@@ -1,17 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 import { Helmet } from 'react-helmet-async'; 
 import './Home.css';
 
-const API = process.env.REACT_APP_API_URL || 'http://localhost:5000';
-
 const Home = () => {
-  const [events, setEvents] = useState([]);
-
-  // useEffect(() => {
-  //   axios.get(`${API}/api/events`).then(r => setEvents(r.data.slice(0, 3))).catch(() => {});
-  // }, []);
   const team = [
   { name: 'Prakash Kumar', role: 'Founder & President', roleHindi: 'संस्थापक एवं अध्यक्ष', image: '/images/prakash1.jpg' },
   { name: 'Anshu Singh', role: 'Youth Wing Head', roleHindi: 'युवा प्रमुख', image: '/images/yuva.jpeg' },
@@ -174,35 +166,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ── EVENTS ── */}
-      {events.length > 0 && (
-        <section className="section-padding">
-          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-            <div className="section-title reveal">
-              <h2>Upcoming Events</h2>
-              <p className="subtitle hindi-text">आगामी कार्यक्रम</p>
-              <div className="divider"></div>
-            </div>
-            <div className="events-grid reveal-stagger">
-              {events.map((ev, i) => (
-                <div key={i} className="event-card card reveal">
-                  {ev.image && <img src={ev.image} alt={ev.title} />}
-                  <div className="event-body">
-                    <span className="event-date">{new Date(ev.date).toLocaleDateString('hi-IN')}</span>
-                    <h3>{ev.title}</h3>
-                    {ev.titleHindi && <p className="hindi-text">{ev.titleHindi}</p>}
-                    <p>{ev.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div style={{ textAlign: 'center', marginTop: '32px' }} className="reveal">
-              <Link to="/events" className="btn-secondary">All Events →</Link>
-            </div>
-          </div>
-        </section>
-      )}
-
       {/* ── TEAM ── */}
       <section className="team-section">
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0px 20px' }}>
@@ -216,7 +179,7 @@ const Home = () => {
               <div key={i} className="team-card card reveal reveal-scale">
                 <div className="team-avatar">
                   {member.image ? (
-                    <img src={member.image} alt={member.name} style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover', border: '3px solid var(--gold)' }} />
+                    <img src={member.image} alt={member.name} loading="lazy" decoding="async" style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover', border: '3px solid var(--gold)' }} />
                   ) : (
                     <div style={{ width: '80px', height: '80px', borderRadius: '50%', background: 'linear-gradient(135deg, var(--saffron), var(--maroon))', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <svg viewBox="0 0 24 24" fill="white" width="40" height="40"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>

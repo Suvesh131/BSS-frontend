@@ -43,4 +43,5 @@ export const initCounters = () => {
     { threshold: 0.5 }
   );
   document.querySelectorAll('[data-count]').forEach((el) => counterObserver.observe(el));
+  return counterObserver;
 };
