@@ -139,6 +139,17 @@ const Footer = () => {
               🔒 Privacy Policy
             </Link>
           </p>
+          <p className="footer-developed-by">
+            Developed by{' '}
+            <a
+              href="https://www.prasarin.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-developer-link"
+            >
+              PRASARIN
+            </a>
+          </p>
         </div>
       </div>
 
